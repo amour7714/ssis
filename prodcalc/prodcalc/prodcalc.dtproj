@@ -26,18 +26,18 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">KAOLAPTOP13</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC5se5F0dpkmill65eG0kWgAAAAACAAAAAAADZgAAwAAAABAAAACpiIR2G5OFewzmA+5isq9IAAAAAASAAACgAAAAEAAAAGX/yO8Nw0TmYuBPMsRV9fuIAAAAvMdGgsACs/z9vISoiBNeLrgtG4XF5N+S80cNb8XDtlZ0UyKMzKN29lmOLieWKdWHix06A7xaf0xxgJnlLTJlCIaZsHX6T4kgftwMTsHZk59FAk8jYmp5hk19bQxOsBb5nBAtlvxcEfqfZdDkprDt+3mS3CO9In4z6/Lx7U3xw/YcLoQ8bS4qfRQAAADAeyjO1EkNVu5cHcHevSb2oBWehQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAC5se5F0dpkmill65eG0kWgAAAAACAAAAAAADZgAAwAAAABAAAAAvqwM34Av1oLW/sQN0ZEVUAAAAAASAAACgAAAAEAAAAOnGi35sL/0GVr9sn4n2QlSIAAAAFFR/6lWSMHMzLitE6jCj7bSxXkeKa4/HCxNJDN+G6U1E5r1pbvnWSjqTEk/Y40QOp1Q95ko1GOxD8DFJ81RhGrVln3oHVurawss2BOL07nG06YtJopY1P3EykcsDSMZqrNK2t1ThMIAt4CByxE9Baapb9s27KmXait2BLRBuUSlUW39Pvt4ZoxQAAAAPQ0/RP//7d16th1taIdud/MHfKQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="prodcalc_staging.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
-          <SSIS:ConnectionManager SSIS:Name="localhost.prodcalc.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="prodcalc.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.ConnectionString">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.ConnectionString">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -52,7 +52,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -67,7 +67,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.Password">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -81,7 +81,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -96,7 +96,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -111,7 +111,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.localhost.prodcalc.UserName">
+            <SSIS:Parameter SSIS:Name="CM.prodcalc.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -133,10 +133,10 @@
                 <SSIS:Property SSIS:Name="Name">prodcalc_staging</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">3</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B69E8C76-FEE9-4E26-B733-6A59021D3271}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4AE56CAD-05AB-40B2-B238-8E7F601594EF}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -159,7 +159,13 @@
         <ConnectionProviderMappings />
         <ConnectionSecurityMappings />
         <DatabaseStorageLocations />
-        <ParameterConfigurationValues />
+        <ParameterConfigurationValues>
+          <ConfigurationSetting>
+            <Id>LastModifiedTime</Id>
+            <Name>LastModifiedTime</Name>
+            <Value xsi:type="xsd:dateTime">2013-04-08T23:40:55.6550016Z</Value>
+          </ConfigurationSetting>
+        </ParameterConfigurationValues>
       </Options>
     </Configuration>
   </Configurations>
