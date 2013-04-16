@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="prodcalc_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="67"
-  DTS:VersionGUID="{753BFFD3-FD67-485F-8836-F04EEF3070D0}">
+  DTS:VersionBuild="72"
+  DTS:VersionGUID="{4782AB2E-65D1-44C8-8FE8-BE403ECE74C3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:ConnectionManagers>
@@ -929,7 +929,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="key"
-              DTS:DTSID="{64911F0C-36A6-47AB-9247-49459CC11F91}"
+              DTS:DTSID="{FE235EC3-107E-411F-ABC0-B86FAEA7D56E}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -937,7 +937,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="divisionKey"
-              DTS:DTSID="{855E3FB0-9C22-48EF-809B-63AC34B44559}"
+              DTS:DTSID="{B1A7F897-52F0-41E0-A3D5-CF7AAACE0DBB}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -945,7 +945,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="shiftKey"
-              DTS:DTSID="{4061C014-A40B-4424-BFE2-3ACEBFA2449D}"
+              DTS:DTSID="{80EE65DA-9D04-4E1B-8B6B-F2E5E91FA71F}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -953,7 +953,7 @@
               DTS:DataType="135"
               DTS:TextQualified="True"
               DTS:ObjectName="date"
-              DTS:DTSID="{C5B56654-C777-4505-8035-C18F8525D4DB}"
+              DTS:DTSID="{71C00592-A4B2-4504-9B8F-1FDB8CB417F4}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -961,15 +961,24 @@
               DTS:DataType="11"
               DTS:TextQualified="True"
               DTS:ObjectName="processed"
-              DTS:DTSID="{74F0BEBE-77A8-4F0F-832D-3FC4C129D1EC}"
+              DTS:DTSID="{11375F9A-EAD6-4E09-A57D-06DD6FA31F75}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:DataType="3"
+              DTS:TextQualified="True"
+              DTS:ObjectName="availableMinutes"
+              DTS:DTSID="{72832D92-B255-4A1A-9C75-026BB9852CCD}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
               DTS:ColumnDelimiter="_x000A_"
-              DTS:DataType="3"
+              DTS:MaximumWidth="500"
+              DTS:DataType="129"
               DTS:TextQualified="True"
-              DTS:ObjectName="availableMinutes"
-              DTS:DTSID="{E41713F8-B871-466C-B3BF-9E1451943C42}"
+              DTS:ObjectName="comments"
+              DTS:DTSID="{13ACC764-B1B4-4464-97A9-C0FE8D294498}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -8338,6 +8347,28 @@
                               name="UseBinaryFormat">false</property>
                           </properties>
                         </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].Columns[comments]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].ExternalColumns[comments]"
+                          length="500"
+                          lineageId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].Columns[comments]"
+                          name="comments"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
                       </outputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8365,6 +8396,12 @@
                           refId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].ExternalColumns[availableMinutes]"
                           dataType="i4"
                           name="availableMinutes" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].ExternalColumns[comments]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="comments" />
                       </externalMetadataColumns>
                     </output>
                     <output
@@ -8585,6 +8622,14 @@
                           cachedName="sourceFile"
                           externalMetadataColumnId="Package\Foreach WorkDay file\load csv to staging table\staging_WorkDay.Inputs[OLE DB Destination Input].ExternalColumns[sourceFile]"
                           lineageId="Package\Foreach WorkDay file\load csv to staging table\Derived Column.Outputs[Derived Column Output].Columns[sourceFile]" />
+                        <inputColumn
+                          refId="Package\Foreach WorkDay file\load csv to staging table\staging_WorkDay.Inputs[OLE DB Destination Input].Columns[comments]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="500"
+                          cachedName="comments"
+                          externalMetadataColumnId="Package\Foreach WorkDay file\load csv to staging table\staging_WorkDay.Inputs[OLE DB Destination Input].ExternalColumns[comments]"
+                          lineageId="Package\Foreach WorkDay file\load csv to staging table\csv_WorkDay.Outputs[Flat File Source Output].Columns[comments]" />
                       </inputColumns>
                       <externalMetadataColumns
                         isUsed="True">
@@ -8617,6 +8662,12 @@
                           dataType="wstr"
                           length="500"
                           name="sourceFile" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach WorkDay file\load csv to staging table\staging_WorkDay.Inputs[OLE DB Destination Input].ExternalColumns[comments]"
+                          codePage="1252"
+                          dataType="str"
+                          length="500"
+                          name="comments" />
                       </externalMetadataColumns>
                     </input>
                   </inputs>
@@ -10118,7 +10169,7 @@ order by processing_order desc;
           PanelSize="241,123"
           Size="241,43"
           Id="Package\Foreach WorkDay file"
-          TopLeft="860.5,302.499999999999" />
+          TopLeft="860.5,303.499999999999" />
         <NodeLayout
           Size="195,42"
           Id="Package\Foreach LocationStaff file\load csv to staging table"
@@ -10280,7 +10331,7 @@ order by processing_order desc;
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="829.5,322.999999999999">
+          TopLeft="829.5,323.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10302,30 +10353,30 @@ order by processing_order desc;
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="981,345.499999999999">
+          TopLeft="981,346.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-835.5,24.9999999999998"
+              EndConnector="-835.5,23.9999999999998"
               Start="0,0"
-              End="-835.5,17.4999999999998">
+              End="-835.5,16.4999999999998">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,8.49999999999989" />
+                    End="0,7.99999999999989" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,8.49999999999989"
-                    Point2="0,12.4999999999999"
-                    Point3="-4,12.4999999999999" />
+                    Point1="0,7.99999999999989"
+                    Point2="0,11.9999999999999"
+                    Point3="-4,11.9999999999999" />
                   <mssgle:LineSegment
-                    End="-831.5,12.4999999999999" />
+                    End="-831.5,11.9999999999999" />
                   <mssgle:CubicBezierSegment
-                    Point1="-831.5,12.4999999999999"
-                    Point2="-835.5,12.4999999999999"
-                    Point3="-835.5,16.4999999999999" />
+                    Point1="-831.5,11.9999999999999"
+                    Point2="-835.5,11.9999999999999"
+                    Point3="-835.5,15.9999999999999" />
                   <mssgle:LineSegment
-                    End="-835.5,17.4999999999998" />
+                    End="-835.5,16.4999999999998" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
