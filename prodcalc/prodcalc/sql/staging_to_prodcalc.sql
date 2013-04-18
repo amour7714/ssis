@@ -245,3 +245,53 @@ WHEN NOT MATCHED
 THEN
 	INSERT (workDayKey, divisionKey, shiftKey, workDate, processed, availableMinutes, comments, date_added, date_last_updated)
 	VALUES (s.[key], s.divisionKey, s.[shiftKey], s.[date], s.[processed], s.[availableMinutes], s.[comments], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.LocationStaff *************************************
+MERGE [prodcalc].[LocationStaff] AS p
+	USING [staging].[LocationStaff] AS s
+	ON p.locationStaffKey = s.[key] AND p.[workDayKey] = s.[workDayKey]
+WHEN MATCHED AND (s.[locationKey] <> p.[locationKey] OR s.[staffMinutes] <> p.[staffMinutes])
+THEN
+	UPDATE SET
+	p.[locationKey] = s.[locationKey],
+	p.[staffMinutes] = s.[staffMinutes],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (locationStaffkey, locationKey, workDayKey, staffMinutes, date_added, date_last_updated)
+	VALUES (s.[key], s.[locationKey], s.[workDayKey], s.[staffMinutes], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.OtherValue ****************************************
+MERGE [prodcalc].[OtherValue] AS p
+	USING [staging].[OtherValue] AS s
+	ON p.otherValueKey = s.[key] AND p.[workDayKey] = s.[workDayKey]
+WHEN MATCHED AND (s.[otherLabelKey] <> p.[otherLabelKey] OR s.[value] <> p.[value])
+THEN
+	UPDATE SET
+	p.[otherLabelKey] = s.[otherLabelKey],
+	p.[value] = s.[value],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (otherValueKey, workDayKey, otherLabelKey, value, date_added, date_last_updated)
+	VALUES (s.[key], s.[workDayKey], s.[otherLabelKey], s.[value], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.LostTime ******************************************
+MERGE [prodcalc].[LostTime] AS p
+	USING [staging].[LostTime] AS s
+	ON p.lostTimeKey = s.[key] AND p.[workDayKey] = s.[workDayKey]
+WHEN MATCHED AND (s.[locationKey] <> p.[locationKey] OR s.[lostTimeReasonKey] <> p.[lostTimeReasonKey]
+				OR s.[duration] <> p.[duration])
+THEN
+	UPDATE SET
+	p.[locationKey] = s.[locationKey],
+	p.[lostTimeReasonKey] = s.[lostTimeReasonKey],
+	p.[duration] = s.[duration],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (lostTimeKey, workDayKey, locationKey, lostTimeReasonKey, duration, date_added, date_last_updated)
+	VALUES (s.[key], s.[workDayKey], s.[locationKey], s.[lostTimeReasonKey], s.[duration], GETDATE(), NULL);
