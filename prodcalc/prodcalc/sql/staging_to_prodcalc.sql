@@ -133,3 +133,115 @@ WHEN NOT MATCHED
 THEN
 	INSERT (locationKey, divisionKey, capacity, locationName, customerReportable, date_added, date_last_updated)
 	VALUES (s.[key], s.divisionKey, s.[capacity], s.[name], s.[customerReportable], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.ProcessingTarget ******************************
+MERGE [prodcalc].[ProcessingTarget] AS p
+	USING [staging].[ProcessingTarget] AS s
+	ON p.processingTargetKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[equipmentTypeKey] <> p.[equipmentTypeKey] 
+				OR s.[productKey] <> p.[productKey] OR s.[loadTarget] <> p.[loadTarget]
+				OR s.[unloadTarget] <> p.[unloadTarget])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[equipmentTypeKey] = s.[equipmentTypeKey],
+	p.[productKey] = s.[productKey],
+	p.[loadTarget] = s.[loadTarget],
+	p.[unloadTarget] = s.[unloadTarget],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (processingTargetKey, divisionKey, equipmentTypeKey, productKey, loadTarget, unloadTarget, date_added, date_last_updated)
+	VALUES (s.[key], s.divisionKey, s.[equipmentTypeKey], s.[productKey], s.[loadTarget], s.[unloadTarget], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.OtherLabel *************************************
+MERGE [prodcalc].[OtherLabel] AS p
+	USING [staging].[OtherLabel] AS s
+	ON p.otherLabelKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[label] <> p.[label] 
+				OR s.[active] <> p.[active] OR s.[customerReportable] <> p.[customerReportable])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[label] = s.[label],
+	p.[active] = s.[active],
+	p.[customerReportable] = s.[customerReportable],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (otherLabelKey, divisionKey, label, active, customerReportable, date_added, date_last_updated)
+	VALUES (s.[key], s.divisionKey, s.[label], s.[active], s.[customerReportable], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.Shift ******************************************
+MERGE [prodcalc].[Shift] AS p
+	USING [staging].[Shift] AS s
+	ON p.shiftKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[name] <> p.[shiftName])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[shiftName] = s.[name],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (shiftKey, divisionKey, shiftName, date_added, date_last_updated)
+	VALUES (s.[key], s.divisionKey, s.[name], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.DailyActivity  **********************************
+MERGE [prodcalc].[DailyActivity] AS p
+	USING [staging].[DailyActivity] AS s
+	ON p.dailyActivityKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[dateIn] <> p.[dateIn] 
+				OR s.[equipmentNumber] <> p.[equipmentNumber] OR s.[equipmentTypeKey] <> p.[equipmentTypeKey] 
+				OR s.[productKey] <> p.[productKey] OR s.[locationKey] <> p.[locationKey] 
+				OR s.[customerKey] <> p.[customerKey] OR s.[shiftKey] <> p.[shiftKey]
+				OR s.[railOwnerKey] <> p.[facilityOwnerKey] OR s.[activityType] <> p.[activityType]
+				OR s.[duration] <> p.[duration] OR s.[completed] <> p.[completed] OR s.[completedDate] <> p.[completedDate])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[dateIn] = s.[dateIn],
+	p.[equipmentNumber] = s.[equipmentNumber],
+	p.[equipmentTypeKey] = s.[equipmentTypeKey],
+	p.[productKey] = s.[productKey],
+	p.[locationKey] = s.[locationKey],
+	p.[customerKey] = s.[customerKey],
+	p.[shiftKey] = s.[shiftKey],
+	p.[facilityOwnerKey] = s.[railOwnerKey],
+	p.[activityType] = s.[activityType],
+	p.[duration] = s.[duration],
+	p.[completed] = s.[completed],
+	p.[completedDate] = s.[completedDate],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (dailyActivityKey, divisionKey, dateIn, equipmentNumber, equipmentTypeKey, productKey, locationKey, customerKey, 
+			shiftKey, facilityOwnerKey, activityType, duration, completed, completedDate, date_added, date_last_updated)
+	VALUES (s.[key], s.[divisionKey], s.[dateIn], s.[equipmentNumber], s.[equipmentTypeKey], s.[productKey], s.[locationKey], s.[customerKey], 
+			s.[shiftKey], s.[railOwnerKey], s.[activityType], s.[duration], s.[completed], s.[completedDate], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.WorkDay ******************************************
+MERGE [prodcalc].[WorkDay] AS p
+	USING [staging].[WorkDay] AS s
+	ON p.workDayKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[shiftKey] <> p.[shiftKey] 
+				OR s.[date] <> p.[workDate] OR s.[processed] <> p.[processed]
+				OR s.[availableMinutes] <> p.[availableMinutes] OR s.[comments] <> p.[comments])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[shiftKey] = s.[shiftKey],
+	p.[workDate] = s.[date],
+	p.[processed] = s.[processed],
+	p.[availableMinutes] = s.[availableMinutes],
+	p.[comments] = s.[comments],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (workDayKey, divisionKey, shiftKey, workDate, processed, availableMinutes, comments, date_added, date_last_updated)
+	VALUES (s.[key], s.divisionKey, s.[shiftKey], s.[date], s.[processed], s.[availableMinutes], s.[comments], GETDATE(), NULL);
