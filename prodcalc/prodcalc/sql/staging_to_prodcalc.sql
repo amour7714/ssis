@@ -98,3 +98,38 @@ THEN
 			monHours, tueHours, wedHours, thuHours, friHours, satHours, sunHours, date_added, date_last_updated)
 	VALUES (s.[key], s.[facilityOwnerKey], s.[id], s.[name], s.[timeZone], s.[utcOffset], s.[multiRailed], s.[multiShifted], 
 			s.[monHours], s.[tueHours], s.[wedHours], s.[thuHours], s.[friHours], s.[satHours], s.[sunHours], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.Customer **************************************
+MERGE [prodcalc].[Customer] AS p
+	USING [staging].[Customer] AS s
+	ON p.customerKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[name] <> p.[customerName])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[customerName] = s.[name],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (customerKey, divisionKey, customerName, date_added, date_last_updated)
+	VALUES (s.[key], s.[divisionKey], s.[name], GETDATE(), NULL);
+
+
+-- insert new and update existing data in prodcalc.Location **************************************
+MERGE [prodcalc].[Location] AS p
+	USING [staging].[Location] AS s
+	ON p.locationKey = s.[key]
+WHEN MATCHED AND (s.[divisionKey] <> p.[divisionKey] OR s.[name] <> p.[locationName] 
+				OR s.[capacity] <> p.[capacity] OR s.[customerReportable] <> p.[customerReportable])
+THEN
+	UPDATE SET
+	p.[divisionKey] = s.[divisionKey],
+	p.[locationName] = s.[name],
+	p.[capacity] = s.[capacity],
+	p.[customerReportable] = s.[customerReportable],
+	p.date_last_updated = GETDATE()
+WHEN NOT MATCHED
+THEN
+	INSERT (locationKey, divisionKey, capacity, locationName, customerReportable, date_added, date_last_updated)
+	VALUES (s.[key], s.divisionKey, s.[capacity], s.[name], s.[customerReportable], GETDATE(), NULL);
