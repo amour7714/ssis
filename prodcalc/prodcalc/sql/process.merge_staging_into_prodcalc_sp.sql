@@ -29,6 +29,13 @@ BEGIN
 
 	SET NOCOUNT ON;
 
+	-- first clean up the "NULL" dates that SSIS converts to 1753-01-01 and make them 9999-12-31
+	update staging.DailyActivity
+		set completedDate = '9999-12-31'
+	where completedDate = '1753-01-01'
+
+
+
 	-- insert new and update existing data in prodcalc.EquipmentType ********************************
 	MERGE [prodcalc].[EquipmentType] AS p
 		USING (select distinct [key], type, customerReportable from [staging].[EquipmentType]) AS s
