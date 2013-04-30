@@ -13,6 +13,7 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 -- ==================================================================================================
 -- Author:	 Grant Schulte
 -- Create date: 2013-04-23
@@ -324,3 +325,8 @@ BEGIN
 		VALUES (s.[key], s.[workDayKey], s.[locationKey], s.[lostTimeReasonKey], s.[duration], GETDATE(), NULL);
 
 end
+GO
+
+
+grant execute on [process].[merge_staging_into_prodcalc_sp] to prodcalc
+go
