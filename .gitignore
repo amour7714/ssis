@@ -165,3 +165,7 @@ pip-log.txt
 
 # SSIS stuff to exclude
 prodcalc/prodcalc/csv/
+
+
+#windows shortcuts
+*.lnk
