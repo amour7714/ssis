@@ -5,6 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=kaoerpsqldev2;Initial Catalog=branchadmin;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      DTS:ConnectionString="Data Source=kaoerpsqldev2;User ID=bradminuser;Initial Catalog=branchadmin;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkUgu07jss0ulewJ9OlTn4QAAAAACAAAAAAADZgAAwAAAABAAAAD5oHtN3WPdp0nFCq7QZgFzAAAAAASAAACgAAAAEAAAAAQ8/DyV+iZFkHneg3+dIix4AAAAUj/hBBusqUY+V2IoRCY4WpXfgJM3lAVunB33WFwqoZ/FtUschSlKzP8+h41el9HpL7QxnqftBjMejh6/Y/bIE8pgr9vVKWQbpPns5J12QShC34tOFSpwoFuxaxgVMAH/ejjXUddds8e+rcyuHxv9v/a9PZ3IToe9FAAAAPVdUysCuJywnuxpOwjvLs0V+raj</DTS:Password>
+    </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
