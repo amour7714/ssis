@@ -11,12 +11,992 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="1"
-  DTS:VersionGUID="{60690CF3-6BF9-430D-B1DF-BDC46718DC8C}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{1DB813FD-3CCF-41B9-9F3C-938CF694024F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
-  <DTS:Executables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load Account Exec tables"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{392B30D9-6F02-435D-8B89-24E5896256AF}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load Account Exec tables"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="branchadmin-custportal-user_acctexec"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+    ua.[user_id]
+   ,u.username
+   ,ua.sales_rep_id
+FROM custportal.user_acctexec ua
+join custportal.users u on u.[user_id] = ua.[user_id]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Connections[OleDbConnection]"
+                  connectionManagerID="{596EBE2F-FA8C-4870-A174-FB2775B14519}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[branchadmin]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[user_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[user_id]"
+                      name="user_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                      length="50"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[username]"
+                      name="username"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
+                      name="sales_rep_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[user_id]"
+                      dataType="i4"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="username" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
+                      dataType="i4"
+                      name="sales_rep_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[user_id]"
+                      name="user_id" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[username]"
+                      name="username" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
+                      name="sales_rep_id" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="customerportal-branchadmin-user_acctexec"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[branchadmin].[user_acctexec]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Connections[OleDbConnection]"
+                  connectionManagerID="{9FFE3584-46F3-4142-8697-58942273114F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[customerportal]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].Columns[user_id]"
+                      cachedDataType="i4"
+                      cachedName="user_id"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[user_id]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].Columns[username]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="username"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[username]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].Columns[sales_rep_id]"
+                      cachedDataType="i4"
+                      cachedName="sales_rep_id"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
+                      lineageId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output].Columns[sales_rep_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[user_id]"
+                      dataType="i4"
+                      name="user_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="username" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
+                      dataType="i4"
+                      name="sales_rep_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Account Exec tables\customerportal-invman-acctexec"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="customerportal-invman-acctexec"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[invman].[acctexec]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Connections[OleDbConnection]"
+                  connectionManagerID="{9FFE3584-46F3-4142-8697-58942273114F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[customerportal]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].Columns[sales_rep_id]"
+                      cachedDataType="i4"
+                      cachedName="sales_rep_id"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_id]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].Columns[sales_rep_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="102"
+                      cachedName="sales_rep_name"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_name]"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_name]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].Columns[division_id]"
+                      cachedDataType="i4"
+                      cachedName="division_id"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[division_id]"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[division_id]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
+                      dataType="i4"
+                      name="sales_rep_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="102"
+                      name="sales_rep_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input].ExternalColumns[division_id]"
+                      dataType="i4"
+                      name="division_id" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-invman-acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-invman-acctexec.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Account Exec tables\customerportal-invman-division"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="customerportal-invman-division"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[invman].[division]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\customerportal-invman-division.Connections[OleDbConnection]"
+                  connectionManagerID="{9FFE3584-46F3-4142-8697-58942273114F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[customerportal]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].Columns[division_id]"
+                      cachedDataType="i4"
+                      cachedName="division_id"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[division_id]"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_id]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].Columns[division_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="division_name"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[division_name]"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_name]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].Columns[branch_code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="branch_code"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[branch_code]"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[branch_code]" />
+                    <inputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].Columns[active]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="active"
+                      externalMetadataColumnId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[active]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[division_id]"
+                      dataType="i4"
+                      name="division_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[division_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="division_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[branch_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="branch_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input].ExternalColumns[active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="active" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\customerportal-invman-division.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-invman-division.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\customerportal-invman-division.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\customerportal-invman-division.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Account Exec tables\invman-inventory-sales_rep"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="invman-inventory-sales_rep"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  
+    sr.sales_rep_id,
+    sr.last_name + ', ' + sr.first_name as sales_rep_name,
+    sr.division_id
+from inventory.sales_rep sr</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Connections[OleDbConnection]"
+                  connectionManagerID="{71A1A604-7EB5-4EDB-8CD0-FB7F27E06D48}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[invman]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
+                      name="sales_rep_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_name]"
+                      length="102"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[sales_rep_name]"
+                      name="sales_rep_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[division_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[division_id]"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].Columns[division_id]"
+                      name="division_id"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
+                      dataType="i4"
+                      name="sales_rep_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="102"
+                      name="sales_rep_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output].ExternalColumns[division_id]"
+                      dataType="i4"
+                      name="division_id" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
+                      name="sales_rep_id" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[sales_rep_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="102"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[sales_rep_name]"
+                      name="sales_rep_name" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[division_id]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[division_id]"
+                      name="division_id" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load Account Exec tables\invman-rdata-division"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="invman-rdata-division"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+       [division_id]
+      ,[division_name]
+      ,[branch_code]
+      ,[active]
+FROM [rdata].[division]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load Account Exec tables\invman-rdata-division.Connections[OleDbConnection]"
+                  connectionManagerID="{71A1A604-7EB5-4EDB-8CD0-FB7F27E06D48}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[invman]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[division_id]"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_id]"
+                      name="division_id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[division_name]"
+                      length="100"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[division_name]"
+                      name="division_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[branch_code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[branch_code]"
+                      length="8"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[branch_code]"
+                      name="branch_code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[active]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      length="1"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].Columns[active]"
+                      name="active"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[division_id]"
+                      dataType="i4"
+                      name="division_id" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[division_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="division_name" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[branch_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="branch_code" />
+                    <externalMetadataColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="active" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[division_id]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[division_id]"
+                      name="division_id" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[division_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[division_name]"
+                      name="division_name" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[branch_code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[branch_code]"
+                      name="branch_code" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[active]"
+                      name="active" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load Account Exec tables.Paths[OLE DB Source Output2]"
+              endId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Account Exec tables.Paths[OLE DB Source Output1]"
+              endId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Account Exec tables.Paths[OLE DB Source Output]"
+              endId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Account Exec tables"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{BE66B1E0-D895-40EA-ABF6-6BC3B434604D}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Account Exec tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{9FFE3584-46F3-4142-8697-58942273114F}"
+          SQLTask:SqlStatementSource="truncate table branchadmin.user_acctexec;&#xA;truncate table invman.acctexec;&#xA;truncate table invman.division;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{B50BDD65-9F13-429A-B1F4-712FF6C8B8E6}"
+      DTS:From="Package\Truncate Account Exec tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load Account Exec tables" />
+  </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
 <!--If you manually edit this section and make a mistake, you can delete it. -->
@@ -24,5 +1004,204 @@
 <Objects
   Version="sql11">
   <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Load Account Exec tables"
+          TopLeft="70.5,114.5" />
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Truncate Account Exec tables"
+          TopLeft="59.5,22.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="169.25,64.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load Account Exec tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="261,42"
+          Id="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec"
+          TopLeft="13,9.16666666666667" />
+        <NodeLayout
+          Size="285,42"
+          Id="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec"
+          TopLeft="1,90.8333333333333" />
+        <EdgeLayout
+          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output]"
+          TopLeft="143.5,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Load Account Exec tables\invman-inventory-sales_rep"
+          TopLeft="395.25,9.16666666666667" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Load Account Exec tables\customerportal-invman-acctexec"
+          TopLeft="383.75,90.8333333333333" />
+        <EdgeLayout
+          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output1]"
+          TopLeft="499.75,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Load Account Exec tables\invman-rdata-division"
+          TopLeft="732.75,9.16666666666667" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Load Account Exec tables\customerportal-invman-division"
+          TopLeft="709.25,90.8333333333333" />
+        <EdgeLayout
+          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output2]"
+          TopLeft="822.75,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\invman-inventory-sales_rep">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\customerportal-invman-acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\invman-rdata-division">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Account Exec tables\customerportal-invman-division">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
