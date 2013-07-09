@@ -31,45 +31,64 @@ BEGIN
 
 	declare @today_less_35 datetime = convert(date, getdate() - 35)
 
-	select * 
-	into #vlumber 
-	from product.v_lumber l 
-	where division_id > -1; 
+
+	-- load process table from v_lumber view
+		truncate table [process].[cp_vlumber];
+
+		INSERT INTO [process].[cp_vlumber]
+			   ([product_id],[master_product_id],[product_class],[master_product],[product],[dimension],[species],[grade],
+				[drying],[planing],[pcs_pkg],[variable_item],[number_of_items],[bdft_per_lift],[length],[master_no_piece],[division_id])
+		select [product_id],[master_product_id],[product_class],[master_product],[product],[dimension],[species],[grade],
+				[drying],[planing],[pcs_pkg],[variable_item],[number_of_items],[bdft_per_lift],[length],[master_no_piece],[division_id]
+		from product.v_lumber l 
+		where division_id > -1; 
+
+	-- load process table from product_detail and other tables
+		truncate table [process].[cp_pdtl];
+
+		INSERT INTO [process].[cp_pdtl]
+			   ([customer_id],[sales_rep_id],[number_of_items],[number_of_r_items],[variable_item_id],[quantity],[waybill_id],[product_id],[order_type],
+				[order_number],[order_id],[customer_reference],[due_date],[destination],[mill_id],[product_group_id],[product_group],[branch_code])
+		SELECT o.customer_id, 
+			  o.sales_rep_id, 
+			  p.number_of_items, 
+			  p.number_of_r_items, 
+			  p.variable_item_id, 
+			  pd.quantity, 
+			  pd.waybill_id, 
+			  p.product_id, 
+			  o.order_type, 
+			  o.order_number, 
+			  o.order_id, 
+			  o.customer_reference, 
+			  o.due_date, 
+			  o.destination, 
+			  pd.mill_id,
+			  pg.product_group_id,
+			  pg.product_group,
+			  d.branch_code
+		FROM inventory.product_detail AS pd
+		INNER JOIN product.product AS p ON pd.product_id = p.product_id 
+		LEFT OUTER JOIN inventory.product_division_group AS pdg ON p.product_id = pdg.product_id AND pd.division_id = pdg.division_id 
+		LEFT OUTER JOIN inventory.product_group AS pg ON pdg.product_group_id = pg.product_group_id AND pd.division_id = pg.division_id 
+		INNER JOIN product.product_item AS i ON p.variable_item_id = i.product_item_id 
+		INNER JOIN inventory.orders AS o ON pd.order_id = o.order_id 
+		INNER JOIN inventory.customer AS c ON o.customer_id = c.location_id AND o.division_id = c.division_id 
+		INNER JOIN inventory.sales_rep AS s ON o.sales_rep_id = s.sales_rep_id 
+		INNER JOIN rdata.division d on d.division_id = pd.division_id
+		WHERE (pd.cancelled = 'n') AND 
+			 (o.cancelled = 'n') and 
+			 o.order_date < @today_less_35;
 
 
-	SELECT o.customer_id, 
-		  o.sales_rep_id, 
-		  p.number_of_items, 
-		  p.number_of_r_items, 
-		  p.variable_item_id, 
-		  pd.quantity, 
-		  pd.waybill_id, 
-		  p.product_id, 
-		  o.order_type, 
-		  o.order_number, 
-		  o.order_id, 
-		  o.customer_reference, 
-		  o.due_date, 
-		  o.destination, 
-		  pd.mill_id,
-		  pg.product_group_id,
-		  pg.product_group,
-		  d.branch_code
-	into #pdtl 
-	FROM inventory.product_detail AS pd
-	INNER JOIN product.product AS p ON pd.product_id = p.product_id 
-	LEFT OUTER JOIN inventory.product_division_group AS pdg ON p.product_id = pdg.product_id AND pd.division_id = pdg.division_id 
-	LEFT OUTER JOIN inventory.product_group AS pg ON pdg.product_group_id = pg.product_group_id AND pd.division_id = pg.division_id 
-	INNER JOIN product.product_item AS i ON p.variable_item_id = i.product_item_id 
-	INNER JOIN inventory.orders AS o ON pd.order_id = o.order_id 
-	INNER JOIN inventory.customer AS c ON o.customer_id = c.location_id AND o.division_id = c.division_id 
-	INNER JOIN inventory.sales_rep AS s ON o.sales_rep_id = s.sales_rep_id 
-	INNER JOIN rdata.division d on d.division_id = pd.division_id
-	WHERE (pd.cancelled = 'n') AND 
-		 (o.cancelled = 'n') and 
-		 o.order_date < @today_less_35;
+	-- load process table from inventory_transaction and other tables
+	truncate table [process].[cp_vinventory];
 
-
+	INSERT INTO [process].[cp_vinventory]
+           ([inventory_transaction_id],[customer_name],[mill_name],[sales_rep],[waybill],[division_id],[waybill_id]
+           ,[waybill_date],[number_of_items],[rpt_item_count],[trk_item_count],[customer_id],[product_id],[sales_rep_id]
+           ,[package_name],[is_package],[customer_reference],[product_group],[product_name],[variable_item],[length]
+           ,[transaction_date],[piece_count],[mill_id],[variable_item_id],[product_group_id],[master_product_id],[master_product],[branch_code])
 	select distinct 
 		i.inventory_transaction_id,
 		c.customer_name, 
@@ -100,7 +119,6 @@ BEGIN
 		p.master_product_id,
 		mp.descript AS master_product,
 		d.branch_code
-	into #vinventory 
 	FROM inventory.inventory_transaction i
 	INNER JOIN (SELECT DISTINCT 
 				inventory_transaction_id, 
@@ -123,30 +141,30 @@ BEGIN
 		 i.inventory_transaction_id <> 0; 
 
 
-create table #lumberinventory (
-	order_status varchar(50),
-	customer_id int,
-	customer_name varchar(500), 
-	sales_rep_id int,
-	sales_rep varchar(150), 
-	mill_name varchar(100),
-	order_number varchar(50),
-	customer_reference varchar(30), 
-	date_io datetime,
-	product_group_id int,
-	product_group varchar(15),
-	master_no_piece varchar(100), 
-	number_of_items int,
-	variable_item varchar(100),
-	[length] numeric(19,3),
-	measure int,  
-	fbm numeric(19,3),  
-	lift_count int,
-	branch_code varchar(8)
-);
+--create table #lumberinventory (
+--	order_status varchar(50),
+--	customer_id int,
+--	customer_name varchar(500), 
+--	sales_rep_id int,
+--	sales_rep varchar(150), 
+--	mill_name varchar(100),
+--	order_number varchar(50),
+--	customer_reference varchar(30), 
+--	date_io datetime,
+--	product_group_id int,
+--	product_group varchar(15),
+--	master_no_piece varchar(100), 
+--	number_of_items int,
+--	variable_item varchar(100),
+--	[length] numeric(19,3),
+--	measure int,  
+--	fbm numeric(19,3),  
+--	lift_count int,
+--	branch_code varchar(8)
+--);
 
-insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_id,sales_rep,mill_name,order_number,customer_reference,date_io,product_group_id,
-								product_group,master_no_piece, number_of_items,variable_item,[length],measure,fbm,lift_count,branch_code)
+--insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_id,sales_rep,mill_name,order_number,customer_reference,date_io,product_group_id,
+--								product_group,master_no_piece, number_of_items,variable_item,[length],measure,fbm,lift_count,branch_code)
 	SELECT 'On Ground' as order_status,
 		  i.customer_id,
 		  i.customer_name, 
@@ -169,8 +187,8 @@ insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_i
 
 	--into #lumberinventory
 
-	FROM #vinventory i 
-	inner join #vlumber l on i.product_id = l.product_id 
+	FROM process.cp_vinventory i 
+	inner join process.cp_vlumber l on i.product_id = l.product_id 
 	INNER JOIN inventory.waybill w on i.waybill_id = w.waybill_id 
 	INNER JOIN inventory.orders o on w.order_id = o.order_id 
 	left join (SELECT w.waybill_id, 
@@ -246,8 +264,8 @@ insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_i
 			   SUM(pd.quantity * l.length * -1) as lf, 
 			   sum(pd.quantity * pd.number_of_r_items * -1) as fbm,
 			   pd.branch_code
-		 FROM #pdtl pd 
-		 inner join #vlumber l on pd.product_id = l.product_id 
+		 FROM process.cp_pdtl pd 
+		 inner join process.cp_vlumber l on pd.product_id = l.product_id 
 		 LEFT OUTER JOIN inventory.waybill w on pd.waybill_id = w.waybill_id 
 		 WHERE pd.order_type = 's' and 
 			  (w.export_status is null or w.export_status in (0,1) or (w.posted_date is not null and w.waybill_date >= @today_less_35)) 
@@ -288,8 +306,8 @@ insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_i
 			   SUM(pd.quantity * l.length) as lf, 
 			   sum(pd.quantity * pd.number_of_r_items) as fbm,
 			   pd.branch_code
-		 FROM #pdtl pd 
-		 inner join #vlumber l on pd.product_id = l.product_id 
+		 FROM process.cp_pdtl pd 
+		 inner join process.cp_vlumber l on pd.product_id = l.product_id 
 		 LEFT OUTER JOIN inventory.waybill w on pd.waybill_id = w.waybill_id 
 		 WHERE pd.order_type in ('r','v') and 
 			  (w.export_status is null or w.export_status in (0,1) or (w.posted_date is not null and w.waybill_date >= @today_less_35)) 
@@ -314,18 +332,18 @@ insert into #lumberinventory (order_status,customer_id,customer_name,sales_rep_i
 	order by order_status, i.customer_name, i.sales_rep, mill_name, l.master_no_piece
 
 
-	drop table #pdtl
-	drop table #vinventory
-	drop table #vlumber
+	--drop table #pdtl
+	--drop table #vinventory
+	--drop table #vlumber
 
 
-	select order_status,customer_id,customer_name,sales_rep_id,sales_rep,mill_name,order_number,customer_reference,date_io,product_group_id,
-			product_group,master_no_piece, number_of_items,variable_item,[length],measure,fbm,lift_count,branch_code
-	--into customerportal.invman.lumber_inventory
-	from #lumberinventory
+	--select order_status,customer_id,customer_name,sales_rep_id,sales_rep,mill_name,order_number,customer_reference,date_io,product_group_id,
+	--		product_group,master_no_piece, number_of_items,variable_item,[length],measure,fbm,lift_count,branch_code
+	----into customerportal.invman.lumber_inventory
+	--from #lumberinventory
 
 
-	drop table #lumberinventory
+	--drop table #lumberinventory
 
 end
 

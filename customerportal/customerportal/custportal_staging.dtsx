@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{8F4BC450-6CE0-414C-99D4-9F2AD78702D3}">
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{E3CE1E58-0796-4E37-8506-BE39A2CE2ED1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -952,9 +952,9 @@ FROM [rdata].[division]</property>
           <paths>
             <path
               refId="Package\Load Account Exec tables.Paths[OLE DB Source Output2]"
-              endId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
+              endId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]" />
+              startId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Load Account Exec tables.Paths[OLE DB Source Output1]"
               endId="Package\Load Account Exec tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]"
@@ -962,9 +962,9 @@ FROM [rdata].[division]</property>
               startId="Package\Load Account Exec tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Load Account Exec tables.Paths[OLE DB Source Output]"
-              endId="Package\Load Account Exec tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
+              endId="Package\Load Account Exec tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Account Exec tables\invman-rdata-division.Outputs[OLE DB Source Output]" />
+              startId="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -2427,28 +2427,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">exec [inventory].[rpt_custportal_lumber_inventory_staging_sp] 
-WITH RESULT SETS ((
-order_status varchar(50),
-customer_id int,
-customer_name varchar(500), 
-sales_rep_id int,
-sales_rep varchar(150), 
-mill_name varchar(100),
-order_number varchar(50),
-customer_reference varchar(30), 
-date_io datetime,
-product_group_id int,
-product_group varchar(15),
-master_no_piece varchar(100), 
-number_of_items int,
-variable_item varchar(100),
-[length] numeric(19,3),
-measure int,  
-fbm numeric(19,3),  
-lift_count int,
-branch_code varchar(8)
-))</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">exec [inventory].[rpt_custportal_lumber_inventory_staging_sp]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -2686,7 +2665,7 @@ branch_code varchar(8)
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="9"
                       name="order_status" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
@@ -2706,7 +2685,7 @@ branch_code varchar(8)
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[sales_rep]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="102"
                       name="sales_rep" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[mill_name]"
@@ -2760,22 +2739,25 @@ branch_code varchar(8)
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
                       dataType="numeric"
                       name="length"
-                      precision="19"
-                      scale="3" />
+                      precision="25"
+                      scale="8" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[measure]"
-                      dataType="i4"
-                      name="measure" />
+                      dataType="numeric"
+                      name="measure"
+                      precision="38"
+                      scale="8" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[fbm]"
                       dataType="numeric"
                       name="fbm"
-                      precision="19"
+                      precision="38"
                       scale="3" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[lift_count]"
-                      dataType="i4"
-                      name="lift_count" />
+                      dataType="numeric"
+                      name="lift_count"
+                      precision="38" />
                     <externalMetadataColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[branch_code]"
                       codePage="1252"
@@ -2793,7 +2775,7 @@ branch_code varchar(8)
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_status]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="9"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_status]"
                       name="order_status" />
                     <outputColumn
@@ -2817,7 +2799,7 @@ branch_code varchar(8)
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep]"
                       codePage="1252"
                       dataType="str"
-                      length="150"
+                      length="102"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep]"
                       name="sales_rep" />
                     <outputColumn
@@ -2882,25 +2864,28 @@ branch_code varchar(8)
                       dataType="numeric"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
                       name="length"
-                      precision="19"
-                      scale="3" />
+                      precision="25"
+                      scale="8" />
                     <outputColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[measure]"
-                      dataType="i4"
+                      dataType="numeric"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[measure]"
-                      name="measure" />
+                      name="measure"
+                      precision="38"
+                      scale="8" />
                     <outputColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[fbm]"
                       dataType="numeric"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[fbm]"
                       name="fbm"
-                      precision="19"
+                      precision="38"
                       scale="3" />
                     <outputColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[lift_count]"
-                      dataType="i4"
+                      dataType="numeric"
                       lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[lift_count]"
-                      name="lift_count" />
+                      name="lift_count"
+                      precision="38" />
                     <outputColumn
                       refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[branch_code]"
                       codePage="1252"
@@ -4017,7 +4002,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Account Exec tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4034,7 +4019,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate IB Receiving table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4051,7 +4036,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Lumber Inventory table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4068,7 +4053,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OB Shipping table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -4128,9 +4113,33 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Account Exec tables"
           TopLeft="70.5,114.5" />
         <NodeLayout
+          Size="190,42"
+          Id="Package\Load IB Receiving table"
+          TopLeft="346.5,116.5" />
+        <NodeLayout
+          Size="216,42"
+          Id="Package\Load Lumber Inventory table"
+          TopLeft="906.5,125.5" />
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Load OB Shipping table"
+          TopLeft="622.5,122.5" />
+        <NodeLayout
           Size="218,42"
           Id="Package\Truncate Account Exec tables"
           TopLeft="59.5,22.5" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Truncate IB Receiving table"
+          TopLeft="336.5,25.5" />
+        <NodeLayout
+          Size="235,42"
+          Id="Package\Truncate Lumber Inventory table"
+          TopLeft="893.5,32.5" />
+        <NodeLayout
+          Size="208,42"
+          Id="Package\Truncate OB Shipping table"
+          TopLeft="608.5,28.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="169.25,64.5">
@@ -4153,14 +4162,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Load IB Receiving table"
-          TopLeft="346.5,116.5" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Truncate IB Receiving table"
-          TopLeft="336.5,25.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
           TopLeft="441.25,67.5">
@@ -4183,14 +4184,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Load OB Shipping table"
-          TopLeft="622.5,122.5" />
-        <NodeLayout
-          Size="208,42"
-          Id="Package\Truncate OB Shipping table"
-          TopLeft="608.5,28.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
           TopLeft="714.75,70.5">
@@ -4213,14 +4206,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Load Lumber Inventory table"
-          TopLeft="906.5,125.5" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Truncate Lumber Inventory table"
-          TopLeft="893.5,32.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
           TopLeft="1012.75,74.5">
@@ -4276,7 +4261,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Account Exec tables\branchadmin-custportal-user_acctexec"
           TopLeft="13,9.16666666666667" />
         <EdgeLayout
-          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output2]"
+          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output]"
           TopLeft="143.5,51.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4324,7 +4309,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output]"
+          Id="Package\Load Account Exec tables.Paths[OLE DB Source Output2]"
           TopLeft="822.75,51.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -4452,14 +4437,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load IB Receiving table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load IB Receiving table\customerportal">
     <Properties>
       <Property>
@@ -4469,6 +4446,73 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load IB Receiving table\invman">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Load Lumber Inventory table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load Lumber Inventory table\customerportal"
+          TopLeft="47.5,157.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Load Lumber Inventory table\invman"
+          TopLeft="65.5,65.5" />
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory table.Paths[OLE DB Source Output]"
+          TopLeft="122.25,107.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50"
+              Start="0,0"
+              End="0,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory table\customerportal">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory table\invman">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -4511,14 +4555,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load OB Shipping table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load OB Shipping table\customerportal">
     <Properties>
       <Property>
@@ -4531,62 +4567,11 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Lumber Inventory table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load Lumber Inventory table\invman"
-          TopLeft="65.5,65.5" />
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Load Lumber Inventory table\customerportal"
-          TopLeft="47.5,157.5" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory table.Paths[OLE DB Source Output]"
-          TopLeft="122.25,107.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory table\invman">
+    design-time-name="Package\Load OB Shipping table\invman">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory table\customerportal">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
