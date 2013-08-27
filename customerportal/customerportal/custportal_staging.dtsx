@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{B12B6C53-8130-4554-AD2C-2F98703A0E7D}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{126CDDB9-EE86-445E-8089-A61AC2907DE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -4408,34 +4408,34 @@ FROM [rdata].[division]</property>
           <paths>
             <path
               refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-users.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-users.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
               endId="Package\Load Miscellaneous tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\invman-rdata-division.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
               endId="Package\Load Miscellaneous tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
               endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-users.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-users.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -4560,14 +4560,6 @@ FROM [rdata].[division]</property>
                       cachedName="customer_name"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[customer_name]" />
-                    <inputColumn
-                      refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[mill_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="mill_name"
-                      externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[mill_name]"
-                      lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[mill_name]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[waybill]"
                       cachedCodepage="1252"
@@ -4889,7 +4881,7 @@ SELECT  o.division_id,
 	wb.posted_date,
 	p.customer_id,
 	p.customer_name, 
-	p.mill_name,
+	--p.mill_name,
 	p.waybill,
 	p.waybill_date, 
 	p.waybill_id,
@@ -4914,8 +4906,9 @@ JOIN inventory.waybill wb on w.waybill_id = wb.waybill_id
 JOIN inventory.v_shipping_order o on w.order_id = o.order_id 
 JOIN rdata.division d on d.division_id = o.division_id
 WHERE wb.posted_date &gt;= @today_less_35
-GROUP BY o.division_id, d.branch_code, wb.posted_date, p.customer_id,p.customer_name, p.mill_name, p.waybill, p.waybill_date, p.waybill_id, p.sales_rep_id, p.sales_rep, master_product, 
-			variable_item, w.note, [length] / 304.8, wb.vessel_number, wb.po_number, wb.other_reference
+GROUP BY o.division_id, d.branch_code, wb.posted_date, p.customer_id,p.customer_name, --p.mill_name, 
+                    p.waybill, p.waybill_date, p.waybill_id, p.sales_rep_id, p.sales_rep, master_product, 
+                    variable_item, w.note, [length] / 304.8, wb.vessel_number, wb.po_number, wb.other_reference
 ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                 <property
                   dataType="System.String"
@@ -5000,17 +4993,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       length="500"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[customer_name]"
                       name="customer_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[mill_name]"
-                      length="100"
-                      lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[mill_name]"
-                      name="mill_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[waybill]"
@@ -5226,12 +5208,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       length="500"
                       name="customer_name" />
                     <externalMetadataColumn
-                      refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="mill_name" />
-                    <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill]"
                       codePage="1252"
                       dataType="str"
@@ -5363,13 +5339,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       length="500"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
                       name="customer_name" />
-                    <outputColumn
-                      refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[mill_name]"
-                      name="mill_name" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[waybill]"
                       codePage="1252"
@@ -5521,7 +5490,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Completed Orders table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="1">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5572,7 +5541,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Miscellaneous tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="1">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5589,7 +5558,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OB Shipping table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -5653,9 +5622,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="201,42"
-          Id="Package\Load Miscellaneous tables"
-          TopLeft="70.5,114.5" />
+          Size="216,42"
+          Id="Package\Load Completed Orders table"
+          TopLeft="72.5,320.5" />
         <NodeLayout
           Size="190,42"
           Id="Package\Load IB Receiving table"
@@ -5665,13 +5634,17 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Lumber Inventory table"
           TopLeft="906.5,125.5" />
         <NodeLayout
+          Size="201,42"
+          Id="Package\Load Miscellaneous tables"
+          TopLeft="70.5,114.5" />
+        <NodeLayout
           Size="189,42"
           Id="Package\Load OB Shipping table"
           TopLeft="622.5,122.5" />
         <NodeLayout
-          Size="220,42"
-          Id="Package\Truncate Miscellaneous tables"
-          TopLeft="57.5,22.5" />
+          Size="235,42"
+          Id="Package\Truncate Completed Orders table"
+          TopLeft="59.5,227.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Truncate IB Receiving table"
@@ -5680,6 +5653,10 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Size="235,42"
           Id="Package\Truncate Lumber Inventory table"
           TopLeft="893.5,32.5" />
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Truncate Miscellaneous tables"
+          TopLeft="57.5,22.5" />
         <NodeLayout
           Size="208,42"
           Id="Package\Truncate OB Shipping table"
@@ -5772,14 +5749,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="216,42"
-          Id="Package\Load Completed Orders table"
-          TopLeft="72.5,320.5" />
-        <NodeLayout
-          Size="235,42"
-          Id="Package\Truncate Completed Orders table"
-          TopLeft="59.5,227.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
           TopLeft="178.75,269.5">
@@ -5806,182 +5775,32 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Load Miscellaneous tables">
+    design-time-name="Package\Load Completed Orders table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Load Miscellaneous tables\invman-rdata-division"
-          TopLeft="732.75,9.16666666666667" />
+          Size="150,42"
+          Id="Package\Load Completed Orders table\customerportal"
+          TopLeft="47.5,157.5" />
         <NodeLayout
-          Size="232,42"
-          Id="Package\Load Miscellaneous tables\customerportal-invman-acctexec"
-          TopLeft="383.75,90.8333333333333" />
-        <NodeLayout
-          Size="209,42"
-          Id="Package\Load Miscellaneous tables\invman-inventory-sales_rep"
-          TopLeft="395.25,9.16666666666667" />
-        <NodeLayout
-          Size="285,42"
-          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec"
-          TopLeft="1,90.8333333333333" />
-        <NodeLayout
-          Size="227,42"
-          Id="Package\Load Miscellaneous tables\customerportal-invman-division"
-          TopLeft="709.25,90.8333333333333" />
-        <NodeLayout
-          Size="261,42"
-          Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec"
-          TopLeft="13,9.16666666666667" />
+          Size="113,42"
+          Id="Package\Load Completed Orders table\invman"
+          TopLeft="65.5,65.5" />
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
-          TopLeft="143.5,51.1666666666667">
+          Id="Package\Load Completed Orders table.Paths[OLE DB Source Output]"
+          TopLeft="122.25,107.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666667"
+              EndConnector="0,50"
               Start="0,0"
-              End="0,32.1666666666667">
+              End="0,42.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
-          TopLeft="499.75,51.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666667"
-              Start="0,0"
-              End="0,32.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
-          TopLeft="822.75,51.1666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666667"
-              Start="0,0"
-              End="0,32.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="288,42"
-          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer"
-          TopLeft="1,274.5" />
-        <NodeLayout
-          Size="263,42"
-          Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer"
-          TopLeft="13,192.833333333333" />
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
-          TopLeft="144.75,234.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="243,42"
-          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-users"
-          TopLeft="376,272.166666666667" />
-        <NodeLayout
-          Size="219,42"
-          Id="Package\Load Miscellaneous tables\branchadmin-custportal-users"
-          TopLeft="388,190.5" />
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
-          TopLeft="497.5,232.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="308,42"
-          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping"
-          TopLeft="1,458.166666666667" />
-        <NodeLayout
-          Size="284,42"
-          Id="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping"
-          TopLeft="13,376.5" />
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
-          TopLeft="155,418.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
+                    End="0,42.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -5994,15 +5813,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\invman-rdata-division">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-invman-acctexec">
+    design-time-name="Package\Load Completed Orders table\customerportal">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6015,41 +5826,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\invman-inventory-sales_rep">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-invman-division">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec">
+    design-time-name="Package\Load Completed Orders table\invman">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -6175,6 +5952,320 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
+    design-time-name="Package\Load Miscellaneous tables">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Load Miscellaneous tables\invman-rdata-division"
+          TopLeft="732.75,9.16666666666667" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Load Miscellaneous tables\customerportal-invman-acctexec"
+          TopLeft="383.75,90.8333333333333" />
+        <NodeLayout
+          Size="209,42"
+          Id="Package\Load Miscellaneous tables\invman-inventory-sales_rep"
+          TopLeft="395.25,9.16666666666667" />
+        <NodeLayout
+          Size="285,42"
+          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec"
+          TopLeft="1,90.8333333333333" />
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Load Miscellaneous tables\customerportal-invman-division"
+          TopLeft="709.25,90.8333333333333" />
+        <NodeLayout
+          Size="261,42"
+          Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec"
+          TopLeft="13,9.16666666666667" />
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
+          TopLeft="143.5,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
+          TopLeft="499.75,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
+          TopLeft="822.75,51.1666666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666667"
+              Start="0,0"
+              End="0,32.1666666666667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="288,42"
+          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer"
+          TopLeft="1,274.5" />
+        <NodeLayout
+          Size="263,42"
+          Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer"
+          TopLeft="13,192.833333333333" />
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
+          TopLeft="144.75,234.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="243,42"
+          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-users"
+          TopLeft="376,272.166666666667" />
+        <NodeLayout
+          Size="219,42"
+          Id="Package\Load Miscellaneous tables\branchadmin-custportal-users"
+          TopLeft="388,190.5" />
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+          TopLeft="497.5,232.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping"
+          TopLeft="1,458.166666666667" />
+        <NodeLayout
+          Size="284,42"
+          Id="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping"
+          TopLeft="13,376.5" />
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+          TopLeft="155,418.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-users">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-invman-division">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\invman-rdata-division">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-users">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-invman-acctexec">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\invman-inventory-sales_rep">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
     design-time-name="Package\Load OB Shipping table">
     <LayoutInfo>
       <GraphLayout
@@ -6227,128 +6318,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load OB Shipping table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Completed Orders table">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150,42"
-          Id="Package\Load Completed Orders table\customerportal"
-          TopLeft="47.5,157.5" />
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load Completed Orders table\invman"
-          TopLeft="65.5,65.5" />
-        <EdgeLayout
-          Id="Package\Load Completed Orders table.Paths[OLE DB Source Output]"
-          TopLeft="122.25,107.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Completed Orders table\customerportal">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Completed Orders table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-users">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-users">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -78,7 +78,7 @@ BEGIN
 		INNER JOIN rdata.division d on d.division_id = pd.division_id
 		WHERE (pd.cancelled = 'n') AND 
 			 (o.cancelled = 'n') and 
-			 o.order_date < @today_less_35;
+			 o.order_date < getdate(); --@today_less_35;
 
 
 	-- load process table from inventory_transaction and other tables
@@ -137,7 +137,7 @@ BEGIN
 	INNER JOIN inventory.customer AS c ON ii.customer_id = c.location_id 
 	INNER JOIN inventory.waybill AS w ON ii.waybill_id = w.waybill_id 
 	INNER JOIN rdata.division d on i.division_id = d.division_id
-	WHERE i.transaction_date < @today_less_35 and 
+	WHERE i.transaction_date < getdate() and --@today_less_35 and 
 		 i.inventory_transaction_id <> 0; 
 
 
