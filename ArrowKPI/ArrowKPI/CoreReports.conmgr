@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CoreReports"
+  DTS:DTSID="{141E4860-54A2-4FE7-8E9C-3855AE8A03F3}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=kaoerpsqldev2;User ID=sa;Initial Catalog=CoreReports;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwWvzxj45NkGoPCLLGBQ5swAAAAACAAAAAAADZgAAwAAAABAAAACqt0V4AhZMRHZmfJg1OIKlAAAAAASAAACgAAAAEAAAACbZFDW1VrG0oF5Rt5AjrCx4AAAAaoClns0xQ+a3PVUygx/YDhPnJ53KRXpBGGBa4QFx+fTEllUdatFdmT3qxuKipcJPflJT9R11YOnf1v/IVoGhGZcRY5NAn4bagFDwLvmsjcy/mM7j2bv1OIjrQbgMAXDo011dZ2BH3NQalHFoGMzA1eBckh5PDRebFAAAAIVtCLhVIA4F9+WGbVVIyAOge5YV</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
