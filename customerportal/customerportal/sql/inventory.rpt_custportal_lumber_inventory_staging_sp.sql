@@ -132,9 +132,9 @@ BEGIN
 	INNER JOIN product.product_item vi ON p.variable_item_id = vi.product_item_id 
 	INNER JOIN inventory.product_division_group pdg ON p.product_id = pdg.product_id AND ii.division_id = pdg.division_id 
 	INNER JOIN inventory.product_group pg ON pdg.product_group_id = pg.product_group_id 
-	INNER JOIN inventory.sales_rep s ON ii.sales_rep_id = s.sales_rep_id 
-	INNER JOIN inventory.mill m on ii.mill_id = m.mill_id 
-	INNER JOIN inventory.customer AS c ON ii.customer_id = c.location_id 
+	INNER JOIN inventory.sales_rep s ON ii.sales_rep_id = s.sales_rep_id AND ii.division_id = s.division_id
+	INNER JOIN inventory.mill m on ii.mill_id = m.mill_id AND ii.division_id = m.division_id
+	INNER JOIN inventory.customer AS c ON ii.customer_id = c.location_id AND ii.division_id = c.division_id
 	INNER JOIN inventory.waybill AS w ON ii.waybill_id = w.waybill_id 
 	INNER JOIN rdata.division d on i.division_id = d.division_id
 	WHERE i.transaction_date < getdate() and --@today_less_35 and 
@@ -326,9 +326,10 @@ BEGIN
 				l.length,
 				pd.branch_code
 		 HAVING SUM(pd.quantity) <> 0) a 
-	join inventory.customer c on a.customer_id = c.location_id 
-	join inventory.sales_rep s on a.sales_rep_id = s.sales_rep_id 
-	join inventory.mill m on a.mill_id = m.mill_id 
+	join rdata.division d on d.branch_code = a.branch_code
+	join inventory.customer c on a.customer_id = c.location_id AND c.division_id = d.division_id
+	join inventory.sales_rep s on a.sales_rep_id = s.sales_rep_id AND s.division_id = d.division_id
+	join inventory.mill m on a.mill_id = m.mill_id AND m.division_id = d.division_id
 	order by order_status, i.customer_name, i.sales_rep, mill_name, l.master_no_piece
 
 

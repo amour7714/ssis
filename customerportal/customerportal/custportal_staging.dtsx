@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{126CDDB9-EE86-445E-8089-A61AC2907DE2}">
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{A8660834-4AB7-4D33-9C31-FA129BA0F605}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -861,7 +861,7 @@ SELECT  o.division_id,
    wb.other_reference, 
    CAST(SUM(p.quantity) as varchar(5)) + '/' + variable_item  as unittally, 
    CAST(SUM(p.number_of_items) as varchar(6)) + '/' + variable_item as piecetally 
-FROM inventory.v_proddtl p 
+FROM inventory.v_proddtl p
 JOIN inventory.v_inbound_waybill w on p.waybill_id = w.waybill_id 
 JOIN inventory.waybill wb on wb.waybill_id = w.waybill_id 
 JOIN inventory.v_receiving_order o on w.order_id = o.order_id 
@@ -4900,7 +4900,7 @@ SELECT  o.division_id,
 	SUM(p.number_of_items) as pieces,
 	CAST(SUM(p.quantity) as varchar(5)) + '/' + p.variable_item  as unittally, 
 	CAST(SUM(p.number_of_items) as varchar(6)) + '/' + p.variable_item as piecetally 
-FROM inventory.v_proddtl p 
+FROM inventory.v_proddtl p
 JOIN inventory.v_outbound_waybill w on p.waybill_id = w.waybill_id 
 JOIN inventory.waybill wb on w.waybill_id = wb.waybill_id 
 JOIN inventory.v_shipping_order o on w.order_id = o.order_id 
