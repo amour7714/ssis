@@ -5,10 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=localhost;User ID=inv;Initial Catalog=invman;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=kaoserver13;User ID=inv;Initial Catalog=invman;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkUgu07jss0ulewJ9OlTn4QAAAAACAAAAAAADZgAAwAAAABAAAABQcigurPtqfmFMCMN7m2+RAAAAAASAAACgAAAAEAAAAGhlKzncq+jIjEYpuqLVA654AAAAmvIjEWJcfARgFZkOp+2RLbDAqU39WODV1MscRHJiXOfmGJ9t00UXvKkijhyMFqnshdQs0KqfhibXPXcJaaxO2g2PG0kjCQae2HkXOrVfclNUlwL/gFjyEeTka6cmMyKgQLbiaUXTsaDj7l0uzdsRioS1NS18axGJFAAAAPLgFapBqf1WQCdp7INWwNm3fPS0</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwWvzxj45NkGoPCLLGBQ5swAAAAACAAAAAAADZgAAwAAAABAAAAANMu7Jd1gQPBiB9SjpPOvcAAAAAASAAACgAAAAEAAAAAu9zLy6Kj+TCauQ4SwGUJh4AAAAH+eyQm9QZvg5SoQZ3eEOpkz70rRMQXmYHK41Q+0GYt7qosbUbZqJf+OL4UHYjlkULwSUJckoz4GrOFpSwAGViadiRqwO/52KlLwrqf96C1xkLrm+p+BG6BzDmZbek5BFPf3wT/IkjTztN9yLt3g4BdU0rLgyjY6aFAAAAG6Zt7wug3mbBTNq5N7ujUqc4kyD</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
