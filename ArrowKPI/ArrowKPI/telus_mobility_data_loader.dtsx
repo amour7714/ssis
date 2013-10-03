@@ -1,0 +1,2267 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="9/25/2013 12:13:17 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="ARROW100010"
+  DTS:CreatorName="ARROW\gschulte"
+  DTS:DTSID="{130FB064-38CC-4461-BEDB-4FD3AE592A66}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="telus_mobility_data_loader"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{D50150E4-81E7-497A-A202-E49F6178183F}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[tm_group_summary_rpt]"
+      DTS:CreationName="FLATFILE"
+      DTS:Description="Telus Mobility Group Summary Report"
+      DTS:DTSID="{511C219A-9853-4284-8C8A-A57A6A8B7C07}"
+      DTS:ObjectName="tm_group_summary_rpt">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::importFQFilename]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="4105"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit Number"
+              DTS:DTSID="{203811CE-117A-4143-842B-3CA1C7CF2D86}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="User Name"
+              DTS:DTSID="{AC687DFC-94EA-49FD-AA8F-D1CAA2A1BA6A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Additional User Name"
+              DTS:DTSID="{11E3FB5C-0B9E-42DA-BD2E-D434D4B25573}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Service Plan Name"
+              DTS:DTSID="{C02BA279-62BD-40C9-99A8-2BC996716EC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Service Plan Price"
+              DTS:DTSID="{0ED5E39A-A00E-48B7-9C83-22FEAE25D436}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Additional Local Airtime"
+              DTS:DTSID="{1610034C-2C41-4441-AFFB-526323ECA01A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Over Under"
+              DTS:DTSID="{6F248127-7C3D-4E17-ABAF-FAAE6D026EF2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Contribution To Pool"
+              DTS:DTSID="{80E63959-71B8-4350-95FC-0A66ADD1E0A3}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Service Plans Pooled"
+              DTS:DTSID="{A39D014E-D137-48AD-83D7-480238BAB62A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ser  Pl  Not Pooled"
+              DTS:DTSID="{E28E4CC3-0C6B-4B2D-BB73-D7C71ED76D4E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Long Distance Charges"
+              DTS:DTSID="{44EAF2CB-76CB-4CA8-90DD-24B8D5369FCA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Roaming Charges"
+              DTS:DTSID="{94CE487D-0E61-483E-B383-A1433C901E24}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Do More Data Services"
+              DTS:DTSID="{FF63D9C0-AC6B-4DBF-9C0B-6E9003EAE061}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Do More Voice Services"
+              DTS:DTSID="{B295C338-9F2C-43D3-9246-E0779194BAB7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Pager Services"
+              DTS:DTSID="{DD79990A-16D1-40D0-9665-F53CFEF81576}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Value-Added Services"
+              DTS:DTSID="{7A9F92D7-B0E1-4E07-BE3F-2BCAABC4954F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Other Charges And Credits"
+              DTS:DTSID="{FD671CCD-8FF0-4753-B10E-023FF56BD916}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Other Fees"
+              DTS:DTSID="{1BC78B0B-0C39-471B-8F41-0AC2370354D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PST QST HST"
+              DTS:DTSID="{56BD5047-0EE3-45AD-A2E1-DBA92ABDBA70}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Subtotal Before GST"
+              DTS:DTSID="{29BCA3A1-6423-4760-B8B7-B1F70C7EF0AB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GST"
+              DTS:DTSID="{C60DD656-DEC7-458D-8C4E-6E0346FA00F6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:DataType="14"
+              DTS:DataScale="2"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total"
+              DTS:DTSID="{465160C9-6DA7-4B2F-884C-A7172C6D6CEC}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A4F6ABA8-F25D-42A9-AED6-34F11268CE2D}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="importFilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">c:\SSIS\ArrowKPI\ArrowKPI\import_files\telus_mobility\</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C06AF0F4-FC5B-40A7-9A2E-E3B31E8B89D6}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="importFQFilename">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Import File"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{544A113B-57FD-4CDC-993A-845A8F4036D5}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Import File">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
+        DTS:DTSID="{14F7293B-252F-46E8-9579-9EAF029FEF70}"
+        DTS:ObjectName="{14F7293B-252F-46E8-9579-9EAF029FEF70}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::importFilePath]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="c:\SSIS\ArrowKPI\ArrowKPI\import_files\telus_mobility\" />
+            <FEFEProperty
+              FileSpec="*.txt" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Import File\archive import file"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="Script Task"
+          DTS:DTSID="{755F4FF1-6BCB-46DE-8266-2FF2B15CDA39}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ScriptTask.ScriptTask, Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="archive import file"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ScriptProject
+              Name="ST_956beefabb284d4db9c2cabb6267a1cc"
+              VSTAMajorVersion="3"
+              VSTAMinorVersion="0"
+              Language="VisualBasic"
+              ReadOnlyVariables="User::importFQFilename">
+              <ProjectItem
+                Name="ST_956beefabb284d4db9c2cabb6267a1cc.vbproj"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectTypeGuids>{30D016F9-3734-4E33-A861-5E7D899E18F3};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ACF720D2-BE76-4C4A-8B8C-B895C60B2FC8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>My Project</AppDesignerFolder>
+    <RootNamespace>ST_956beefabb284d4db9c2cabb6267a1cc</RootNamespace>
+    <AssemblyName>ST_956beefabb284d4db9c2cabb6267a1cc</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>.\bin\Debug\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>false</DebugSymbols>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.SqlServer.ManagedDTS, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.SqlServer.ScriptTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="My Project\" />
+    <Compile Include="My Project\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+    </EmbeddedResource>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ScriptMain.vb">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <!-- Include the build rules for a VB project.-->
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{30D016F9-3734-4E33-A861-5E7D899E18F3}">
+        <ProjectProperties HostName="VSTAHostName" HostPackage="{B3A685AA-7EAF-4BC6-9940-57959FA5AC07}" ApplicationType="usd" Language="vb" TemplatesPath="" DebugInfoExeName="devenv.exe" DebugInfoCommandLine="/vstaHostDebugUri:&quot;vstadebug88424102-cf00-4b60-a6d5-8ff8bfe23501/d5a6bfe5-0b72-45cb-9a50-36acfb7bab65&quot;" />
+        <Host Name="ScriptTask" />
+        <ProjectClient>
+          <HostIdentifier>SSIS_ST110</HostIdentifier>
+        </ProjectClient>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\AssemblyInfo.vb"
+                Encoding="UTF8"><![CDATA[Imports System
+Imports System.Reflection
+Imports System.Runtime.InteropServices
+
+' General Information about an assembly is controlled through the following 
+' set of attributes. Change these attribute values to modify the information
+' associated with an assembly.
+
+' Review the values of the assembly attributes
+
+<Assembly: AssemblyTitle("ST_956beefabb284d4db9c2cabb6267a1cc")> 
+<Assembly: AssemblyDescription("")> 
+<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyProduct("ST_956beefabb284d4db9c2cabb6267a1cc")> 
+<Assembly: AssemblyCopyright("Copyright @  2013")> 
+<Assembly: AssemblyTrademark("")> 
+<Assembly: CLSCompliant(True)> 
+
+<Assembly: ComVisible(False)> 
+
+'The following GUID is for the ID of the typelib if this project is exposed to COM
+<Assembly: Guid("59d18eea-bd5d-48ca-ab62-67976803ab8a")> 
+
+' Version information for an assembly consists of the following four values:
+'
+'      Major Version
+'      Minor Version 
+'      Build Number
+'      Revision
+'
+' You can specify all the values or you can default the Build and Revision Numbers 
+' by using the '*' as shown below:
+' <Assembly: AssemblyVersion("1.0.*")>
+
+<Assembly: AssemblyVersion("1.0.0.0")> 
+<Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
+              <ProjectItem
+                Name="ScriptMain.vb"
+                Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
+'The Script Task allows you to perform virtually any operation that can be accomplished in
+'a .Net application within the context of an Integration Services control flow. 
+
+'Expand the other regions which have "Help" prefixes for examples of specific ways to use
+'Integration Services features within this script task.
+#End Region
+
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+Imports System.IO
+#End Region
+
+'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+'or parent of this class.
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+#Region "Help:  Using Integration Services variables and parameters in a script"
+    'To use a variable in this script, first ensure that the variable has been added to 
+    'either the list contained in the ReadOnlyVariables property or the list contained in 
+    'the ReadWriteVariables property of this script task, according to whether or not your
+    'code needs to write to the variable.  To add the variable, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and 
+    'ReadWriteVariables properties in the Script Transformation Editor window.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable:
+    ' startTime = Dts.Variables("System::StartTime").Value
+
+    'Example of writing to a variable:
+    ' Dts.Variables("User::myStringVariable").Value = "new value"
+
+    'Example of reading from a package parameter:
+    ' batchId = Dts.Variables("$Package::batchId").Value
+
+    'Example of reading from a project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").Value
+
+    'Example of reading from a sensitive project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
+#End Region
+
+#Region "Help:  Firing Integration Services events from a script"
+    'This script task can fire events for logging purposes.
+
+    'Example of firing an error event:
+    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
+
+    'Example of firing an information event:
+    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
+#End Region
+
+#Region "Help:  Using Integration Services connection managers in a script"
+    'Some types of connection managers can be used in this script task.  See the topic 
+    '"Working with Connection Managers Programatically" for details.
+
+    'Example of using an ADO.Net connection manager:
+    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
+    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
+
+    'Example of using a File connection manager
+    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
+#End Region
+
+    'This method is called when this script task executes in the control flow.
+    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    'To open Help, press F1.
+
+    Public Sub Main()
+        Dim sSourceFile As String
+        Dim sDestinationFile As String
+
+        sSourceFile = Dts.Variables("importFQFilename").Value.ToString()
+        sDestinationFile = Path.GetDirectoryName(Dts.Variables("importFQFilename").Value.ToString()) + "\archive\" + Path.GetFileName(Dts.Variables("importFQFilename").Value.ToString())
+
+        'Dts.Events.FireError(0, String.Empty, sSourceFile, String.Empty, 0)
+        'Dts.Events.FireError(0, String.Empty, sDestinationFile, String.Empty, 0)
+
+        File.Move(sSourceFile, sDestinationFile)
+
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+#Region "ScriptResults declaration"
+    'This enum provides a convenient shorthand within the scope of this class for setting the
+    'result of the script.
+
+    'This code was generated automatically.
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+#End Region
+
+End Class]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Settings.settings"
+                Encoding="UTF8"><![CDATA[<?xml version='1.0' encoding='iso-8859-1'?>
+<SettingsFile xmlns="uri:settings" CurrentProfile="(Default)" GeneratedClassNamespace="$safeprojectname" GeneratedClassName="MySettings">
+  <Profiles>
+    <Profile Name="(Default)" />
+  </Profiles>
+  <Settings />
+</SettingsFile>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Settings.Designer.vb"
+                Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+
+Partial Friend NotInheritable Class MySettings
+    Inherits System.Configuration.ApplicationSettingsBase
+
+    Private Shared m_Value As MySettings
+
+    Private Shared m_SyncObject As Object = New Object
+
+    <System.Diagnostics.DebuggerNonUserCode()> _
+    Public Shared ReadOnly Property Value() As MySettings
+        Get
+            If (MySettings.m_Value Is Nothing) Then
+                System.Threading.Monitor.Enter(MySettings.m_SyncObject)
+                If (MySettings.m_Value Is Nothing) Then
+                    Try
+                        MySettings.m_Value = New MySettings
+                    Finally
+                        System.Threading.Monitor.Exit(MySettings.m_SyncObject)
+                    End Try
+                End If
+            End If
+            Return MySettings.m_Value
+        End Get
+    End Property
+End Class]]></ProjectItem>
+              <ProjectItem
+                Name="Project"
+                Encoding="UTF16LE"><![CDATA[<?xml version="1.0" encoding="UTF-16" standalone="yes"?>
+<c:Project xmlns:c="http://schemas.microsoft.com/codeprojectml/2010/08/main" xmlns:msb="http://schemas.microsoft.com/developer/msbuild/2003" runtimeVersion="3.0" schemaVersion="1.0">
+	<msb:PropertyGroup>
+		<msb:CodeName>ST_956beefabb284d4db9c2cabb6267a1cc</msb:CodeName>
+		<msb:DisplayName>ST_956beefabb284d4db9c2cabb6267a1cc</msb:DisplayName>
+		<msb:ProjectId>{30D801D7-052C-49D3-B70B-1DE608F6A723}</msb:ProjectId>
+		<msb:Language>msBuild</msb:Language>
+	</msb:PropertyGroup>
+	<msb:ItemGroup>
+		<msb:Project Include="ST_956beefabb284d4db9c2cabb6267a1cc.vbproj"/>
+		<msb:File Include="My Project\Settings.Designer.vb"/>
+		<msb:File Include="My Project\Resources.Designer.vb"/>
+		<msb:File Include="My Project\AssemblyInfo.vb"/>
+		<msb:File Include="My Project\Resources.resx"/>
+		<msb:File Include="My Project\Settings.settings"/>
+		<msb:File Include="ScriptMain.vb"/>
+	</msb:ItemGroup>
+</c:Project>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Resources.resx"
+                Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>]]></ProjectItem>
+              <ProjectItem
+                Name="My Project\Resources.Designer.vb"
+                Encoding="UTF8"><![CDATA['------------------------------------------------------------------------------
+' <autogenerated>
+'     This code was generated by a tool.
+'
+'     Changes to this file may cause incorrect behavior and will be lost if
+'     the code is regenerated.
+' </autogenerated>
+'------------------------------------------------------------------------------
+
+Option Strict Off
+Option Explicit On
+
+
+Namespace My.Resources
+    
+    '''<summary>
+    '''   A strongly-typed resource class, for looking up localized strings, etc.
+    '''</summary>
+    'This class was auto-generated by the Strongly Typed Resource Builder
+    'class via a tool like ResGen or Visual Studio.NET.
+    'To add or remove a member, edit your .ResX file then rerun ResGen
+    'with the /str option, or rebuild your VS project.
+    Class MyResources
+        
+        Private Shared _resMgr As System.Resources.ResourceManager
+        
+        Private Shared _resCulture As System.Globalization.CultureInfo
+        
+        Friend Sub New()
+            MyBase.New
+        End Sub
+        
+        '''<summary>
+        '''   Returns the cached ResourceManager instance used by this class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared ReadOnly Property ResourceManager() As System.Resources.ResourceManager
+            Get
+                If (_resMgr Is Nothing) Then
+                    Dim temp As System.Resources.ResourceManager = New System.Resources.ResourceManager("My.Resources.MyResources", GetType(MyResources).Assembly)
+                    _resMgr = temp
+                End If
+                Return _resMgr
+            End Get
+        End Property
+        
+        '''<summary>
+        '''   Overrides the current thread's CurrentUICulture property for all
+        '''   resource lookups using this strongly typed resource class.
+        '''</summary>
+        <System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)>  _
+        Public Shared Property Culture() As System.Globalization.CultureInfo
+            Get
+                Return _resCulture
+            End Get
+            Set
+                _resCulture = value
+            End Set
+        End Property
+    End Class
+End Namespace]]></ProjectItem>
+              <BinaryItem
+                Name="ST_956beefabb284d4db9c2cabb6267a1cc.dll">TVqQAAMAAAAEAAAA//8AALgAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAgAAAAA4fug4AtAnNIbgBTM0hVGhpcyBwcm9ncmFtIGNhbm5vdCBiZSBydW4gaW4gRE9TIG1v
+ZGUuDQ0KJAAAAAAAAABQRQAATAEDAGhDQ1IAAAAAAAAAAOAAAiELAQsAABwAAAAGAAAAAAAAHjoA
+AAAgAAAAQAAAAAAAEAAgAAAAAgAABAAAAAAAAAAEAAAAAAAAAACAAAAAAgAAAAAAAAIAQIUAABAA
+ABAAAAAAEAAAEAAAAAAAABAAAAAAAAAAAAAAAMw5AABPAAAAAEAAANgDAAAAAAAAAAAAAAAAAAAA
+AAAAAGAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAIAAACAAAAAAAAAAAAAAACCAAAEgAAAAAAAAAAAAAAC50ZXh0AAAAJBoAAAAgAAAAHAAAAAIA
+AAAAAAAAAAAAAAAAACAAAGAucnNyYwAAANgDAAAAQAAAAAQAAAAeAAAAAAAAAAAAAAAAAABAAABA
+LnJlbG9jAAAMAAAAAGAAAAACAAAAIgAAAAAAAAAAAAAAAAAAQAAAQgAAAAAAAAAAAAAAAAAAAAAA
+OgAAAAAAAEgAAAACAAUA/CMAANAVAAABAAAAAAAAAEMjAAC4AAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAB4CKAEAAAoqHgIoBAAACiqmcwYAAAqAAQAABHMHAAAKgAIA
+AARzCAAACoADAAAEcwkAAAqABAAABCoAABMwAQALAAAAAQAAEX4BAAAEbwoAAAoqABMwAQALAAAA
+AgAAEX4CAAAEbwsAAAoqABMwAQALAAAAAwAAEX4DAAAEbwwAAAoqABMwAQALAAAABAAAEX4EAAAE
+bw0AAAoqABMwAgANAAAABQAAEQIDKBEAAAooEgAACioAAAATMAEABwAAAAYAABECKBMAAAoqABMw
+AQALAAAABwAAEdAFAAACKBQAAAoqABMwAQAHAAAACAAAEQIoFQAACioAEzABABAAAAAJAAARAowB
+AAAbLQYoAQAAKyoCKhMwAgAQAAAACgAAEQMSAP4VAgAAGwaBAgAAGyoeAigXAAAKKhMwAgAoAAAA
+CwAAEQJ7GQAACm8aAAAKCweMAwAAGy0SKAIAACsLAnsZAAAKB28bAAAKBypKAigXAAAKAnMcAAAK
+fRkAAAoqAB4CKBcAAAoqEzACAC0AAAAMAAARfgYAAAQtIHIBAABw0AcAAAIoFAAACm8eAAAKcx8A
+AAoLB4AGAAAEfgYAAAQqAAAAEzABAAYAAAANAAARfgcAAAQqAAAeAoAHAAAEKkJzFwAACigRAAAK
+gAkAAAQqAAAAHgIoIAAACiobMAEAPwAAAA4AABF+CAAABC0yfgkAAAQoEQAACighAAAKfggAAAQt
+HHMWAAAGgAgAAATeEH4JAAAEKBEAAAooIgAACtx+CAAABCoAARAAAAIAHQAMKQAQAAAAAB4CKCQA
+AAoqEzAEAIcAAAAPAAARAm8lAAAKbyYAAApyMwAAcG8nAAAKbygAAApvFQAACgsCbyUAAApvJgAA
+CnIzAABwbycAAApvKAAACm8VAAAKKCkAAApyVQAAcAJvJQAACm8mAAAKcjMAAHBvJwAACm8oAAAK
+bxUAAAooKgAACigrAAAKCgcGKCwAAAoCbyUAAAoWby0AAAoqtAAAAM7K774BAAAAkQAAAGxTeXN0
+ZW0uUmVzb3VyY2VzLlJlc291cmNlUmVhZGVyLCBtc2NvcmxpYiwgVmVyc2lvbj00LjAuMC4wLCBD
+dWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkjU3lzdGVtLlJl
+c291cmNlcy5SdW50aW1lUmVzb3VyY2VTZXQCAAAAAAAAAAAAAABQQURQQURQtAAAAABCU0pCAQAB
+AAAAAAAMAAAAdjQuMC4zMDMxOQAAAAAFAGwAAADQBwAAI34AADwIAAB4CQAAI1N0cmluZ3MAAAAA
+tBEAAGwAAAAjVVMAIBIAABAAAAAjR1VJRAAAADASAACgAwAAI0Jsb2IAAAAAAAAAAgAAAVcdogkJ
+DwAAAPolMwAWAAABAAAALQAAAAoAAAAMAAAAGQAAAAQAAAA6AAAAAgAAADYAAAAPAAAABAAAAAgA
+AAAJAAAACQAAAAEAAAAFAAAAAQAAAAMAAAADAAAAAgAAAAAATwkBAAAAAAAKAEsBIQEKAH8BYQEG
+AI8BiAEKAOcBIQEGAGUCiAEKAOcCvQIGAB0DDAMGAEoDNQMOALEDnAMSADAEBwQGAFEEiAEOAIQE
+bgQOAJ0EbgQOAMoEsgQGAPQE4QQKADMFDAUKAEsFEwAOAIAFYwUGALUFlQUGANMFiAEGAPcFiAEK
+ABAGEwAGAFQGNQYGAHoGaAYGAKEGkAYGALQG4QQSANEGBwQWACoHCgcWAEIHCgcGAF4HVAcGAIAH
+iAEGAI4HVAcGAKcHiAESAL0HBwQGABcIlQUGADcIlQUGAG8IVQgGAIgIaAYGAKUINQYGALMIaAYG
+AM4IaAYGAOkIaAYGAAIJaAYGABsJaAYGADgJaAYAAAAAAQAAAAAAAQABAAAAAAApADcABQABAAEA
+AAAAAF4ANwAJAAEAAgAAARAAaQA3AA0AAQADAAUBAABzAAAADQAFAAgABQEAAIEAAAANAAUADwAA
+AAAAnACoAA0ABgARAAABEADZAOQAJQAIABUAAQAAAAgB5AApAAoAGAACAQAAEwEAAC0ACgAaADEA
+qgEgADEA0wEtADEA9QE6ADEAGgJHACEA9gKQABEALQOdABEAVgOhABEAyQO/ABEA0QPDAAYGVgTZ
+AFaAXgTcAFaAZgTcAFAgAAAAAAYYWwETAAEAWCAAAAAABhhbARMAAQBgIAAAAAARGJYBFwABAIwg
+AAAAABMInQEbAAEApCAAAAAAEwjDASgAAQC8IAAAAAATCOwBNQABANQgAAAAABMICgJCAAEA7CAA
+AAAARgJQAmMAAQAIIQAAAABGAlkCaAACABwhAAAAAIMAagJsAAIANCEAAAAARgJyAnEAAgBIIQAA
+AAARAHsCeAACAGQhAAAAAAEAmQKAAAMAgCEAAAAABhhbARMABACIIQAAAAADCK0CiwAEALwhAAAA
+AAYYWwETAAQA0CEAAAAAAxhbARMABADYIQAAAAAWCGIDpQAEABQiAAAAABYIdgOqAAQAKCIAAAAA
+FgiCA68ABAAwIgAAAAARGJYBFwAFAEQiAAAAAAYYWwETAAUATCIAAAAAFgjeA8YABQCoIgAAAAAG
+GFsBEwAFALAiAAAAAAYATAQTAAUAAAABAFcCAAABAJACAAABAJACAAABAI4DCQBbARMAYQBbAeoA
+cQBbAfkAEQBbARMAeQBbARMAJABbARMALABbARMANABbARMAPABbARMAJACtAosALACtAosANACt
+AosAPACtAosAgQBbARMAiQBbARMAkQBbAUgBmQDEBZMBGQBQAmMAGQBZAmgAKQDlBaABGQByAnEA
+qQABBrABGQBbARMAsQBbAcABRAD2ApAATADeA4sATAArBj0CTABbARMAuQBbAUwCKQCDBlcCOQBb
+AVwCSQBbARMAyQCpBngCyQCvBngC0QBbARMAUQBbARMAUQDjBoIC2QA0B4cC4QBLB4wC6QDeA5IC
+8QBjB5YC8QB0B5YC+QCHB5sCAQGTB6IC2QCYB6gCCQFbAUwCEQFbARMAGQFbAagCIQFbARMAKQFb
+AUgBMQFbAUgBOQFbAUgBQQFbAUgBSQFbAUgBUQFbAUgBWQFbAUgBYQFbAUgBaQFbAUgBCAAsAOAA
+CAAwAOUAKQCDAE0BLgDDAVECLgDTAXYDLgC7AXYDLgCLAbsCLgCzAV8DLgDLAVECLgCDAbICLgCT
+AdoCLgCbASIDLgCjAS8DLgDrAFECLgBzAVkDLgCrAVECQAArAOUAQAATAPAAQwAbAP8AQwATAPAA
+SQCDAH8BYwAbAP8AYwATAPAAaQCDAF4BgAArAOUAgwB7AOUAgwAbAP8AgwBzAOUAiQCDAGsBoAAr
+AOUAowATAPAAowDDAMgBwAArAOUAwwDrAFECwwATAPAAyQATAG8C4AArAOUA6QATAG8CAAETAPAA
+AAErAOUACQEbAeUAIAETAPAAIAErAOUAIwFzAVECIwF7AeUAQAErAOUAQAETAPAAYAETAPAAYAEr
+AOUAgAErAOUAoAErAOUAwAETAPAAwAErAOUA4AErAOUAAAIrAOUAAAITAPAANAE5AT4BQwGYAZwB
+pwGsAbsBuwFDAmMCagJ9Aq0CBAABAAYABQAHAAYACAAIAAAAfwFPAAAAOAJUAAAA5wFZAAAARAJe
+AAAAAAOYAAAAHQO1AAAAlAO6AAAAjgPLAAIABAADAAIABQAFAAIABgAHAAIABwAJAAIADwALAAIA
+EgANAAIAEwAPAAEAFAAPAAIAFwARAHUAdQCIABgBHwEmAS0BKgIxAgSAAAABAAAAAAAAAAAAAAAA
+AOQAAAAEAAAAAAAAAAAAAAABAAoAAAAAAAoAAAAAAAAAAAAAAAoAEwAAAAAABAAAAAAAAAAAAAAA
+AQCIAQAAAAALAAAAAAAAAAAAAADQAOgDAAAAAAsAAAAAAAAAAAAAANAA6wYAAAAAAAAAAAEAAADf
+BwAABQAEAAYABAAKAAkAAAAQAAwAjgIAABAAGQCOAgAAAAAbAI4CLQC2AS0AOAIAAAA8TW9kdWxl
+PgBtc2NvcmxpYgBNaWNyb3NvZnQuVmlzdWFsQmFzaWMATXlBcHBsaWNhdGlvbgBTVF85NTZiZWVm
+YWJiMjg0ZDRkYjljMmNhYmI2MjY3YTFjYy5NeQBNeUNvbXB1dGVyAE15UHJvamVjdABNeVdlYlNl
+cnZpY2VzAFRocmVhZFNhZmVPYmplY3RQcm92aWRlcmAxAE15UmVzb3VyY2VzAFNUXzk1NmJlZWZh
+YmIyODRkNGRiOWMyY2FiYjYyNjdhMWNjLk15LlJlc291cmNlcwBNeVNldHRpbmdzAFNUXzk1NmJl
+ZWZhYmIyODRkNGRiOWMyY2FiYjYyNjdhMWNjAFNjcmlwdE1haW4AU2NyaXB0UmVzdWx0cwBNaWNy
+b3NvZnQuVmlzdWFsQmFzaWMuQXBwbGljYXRpb25TZXJ2aWNlcwBBcHBsaWNhdGlvbkJhc2UALmN0
+b3IATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkRldmljZXMAQ29tcHV0ZXIAU3lzdGVtAE9iamVjdAAu
+Y2N0b3IAZ2V0X0NvbXB1dGVyAG1fQ29tcHV0ZXJPYmplY3RQcm92aWRlcgBnZXRfQXBwbGljYXRp
+b24AbV9BcHBPYmplY3RQcm92aWRlcgBVc2VyAGdldF9Vc2VyAG1fVXNlck9iamVjdFByb3ZpZGVy
+AGdldF9XZWJTZXJ2aWNlcwBtX015V2ViU2VydmljZXNPYmplY3RQcm92aWRlcgBBcHBsaWNhdGlv
+bgBXZWJTZXJ2aWNlcwBFcXVhbHMAbwBHZXRIYXNoQ29kZQBUeXBlAEdldFR5cGUAVG9TdHJpbmcA
+Q3JlYXRlX19JbnN0YW5jZV9fAFQAaW5zdGFuY2UARGlzcG9zZV9fSW5zdGFuY2VfXwBnZXRfR2V0
+SW5zdGFuY2UATWljcm9zb2Z0LlZpc3VhbEJhc2ljLk15U2VydmljZXMuSW50ZXJuYWwAQ29udGV4
+dFZhbHVlYDEAbV9Db250ZXh0AEdldEluc3RhbmNlAFN5c3RlbS5SZXNvdXJjZXMAUmVzb3VyY2VN
+YW5hZ2VyAF9yZXNNZ3IAU3lzdGVtLkdsb2JhbGl6YXRpb24AQ3VsdHVyZUluZm8AX3Jlc0N1bHR1
+cmUAZ2V0X1Jlc291cmNlTWFuYWdlcgBnZXRfQ3VsdHVyZQBzZXRfQ3VsdHVyZQBWYWx1ZQBDdWx0
+dXJlAFN5c3RlbS5Db25maWd1cmF0aW9uAEFwcGxpY2F0aW9uU2V0dGluZ3NCYXNlAG1fVmFsdWUA
+bV9TeW5jT2JqZWN0AGdldF9WYWx1ZQBNaWNyb3NvZnQuU3FsU2VydmVyLlNjcmlwdFRhc2sATWlj
+cm9zb2Z0LlNxbFNlcnZlci5EdHMuVGFza3MuU2NyaXB0VGFzawBWU1RBUlRTY3JpcHRPYmplY3RN
+b2RlbEJhc2UATWFpbgBFbnVtAHZhbHVlX18AU3VjY2VzcwBGYWlsdXJlAFN5c3RlbS5Db21wb25l
+bnRNb2RlbABFZGl0b3JCcm93c2FibGVBdHRyaWJ1dGUARWRpdG9yQnJvd3NhYmxlU3RhdGUAU3lz
+dGVtLkNvZGVEb20uQ29tcGlsZXIAR2VuZXJhdGVkQ29kZUF0dHJpYnV0ZQBTeXN0ZW0uRGlhZ25v
+c3RpY3MARGVidWdnZXJIaWRkZW5BdHRyaWJ1dGUATWljcm9zb2Z0LlZpc3VhbEJhc2ljLkNvbXBp
+bGVyU2VydmljZXMAU3RhbmRhcmRNb2R1bGVBdHRyaWJ1dGUASGlkZU1vZHVsZU5hbWVBdHRyaWJ1
+dGUAU3lzdGVtLkNvbXBvbmVudE1vZGVsLkRlc2lnbgBIZWxwS2V5d29yZEF0dHJpYnV0ZQBTeXN0
+ZW0uUnVudGltZS5Db21waWxlclNlcnZpY2VzAFJ1bnRpbWVIZWxwZXJzAEdldE9iamVjdFZhbHVl
+AFJ1bnRpbWVUeXBlSGFuZGxlAEdldFR5cGVGcm9tSGFuZGxlAEFjdGl2YXRvcgBDcmVhdGVJbnN0
+YW5jZQBNeUdyb3VwQ29sbGVjdGlvbkF0dHJpYnV0ZQBzZXRfVmFsdWUAU3lzdGVtLlJ1bnRpbWUu
+SW50ZXJvcFNlcnZpY2VzAENvbVZpc2libGVBdHRyaWJ1dGUAU3lzdGVtLlJlZmxlY3Rpb24AQXNz
+ZW1ibHkAZ2V0X0Fzc2VtYmx5AFN5c3RlbS5UaHJlYWRpbmcATW9uaXRvcgBFbnRlcgBFeGl0AERl
+YnVnZ2VyTm9uVXNlckNvZGVBdHRyaWJ1dGUAU2NyaXB0T2JqZWN0TW9kZWwAZ2V0X0R0cwBNaWNy
+b3NvZnQuU3FsU2VydmVyLk1hbmFnZWREVFMATWljcm9zb2Z0LlNxbFNlcnZlci5EdHMuUnVudGlt
+ZQBWYXJpYWJsZXMAZ2V0X1ZhcmlhYmxlcwBWYXJpYWJsZQBnZXRfSXRlbQBTeXN0ZW0uSU8AUGF0
+aABHZXREaXJlY3RvcnlOYW1lAEdldEZpbGVOYW1lAFN0cmluZwBDb25jYXQARmlsZQBNb3ZlAHNl
+dF9UYXNrUmVzdWx0AENMU0NvbXBsaWFudEF0dHJpYnV0ZQBTU0lTU2NyaXB0VGFza0VudHJ5UG9p
+bnRBdHRyaWJ1dGUAU1RfOTU2YmVlZmFiYjI4NGQ0ZGI5YzJjYWJiNjI2N2ExY2MuUmVzb3VyY2Vz
+LnJlc291cmNlcwBDb21waWxhdGlvblJlbGF4YXRpb25zQXR0cmlidXRlAFJ1bnRpbWVDb21wYXRp
+YmlsaXR5QXR0cmlidXRlAFN5c3RlbS5SdW50aW1lLlZlcnNpb25pbmcAVGFyZ2V0RnJhbWV3b3Jr
+QXR0cmlidXRlAEFzc2VtYmx5RmlsZVZlcnNpb25BdHRyaWJ1dGUAR3VpZEF0dHJpYnV0ZQBBc3Nl
+bWJseVRyYWRlbWFya0F0dHJpYnV0ZQBBc3NlbWJseUNvcHlyaWdodEF0dHJpYnV0ZQBBc3NlbWJs
+eVByb2R1Y3RBdHRyaWJ1dGUAQXNzZW1ibHlDb21wYW55QXR0cmlidXRlAEFzc2VtYmx5RGVzY3Jp
+cHRpb25BdHRyaWJ1dGUAQXNzZW1ibHlUaXRsZUF0dHJpYnV0ZQBTVF85NTZiZWVmYWJiMjg0ZDRk
+YjljMmNhYmI2MjY3YTFjYy5kbGwAAAAxTQB5AC4AUgBlAHMAbwB1AHIAYwBlAHMALgBNAHkAUgBl
+AHMAbwB1AHIAYwBlAHMAACFpAG0AcABvAHIAdABGAFEARgBpAGwAZQBuAGEAbQBlAAATXABhAHIA
+YwBoAGkAdgBlAFwAAAAAACDb8z7fnchOp8N/NUrCNpEACLd6XFYZNOCJCLA/X38R1Qo6AyAAAQMA
+AAEEAAASDAcGFRIYARIMBAAAEggHBhUSGAESCAQAABIRBwYVEhgBEhEEAAASFAcGFRIYARIUBAgA
+EgwECAASCAQIABIRBAgAEhQEIAECHAMgAAgEIAASFQMgAA4CHgAHEAEBHgAeAAcwAQEBEB4AAhMA
+BCAAEwAHBhUSGQETAAQoABMAAwYSHQMGEiEEAAASHQQAABIhBQABARIhBAgAEh0ECAASIQMGEiAC
+BhwEAAASIAQIABIgCImEXc2AgMyRAgYIAwYRKAQAAAAABAEAAAAFIAEBETUIAQABAAAAAAAFIAIB
+Dg4YAQAKTXlUZW1wbGF0ZQgxMC4wLjAuMAAABhUSGAESDAYVEhgBEggGFRIYARIRBhUSGAESFAQH
+ARIMBAcBEggEBwESEQQHARIUBCABAQ4QAQALTXkuQ29tcHV0ZXIAAAwBAAdNeS5Vc2VyAAATAQAO
+TXkuV2ViU2VydmljZXMAABMBAA5NeS5BcHBsaWNhdGlvbgAABAABHBwDBwECAwcBCAYAARIVEVEE
+BwESFQMHAQ4FEAEAHgAECgEeAAQHAR4AByAEAQ4ODg5hAQA0U3lzdGVtLldlYi5TZXJ2aWNlcy5Q
+cm90b2NvbHMuU29hcEh0dHBDbGllbnRQcm90b2NvbBJDcmVhdGVfX0luc3RhbmNlX18TRGlzcG9z
+ZV9fSW5zdGFuY2VfXwAAAAYVEhgBEwAGFRIZARMABAoBEwAFIAEBEwAIBwMTABMAEwAEIAEBAgUB
+AAAAAAQgABJhBiACAQ4SYQYHAhIdEh0EBwESIQgBAAIAAAAAAAQAAQEcBAcBEiAEIAASbQQgABJx
+BSABEnUcAyAAHAQAAQ4OBgADDg4ODgUAAgEODgQgAQEIBAcCDg4IAQAIAAAAAAAeAQABAFQCFldy
+YXBOb25FeGNlcHRpb25UaHJvd3MBRwEAGi5ORVRGcmFtZXdvcmssVmVyc2lvbj12NC4wAQBUDhRG
+cmFtZXdvcmtEaXNwbGF5TmFtZRAuTkVUIEZyYW1ld29yayA0DAEABzEuMC4wLjAAACkBACQ1OWQx
+OGVlYS1iZDVkLTQ4Y2EtYWI2Mi02Nzk3NjgwM2FiOGEAAAUBAAEAABYBABFDb3B5cmlnaHQgQCAg
+MjAxMwAAKAEAI1NUXzk1NmJlZWZhYmIyODRkNGRiOWMyY2FiYjYyNjdhMWNjAAAA9DkAAAAAAAAA
+AAAADjoAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA6AAAAAAAAAAAAAAAAX0NvckRsbE1haW4A
+bXNjb3JlZS5kbGwAAAAAAP8lACAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB
+ABAAAAAYAACAAAAAAAAAAAAAAAAAAAABAAEAAAAwAACAAAAAAAAAAAAAAAAAAAABAAAAAABIAAAA
+WEAAAIADAAAAAAAAAAAAAIADNAAAAFYAUwBfAFYARQBSAFMASQBPAE4AXwBJAE4ARgBPAAAAAAC9
+BO/+AAABAAAAAQAAAAAAAAABAAAAAAA/AAAAAAAAAAQAAAACAAAAAAAAAAAAAAAAAAAARAAAAAEA
+VgBhAHIARgBpAGwAZQBJAG4AZgBvAAAAAAAkAAQAAABUAHIAYQBuAHMAbABhAHQAaQBvAG4AAAAA
+AAAAsATgAgAAAQBTAHQAcgBpAG4AZwBGAGkAbABlAEkAbgBmAG8AAAC8AgAAAQAwADAAMAAwADAA
+NABiADAAAABwACQAAQBGAGkAbABlAEQAZQBzAGMAcgBpAHAAdABpAG8AbgAAAAAAUwBUAF8AOQA1
+ADYAYgBlAGUAZgBhAGIAYgAyADgANABkADQAZABiADkAYwAyAGMAYQBiAGIANgAyADYANwBhADEA
+YwBjAAAAMAAIAAEARgBpAGwAZQBWAGUAcgBzAGkAbwBuAAAAAAAxAC4AMAAuADAALgAwAAAAcAAo
+AAEASQBuAHQAZQByAG4AYQBsAE4AYQBtAGUAAABTAFQAXwA5ADUANgBiAGUAZQBmAGEAYgBiADIA
+OAA0AGQANABkAGIAOQBjADIAYwBhAGIAYgA2ADIANgA3AGEAMQBjAGMALgBkAGwAbAAAAEgAEgAB
+AEwAZQBnAGEAbABDAG8AcAB5AHIAaQBnAGgAdAAAAEMAbwBwAHkAcgBpAGcAaAB0ACAAQAAgACAA
+MgAwADEAMwAAAHgAKAABAE8AcgBpAGcAaQBuAGEAbABGAGkAbABlAG4AYQBtAGUAAABTAFQAXwA5
+ADUANgBiAGUAZQBmAGEAYgBiADIAOAA0AGQANABkAGIAOQBjADIAYwBhAGIAYgA2ADIANgA3AGEA
+MQBjAGMALgBkAGwAbAAAAGgAJAABAFAAcgBvAGQAdQBjAHQATgBhAG0AZQAAAAAAUwBUAF8AOQA1
+ADYAYgBlAGUAZgBhAGIAYgAyADgANABkADQAZABiADkAYwAyAGMAYQBiAGIANgAyADYANwBhADEA
+YwBjAAAANAAIAAEAUAByAG8AZAB1AGMAdABWAGUAcgBzAGkAbwBuAAAAMQAuADAALgAwAC4AMAAA
+ADgACAABAEEAcwBzAGUAbQBiAGwAeQAgAFYAZQByAHMAaQBvAG4AAAAxAC4AMAAuADAALgAwAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAwAAAMAAAAIDoAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</BinaryItem>
+            </ScriptProject>
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Import File\load import file to staging table"
+          DTS:CreationName="SSIS.Pipeline.3"
+          DTS:Description="Data Flow Task"
+          DTS:DTSID="{CAF6B8CF-0663-4E2F-A69A-0F37E2F44203}"
+          DTS:ExecutableType="SSIS.Pipeline.3"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="load import file to staging table"
+          DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <pipeline
+              version="1">
+              <components>
+                <component
+                  refId="Package\Foreach Import File\load import file to staging table\Flat File Source"
+                  componentClassID="{D23FD76B-F51D-420F-BBCB-19CBF6AC1AB4}"
+                  contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                  description="Flat File Source"
+                  localeId="4105"
+                  name="Flat File Source"
+                  usesDispositions="true"
+                  version="1">
+                  <properties>
+                    <property
+                      dataType="System.Boolean"
+                      description="Specifies whether zero-length columns are treated as null."
+                      name="RetainNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                      name="FileNameColumnName"></property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Connections[FlatFileConnection]"
+                      connectionManagerID="Package.ConnectionManagers[tm_group_summary_rpt]"
+                      connectionManagerRefId="Package.ConnectionManagers[tm_group_summary_rpt]"
+                      name="FlatFileConnection" />
+                  </connections>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output]"
+                      name="Flat File Source Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Unit Number]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unit Number]"
+                          length="10"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Unit Number]"
+                          name="Unit Number"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[User Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[User Name]"
+                          length="100"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[User Name]"
+                          name="User Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional User Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Additional User Name]"
+                          length="100"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional User Name]"
+                          name="Additional User Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Name]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plan Name]"
+                          length="100"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Name]"
+                          name="Service Plan Name"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Price]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plan Price]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Price]"
+                          name="Service Plan Price"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional Local Airtime]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Additional Local Airtime]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional Local Airtime]"
+                          name="Additional Local Airtime"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Over Under]"
+                          codePage="1252"
+                          dataType="str"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Over Under]"
+                          length="100"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Over Under]"
+                          name="Over Under"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Contribution To Pool]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Contribution To Pool]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Contribution To Pool]"
+                          name="Contribution To Pool"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plans Pooled]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plans Pooled]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plans Pooled]"
+                          name="Service Plans Pooled"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Ser  Pl  Not Pooled]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ser  Pl  Not Pooled]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Ser  Pl  Not Pooled]"
+                          name="Ser  Pl  Not Pooled"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Long Distance Charges]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Long Distance Charges]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Long Distance Charges]"
+                          name="Long Distance Charges"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Roaming Charges]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Roaming Charges]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Roaming Charges]"
+                          name="Roaming Charges"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Data Services]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Do More Data Services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Data Services]"
+                          name="Do More Data Services"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Voice Services]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Do More Voice Services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Voice Services]"
+                          name="Do More Voice Services"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Pager Services]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pager Services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Pager Services]"
+                          name="Pager Services"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Value-Added Services]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value-Added Services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Value-Added Services]"
+                          name="Value-Added Services"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Charges And Credits]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Other Charges And Credits]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Charges And Credits]"
+                          name="Other Charges And Credits"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Fees]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Other Fees]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Fees]"
+                          name="Other Fees"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[PST QST HST]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PST QST HST]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[PST QST HST]"
+                          name="PST QST HST"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Subtotal Before GST]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Subtotal Before GST]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Subtotal Before GST]"
+                          name="Subtotal Before GST"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[GST]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GST]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[GST]"
+                          name="GST"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Total]"
+                          dataType="decimal"
+                          errorOrTruncationOperation="Conversion"
+                          errorRowDisposition="FailComponent"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Total]"
+                          name="Total"
+                          scale="2"
+                          truncationRowDisposition="FailComponent">
+                          <properties>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                              name="FastParse">false</property>
+                            <property
+                              dataType="System.Boolean"
+                              description="Indicates whether the data is in binary format."
+                              name="UseBinaryFormat">false</property>
+                          </properties>
+                        </outputColumn>
+                      </outputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unit Number]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="Unit Number" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[User Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="User Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Additional User Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Additional User Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plan Name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Service Plan Name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plan Price]"
+                          dataType="decimal"
+                          name="Service Plan Price"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Additional Local Airtime]"
+                          dataType="decimal"
+                          name="Additional Local Airtime"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Over Under]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="Over Under" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Contribution To Pool]"
+                          dataType="decimal"
+                          name="Contribution To Pool"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Service Plans Pooled]"
+                          dataType="decimal"
+                          name="Service Plans Pooled"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ser  Pl  Not Pooled]"
+                          dataType="decimal"
+                          name="Ser  Pl  Not Pooled"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Long Distance Charges]"
+                          dataType="decimal"
+                          name="Long Distance Charges"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Roaming Charges]"
+                          dataType="decimal"
+                          name="Roaming Charges"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Do More Data Services]"
+                          dataType="decimal"
+                          name="Do More Data Services"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Do More Voice Services]"
+                          dataType="decimal"
+                          name="Do More Voice Services"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Pager Services]"
+                          dataType="decimal"
+                          name="Pager Services"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Value-Added Services]"
+                          dataType="decimal"
+                          name="Value-Added Services"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Other Charges And Credits]"
+                          dataType="decimal"
+                          name="Other Charges And Credits"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Other Fees]"
+                          dataType="decimal"
+                          name="Other Fees"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[PST QST HST]"
+                          dataType="decimal"
+                          name="PST QST HST"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Subtotal Before GST]"
+                          dataType="decimal"
+                          name="Subtotal Before GST"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[GST]"
+                          dataType="decimal"
+                          name="GST"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total]"
+                          dataType="decimal"
+                          name="Total"
+                          scale="2" />
+                      </externalMetadataColumns>
+                    </output>
+                    <output
+                      refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output]"
+                      isErrorOut="true"
+                      name="Flat File Source Error Output">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          codePage="1252"
+                          dataType="text"
+                          description="Flat File Source Error Output Column"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                          name="Flat File Source Error Output Column" />
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+                <component
+                  refId="Package\Foreach Import File\load import file to staging table\staging table"
+                  componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+                  contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                  description="OLE DB Destination"
+                  name="staging table"
+                  usesDispositions="true"
+                  version="4">
+                  <properties>
+                    <property
+                      dataType="System.Int32"
+                      description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                      name="CommandTimeout">0</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the name of the database object used to open a rowset."
+                      name="OpenRowset">[staging].[telus_mobility_group_summary]</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies the variable that contains the name of the database object used to open a rowset."
+                      name="OpenRowsetVariable"></property>
+                    <property
+                      dataType="System.String"
+                      description="The SQL command to be executed."
+                      name="SqlCommand"
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the column code page to use when code page information is unavailable from the data source."
+                      name="DefaultCodePage">1252</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Forces the use of the DefaultCodePage property value when describing character data."
+                      name="AlwaysUseDefaultCodePage">false</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies the mode used to access the database."
+                      name="AccessMode"
+                      typeConverter="AccessMode">3</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepIdentity">false</property>
+                    <property
+                      dataType="System.Boolean"
+                      description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                      name="FastLoadKeepNulls">false</property>
+                    <property
+                      dataType="System.String"
+                      description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                      name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                    <property
+                      dataType="System.Int32"
+                      description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                      name="FastLoadMaxInsertCommitSize">2147483647</property>
+                  </properties>
+                  <connections>
+                    <connection
+                      refId="Package\Foreach Import File\load import file to staging table\staging table.Connections[OleDbConnection]"
+                      connectionManagerID="{4A76E978-D67D-4666-9DE2-EEA3F0B6E751}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[arrowkpi]"
+                      description="The OLE DB runtime connection used to access the database."
+                      name="OleDbConnection" />
+                  </connections>
+                  <inputs>
+                    <input
+                      refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input]"
+                      errorOrTruncationOperation="Insert"
+                      errorRowDisposition="FailComponent"
+                      hasSideEffects="true"
+                      name="OLE DB Destination Input">
+                      <inputColumns>
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[GST]"
+                          cachedDataType="decimal"
+                          cachedName="GST"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[gst]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[GST]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Total]"
+                          cachedDataType="decimal"
+                          cachedName="Total"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Total]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Unit Number]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="10"
+                          cachedName="Unit Number"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[phone_number]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Unit Number]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[User Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="User Name"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[User Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Additional User Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Additional User Name"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[additional_username]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional User Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Service Plan Name]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Service Plan Name"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plan_name]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Name]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Service Plan Price]"
+                          cachedDataType="decimal"
+                          cachedName="Service Plan Price"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plan_price]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plan Price]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Additional Local Airtime]"
+                          cachedDataType="decimal"
+                          cachedName="Additional Local Airtime"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[additional_local_airtime]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Additional Local Airtime]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Over Under]"
+                          cachedCodepage="1252"
+                          cachedDataType="str"
+                          cachedLength="100"
+                          cachedName="Over Under"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[over_under]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Over Under]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Contribution To Pool]"
+                          cachedDataType="decimal"
+                          cachedName="Contribution To Pool"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[contribution_to_pool]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Contribution To Pool]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Service Plans Pooled]"
+                          cachedDataType="decimal"
+                          cachedName="Service Plans Pooled"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plans_pooled]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Service Plans Pooled]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Ser  Pl  Not Pooled]"
+                          cachedDataType="decimal"
+                          cachedName="Ser  Pl  Not Pooled"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plans_not_pooled]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Ser  Pl  Not Pooled]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Long Distance Charges]"
+                          cachedDataType="decimal"
+                          cachedName="Long Distance Charges"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[long_distance_charges]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Long Distance Charges]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Roaming Charges]"
+                          cachedDataType="decimal"
+                          cachedName="Roaming Charges"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[roaming_charges]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Roaming Charges]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Do More Data Services]"
+                          cachedDataType="decimal"
+                          cachedName="Do More Data Services"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[do_more_data_services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Data Services]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Do More Voice Services]"
+                          cachedDataType="decimal"
+                          cachedName="Do More Voice Services"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[do_more_voice_services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Do More Voice Services]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Pager Services]"
+                          cachedDataType="decimal"
+                          cachedName="Pager Services"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[pager_services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Pager Services]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Value-Added Services]"
+                          cachedDataType="decimal"
+                          cachedName="Value-Added Services"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[value_added_services]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Value-Added Services]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Other Charges And Credits]"
+                          cachedDataType="decimal"
+                          cachedName="Other Charges And Credits"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[other_charges_and_credits]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Charges And Credits]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Other Fees]"
+                          cachedDataType="decimal"
+                          cachedName="Other Fees"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[other_fees]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Other Fees]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[PST QST HST]"
+                          cachedDataType="decimal"
+                          cachedName="PST QST HST"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[pst_qst_hst]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[PST QST HST]" />
+                        <inputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].Columns[Subtotal Before GST]"
+                          cachedDataType="decimal"
+                          cachedName="Subtotal Before GST"
+                          cachedScale="2"
+                          externalMetadataColumnId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[subtotal_before_gst]"
+                          lineageId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output].Columns[Subtotal Before GST]" />
+                      </inputColumns>
+                      <externalMetadataColumns
+                        isUsed="True">
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[phone_number]"
+                          codePage="1252"
+                          dataType="str"
+                          length="10"
+                          name="phone_number" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[username]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="username" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[additional_username]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="additional_username" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plan_name]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="service_plan_name" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plan_price]"
+                          dataType="numeric"
+                          name="service_plan_price"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[additional_local_airtime]"
+                          dataType="numeric"
+                          name="additional_local_airtime"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[over_under]"
+                          codePage="1252"
+                          dataType="str"
+                          length="100"
+                          name="over_under" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[contribution_to_pool]"
+                          dataType="numeric"
+                          name="contribution_to_pool"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plans_pooled]"
+                          dataType="numeric"
+                          name="service_plans_pooled"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[service_plans_not_pooled]"
+                          dataType="numeric"
+                          name="service_plans_not_pooled"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[long_distance_charges]"
+                          dataType="numeric"
+                          name="long_distance_charges"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[roaming_charges]"
+                          dataType="numeric"
+                          name="roaming_charges"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[do_more_data_services]"
+                          dataType="numeric"
+                          name="do_more_data_services"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[do_more_voice_services]"
+                          dataType="numeric"
+                          name="do_more_voice_services"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[pager_services]"
+                          dataType="numeric"
+                          name="pager_services"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[value_added_services]"
+                          dataType="numeric"
+                          name="value_added_services"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[other_charges_and_credits]"
+                          dataType="numeric"
+                          name="other_charges_and_credits"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[other_fees]"
+                          dataType="numeric"
+                          name="other_fees"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[pst_qst_hst]"
+                          dataType="numeric"
+                          name="pst_qst_hst"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[subtotal_before_gst]"
+                          dataType="numeric"
+                          name="subtotal_before_gst"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[gst]"
+                          dataType="numeric"
+                          name="gst"
+                          precision="9"
+                          scale="2" />
+                        <externalMetadataColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input].ExternalColumns[total]"
+                          dataType="cy"
+                          name="total" />
+                      </externalMetadataColumns>
+                    </input>
+                  </inputs>
+                  <outputs>
+                    <output
+                      refId="Package\Foreach Import File\load import file to staging table\staging table.Outputs[OLE DB Destination Error Output]"
+                      exclusionGroup="1"
+                      isErrorOut="true"
+                      name="OLE DB Destination Error Output"
+                      synchronousInputId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input]">
+                      <outputColumns>
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Import File\load import file to staging table\staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                          name="ErrorCode"
+                          specialFlags="1" />
+                        <outputColumn
+                          refId="Package\Foreach Import File\load import file to staging table\staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          dataType="i4"
+                          lineageId="Package\Foreach Import File\load import file to staging table\staging table.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                          name="ErrorColumn"
+                          specialFlags="2" />
+                      </outputColumns>
+                      <externalMetadataColumns />
+                    </output>
+                  </outputs>
+                </component>
+              </components>
+              <paths>
+                <path
+                  refId="Package\Foreach Import File\load import file to staging table.Paths[Flat File Source Output]"
+                  endId="Package\Foreach Import File\load import file to staging table\staging table.Inputs[OLE DB Destination Input]"
+                  name="Flat File Source Output"
+                  startId="Package\Foreach Import File\load import file to staging table\Flat File Source.Outputs[Flat File Source Output]" />
+              </paths>
+            </pipeline>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach Import File.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{BE48CD05-0033-4825-8C83-5B49EA1C9B33}"
+          DTS:From="Package\Foreach Import File\load import file to staging table"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach Import File\archive import file" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{4B305628-A403-4966-85F2-94FAD25AA799}"
+          DTS:ObjectName="{4B305628-A403-4966-85F2-94FAD25AA799}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::importFQFilename" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Merge staging into kpi"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{11ED4D98-0ECB-44E8-9DB1-16F66D84B15A}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge staging into kpi"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A76E978-D67D-4666-9DE2-EEA3F0B6E751}"
+          SQLTask:SqlStatementSource="exec [process].[merge_telus_mobility_staging_into_kpi_sp];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Staging Table"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{54DAE785-B24F-48BF-B258-5DC5580B2008}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Staging Table"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4A76E978-D67D-4666-9DE2-EEA3F0B6E751}"
+          SQLTask:SqlStatementSource="truncate table staging.telus_mobility_group_summary;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{8D823064-B2B1-464E-98F3-5D514E5F9B4C}"
+      DTS:From="Package\Truncate Staging Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Import File" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D44B694A-3BD9-4217-B1F3-708D808700A6}"
+      DTS:From="Package\Foreach Import File"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Merge staging into kpi" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="188,42"
+          Id="Package\Truncate Staging Table"
+          TopLeft="94,47" />
+        <NodeLayout
+          Size="226,42"
+          Id="Package\Foreach Import File\load import file to staging table"
+          TopLeft="23,25" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Foreach Import File\archive import file"
+          TopLeft="54,96" />
+        <EdgeLayout
+          Id="Package\Foreach Import File.PrecedenceConstraints[Constraint]"
+          TopLeft="136,67">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="False"
+          PanelSize="271,173"
+          Size="271,43"
+          Id="Package\Foreach Import File"
+          TopLeft="340.5,47" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="282,68.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.5,0"
+              Start="0,0"
+              End="51,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="184,42"
+          Id="Package\Merge staging into kpi"
+          TopLeft="670,47" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="611.5,68.25">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="58.5,0"
+              Start="0,0"
+              End="51,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="51,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Import File\load import file to staging table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="151,42"
+          Id="Package\Foreach Import File\load import file to staging table\Flat File Source"
+          TopLeft="114,46" />
+        <NodeLayout
+          Size="140,42"
+          Id="Package\Foreach Import File\load import file to staging table\staging table"
+          TopLeft="117,164" />
+        <EdgeLayout
+          Id="Package\Foreach Import File\load import file to staging table.Paths[Flat File Source Output]"
+          TopLeft="188.25,88">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,76"
+              Start="0,0"
+              End="0,68.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,68.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Import File\load import file to staging table\staging table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
