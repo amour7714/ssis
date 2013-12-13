@@ -12,16 +12,30 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
--- ===========================================================================================
+/**********************************************************************************************************************************
 -- Author:		Grant Schulte
 -- Create date: 2013-12-10
--- Description:	Provides GL detail data from a single company passed in as a parameter
--- ===========================================================================================
+-- Description:	Loads GL detail data into the dbo.finance_FactGL_staging table for use in loading of finance.FactGL table in DW
+
+
+Parameter Usage:
+
+	@company_code: 
+		if = 'ALL' (which is the default) then it will get the gl details for each company with GL installed
+		if = <a valid company code> then it will get the gl details for just that company
+
+	@lookback:
+		if > 0 then it will get the gl details for the last @lookback number of days
+		if = 0 (which is the default) then it will get the gl details for journals that have not already been processed into the DW
+
+		* for incremental DW loads, use @lookback = 0 and for full or partial loads (i.e. refresh last 60 days), use @lookback = 60
+
+***********************************************************************************************************************************/
 
 CREATE PROCEDURE dbo.get_GLDetailsForCompany_sp
 	@company_code varchar(8) = 'ALL',
 	@lookback int = 0,
-	@BatchID int = 0
+	@BatchID int = 0 -- comes from batch table on DW server, SSIS package gets this first and then passes into this SP
 AS
 BEGIN
 
@@ -116,40 +130,12 @@ BEGIN
 	-- at this point we have 2 temp tables telling us which companies have GL and AM (Asset Management) installed
 	-- **********************************************************************************************************
 
-	create table #tempGLDetailsAllCompanies (
-		  ApplyDate date
-		, TrxDate  date
-		, PostedDate  date
-		, PeriodEndDate  date
-		, OrganizationCode varchar(8)
-		, CompanyCode varchar(8)
-		, BranchCode varchar(8)
-		, DivisionCode varchar(8)
-		, ReferenceCode varchar(32)
-		, JournalTypeCode varchar(8)
-		, TrxCurrencyCode varchar(8)
-		, HomeCurrencyCode varchar(8)
-		, OperCurrencyCode varchar(8)
-		, CustomerCode varchar(8)
-		, VendorCode varchar(8)
-		, TransactionTypeCode varchar(8)
-		, GLAccountCode varchar(32)
-		, AssetCode varchar(16)
-		, journal_ctrl_num varchar(16)
-		, sequence_id int
-		, batch_ctrl_num varchar(16)
-		, trx_description varchar(30)
-		, trx_reference_1 varchar(16)
-		, trx_reference_2 varchar(16)
-		, username varchar(30)
-		, trx_amt float
-		, home_rate float
-		, home_amt float
-		, oper_rate float
-		, oper_amt float
-	);
+
+	-- clear the staging table so that it will contain only the new data about to be loaded
+	truncate table dbo.finance_FactGL_staging;
 
 
+	-- loop through the list of companies and insert new data into staging table
 
 	declare cur_companies cursor for
 		select [db_name]
@@ -164,10 +150,10 @@ BEGIN
 	begin
 
 		set @sql = '
-			insert into #tempGLDetailsAllCompanies (ApplyDate, TrxDate, PostedDate, PeriodEndDate, OrganizationCode, CompanyCode, BranchCode, DivisionCode, ReferenceCode, 
+			insert into dbo.finance_FactGL_staging (ApplyDate, TrxDate, PostedDate, PeriodEndDate, OrganizationCode, CompanyCode, BranchCode, DivisionCode, ReferenceCode, 
 													JournalTypeCode, TrxCurrencyCode, HomeCurrencyCode, OperCurrencyCode, CustomerCode, VendorCode, TransactionTypeCode, 
 													GLAccountCode, AssetCode, journal_ctrl_num, sequence_id, batch_ctrl_num, trx_description, trx_reference_1, trx_reference_2, 
-													username, trx_amt, home_rate, home_amt, oper_rate, oper_amt)
+													username, trx_amt, home_rate, home_amt, oper_rate, oper_amt, BatchID)
 			select 
 				  ApplyDate = isnull(convert(date, CoreReports.dbo.fnJulianToGregorianDate(glh.date_applied)), ''1900-01-01'')
 				, TrxDate = isnull(convert(date, CoreReports.dbo.fnJulianToGregorianDate(glh.date_entered)), ''1900-01-01'') --change to CASE with lookups into other tables for actual trx dates (based on transaction type which other tables to look at): for AR can always use artrx_all only, everything goes there
@@ -209,6 +195,7 @@ BEGIN
 				, home_amt = gld.balance
 				, oper_rate = gld.rate_oper
 				, oper_amt = gld.balance_oper
+				, BatchID = ' + convert(varchar(50), @BatchID) + '
 			from ' + @dbname + '.dbo.gltrxdet gld
 			left join ' + @dbname + '.dbo.gltrx_all glh on glh.journal_ctrl_num = gld.journal_ctrl_num
 			left join Epicor_Control.dbo.atsi_CompanyBranches cb on cb.branch_code = gld.seg2_code
@@ -235,8 +222,15 @@ BEGIN
 		if @lookback > 0 
 			set @sql = @sql + '
 				  and convert(date, CoreReports.dbo.fnJulianToGregorianDate(glh.date_applied)) > getdate() - ' + convert(varchar(4), @lookback);
+
 		else if @lookback = 0
-			set @sql = @sql + ''; --need the lookup to the tracking table here
+			set @sql = @sql + '
+				  and not exists (
+							select NULL
+							from dbo.finance_FactGL_tracking track
+							where track.company_code = glh.company_code
+								and track.journal_ctrl_num = glh.journal_ctrl_num
+					  )'; 
 
 
 
@@ -249,8 +243,6 @@ BEGIN
 		-- maybe here, maybe elsewhere in the processing... shouldn't finalize until the new data is actually in finance.FactGL
 
 
-
-
 		fetch next from cur_companies into @dbname;
 
 	end;
@@ -260,8 +252,6 @@ BEGIN
 
 	drop table #db_gl;
 	drop table #db_am;
-
-	select * from #tempGLDetailsAllCompanies;
 
 END
 GO
