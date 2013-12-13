@@ -2,8 +2,8 @@ USE dwloadobjects
 go
 
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'dbo.get_GLDetailsForCompany_sp') AND type in (N'P', N'PC'))
-	DROP PROCEDURE dbo.get_GLDetailsForCompany_sp
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'dbo.stage_GLDetailsForCompany_sp') AND type in (N'P', N'PC'))
+	DROP PROCEDURE dbo.stage_GLDetailsForCompany_sp
 go
 
 
@@ -32,7 +32,7 @@ Parameter Usage:
 
 ***********************************************************************************************************************************/
 
-CREATE PROCEDURE dbo.get_GLDetailsForCompany_sp
+CREATE PROCEDURE dbo.stage_GLDetailsForCompany_sp
 	@company_code varchar(8) = 'ALL',
 	@lookback int = 0,
 	@BatchID int = 0 -- comes from batch table on DW server, SSIS package gets this first and then passes into this SP
@@ -74,7 +74,8 @@ BEGIN
 		-- get list of all company databases
 		declare cur_dblistGL cursor for
 			select company_code, [db_name]
-			from Epicor_Control.dbo.ewcomp; 
+			from Epicor_Control.dbo.ewcomp
+			where company_code not in ('OLDRELOA','SLS'); -- don't want OldReload or StreamlineLearning
 		
 		open cur_dblistGL;
 	
@@ -109,7 +110,8 @@ BEGIN
 		-- get list of all company databases
 		declare cur_dblistAM cursor for
 			select [db_name]
-			from Epicor_Control.dbo.ewcomp; 
+			from Epicor_Control.dbo.ewcomp
+			where company_code not in ('OLDRELOA','SLS'); -- don't want OldReload or StreamlineLearning
 		
 		open cur_dblistAM;
 	
