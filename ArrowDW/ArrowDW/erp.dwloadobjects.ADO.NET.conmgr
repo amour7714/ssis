@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="erp dwloadobjects ADO NET"
+  DTS:DTSID="{07EECAF4-D126-4452-823D-ABEDAA92510C}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=localhost;User ID=dwssis;Initial Catalog=dwloadobjects;Persist Security Info=True;Application Name=SSIS-ArrowDW-{07EECAF4-D126-4452-823D-ABEDAA92510C}localhost.dwloadobjects.dwssis1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASBm/rPsanU6xO4y6RzIsAAAAAAACAAAAAAADZgAAwAAAABAAAACIBXLI3dxX47o2pKd4IYKRAAAAAASAAACgAAAAEAAAAFz27v0X5rG7o1be268MUHiAAAAAQFVoEEwO2SVM7NRnVVrqlszCwFlEq3CRL7yMCZULXP/zmP1b4UDi63wEsiW00KfIp98t9c4X1b74VDSTHRPmNLo+DY2QysWOscVMj6fRfEERsRhufvokVJpVVGaP2wrOZG1ikwILvm+wAtV+j/9LRs0R59fvweo315XGJG4Jd9UUAAAAJTdqZXl48e4oGteXUDvo4zFphJg=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="arrowdw"
+  DTS:DTSID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=localhost;User ID=dwssis;Initial Catalog=arrowdw;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASBm/rPsanU6xO4y6RzIsAAAAAAACAAAAAAADZgAAwAAAABAAAAD+WfDGOw3kBU4xbcGomXLRAAAAAASAAACgAAAAEAAAALw5BmiCBwA1KNgHLsmt9IaAAAAApG6fzrPGfnk06HlJOUUIHpWsI3KWNj02nIVHjhnH6O77b2Hx4IHh+AfWfgCQTVXBfmBGYmm6g/UJ2kQ9GNlnNOSoKyuY5LeOQN55wtttQkLQ1Awfc7hA58nQUhcc4bDaZ1QQJEuGGqaCZDC64Bdw6uY7k4+ZqtB2Mq4C8DBxPMQUAAAAxsc+vmF6ydktERKnr1EHP+S8sEo=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

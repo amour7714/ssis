@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="erp dwloadobjects"
+  DTS:DTSID="{44F1E26B-63A0-45EC-9D06-5C997B8EB28F}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=localhost;User ID=dwssis;Initial Catalog=dwloadobjects;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASBm/rPsanU6xO4y6RzIsAAAAAAACAAAAAAADZgAAwAAAABAAAAABO8IUEIKoqgJ8SE+36IpwAAAAAASAAACgAAAAEAAAADKBN+yDx2IPNaw6vkS823+AAAAAVwq6d5pWtT209icyJlYyURf0Kn6CI70Mwr4rlU24Q3QJwToV+y21PvfNHzDUriJXoCzdtNWoO0SgChmvbRNFO29mgbHhzToOmu8jdUskDTqO6k+en3l4MHNwoZmYwGKvYltucQnNgDNZ20fXw+qCcMmH7vkQFMzWOQapZh86azwUAAAAB+dIqXdOFtVDcdmx/yHxUZZeJHw=</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
