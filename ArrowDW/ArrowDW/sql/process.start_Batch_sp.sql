@@ -27,20 +27,24 @@ BEGIN
 
 	declare @BatchID int = NEXT VALUE FOR process.BatchID; --get the next BatchID from the sequence
 
-	insert into [process].[Batch]
-		([BatchID]
-		,[BatchDescript]
-		,[StartDateTime]
-		,[EndDateTime]
-		,[BatchStatus]
-		,[ErrorMessage])
-	values
-		(@BatchID
-		,@BatchDescript
-		,getdate()
-		,NULL
-		,'r' --running
-		,'');
+    insert into [process].[Batch]
+        ([BatchID]
+        ,[BatchDescript]
+        ,[StartDateTime]
+        ,[EndDateTime]
+        ,[BatchStatus]  
+        ,[NumRowsInserted]
+        ,[NumRowsUpdated]
+        ,[ErrorMessage])
+    values
+        (@BatchID
+        ,@BatchDescript
+        ,getdate()
+        ,NULL
+        ,'r' --running  
+        ,0
+        ,0
+        ,'');
 
 	return @BatchID;
 
