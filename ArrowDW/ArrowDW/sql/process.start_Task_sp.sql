@@ -12,11 +12,11 @@ SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
 GO
-/********************************************************************************
+/**********************************************************************************************************************************
 -- Author:		Grant Schulte
 -- Create date: 2013-12-16
--- Description:	Creates a new task in process.Task from the parameters passed in 
-*********************************************************************************/
+-- Description:	Creates a new task in process.Task from the parameters passed in, returns the TaskID to be able to update it later
+***********************************************************************************************************************************/
 
 CREATE PROCEDURE process.start_Task_sp
 	@BatchID int,
@@ -25,6 +25,8 @@ AS
 BEGIN
 
 	SET NOCOUNT ON;
+
+	declare @TaskID int = NEXT VALUE FOR process.TaskID; --get the next TaskID from the sequence
 
 	INSERT INTO [process].[Task]
            ([BatchID]
@@ -44,6 +46,9 @@ BEGIN
            ,0
            ,0
            ,'')
+
+	
+	return @TaskID;
 
 END
 GO
