@@ -2,8 +2,8 @@ USE arrowdw
 go
 
 
-IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'process.create_Batch_sp') AND type in (N'P', N'PC'))
-	DROP PROCEDURE process.create_Batch_sp
+IF EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'process.start_Batch_sp') AND type in (N'P', N'PC'))
+	DROP PROCEDURE process.start_Batch_sp
 go
 
 
@@ -18,7 +18,7 @@ GO
 -- Description:	Creates a new batch in process.Batch from the parameters passed in and returns the BatchID to the calling process
 ***********************************************************************************************************************************/
 
-CREATE PROCEDURE process.create_Batch_sp
+CREATE PROCEDURE process.start_Batch_sp
 	@BatchDescript varchar(100)
 AS
 BEGIN
