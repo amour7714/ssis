@@ -26,11 +26,24 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ARROW100010</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAASBm/rPsanU6xO4y6RzIsAAAAAAACAAAAAAADZgAAwAAAABAAAABg7BgDbjgg7hLMf/3a8OENAAAAAASAAACgAAAAEAAAAPhNL5ILcayk46rHQMvItVGIAAAA/oB77apGG+m8XrxTnIIrUpzIBdbbWAON/tRx00A72w6ynkkgnLSgqzOUOr7syhN4za8D3PpO9k0siYV0AntaYK2oq6nZPPJ76naXWa7FH44CoU2ROYqRnjeraOiniThq7urUhQrTglUc2kYDiE+nrYJEWxivOQsp20D2gg3PtffZFEL13sWewRQAAAB2m4YZPXSQvclvW/9XNYCTqeMC8Q==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYkvcOPxhE0iF8V36gCcfmAAAAAACAAAAAAADZgAAwAAAABAAAADR/OBJ+js81irER5BA3mI+AAAAAASAAACgAAAAEAAAADfRKp9y0TombWVyEUw9TpCIAAAA6Qh/YHLtHPVAfoHDutjKEevZbC+FM9RMj+xW8a8PldkGVNNfXpoLyt7tCWR7M6ctbFwLu2H5nLGJ1TEHG9/US3h/MdtO+fV6JydDDJhohOHOAEqTL0r+qRBsz7aN+yBH+VwWpIht4dKuAd8IG806f8kKR23XBaXBmgb//FtYYalRBRW+DpqP4hQAAADyZHIbMlFu6sXbZkbDS9T4n79Tsg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Finance - Stage FactGL.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Finance - STAGING.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Finance - Stage DimJournalType.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Finance - Stage DimTransactionType.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimOrganization.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - STAGING.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="DW - STAGING.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimCompany.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimCustomer.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimVendor.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimAsset.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimReferenceCode.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimGLAccount.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Conformed - Stage DimBranch.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="erp.dwloadobjects.conmgr" />
@@ -404,10 +417,231 @@
                 <SSIS:Property SSIS:Name="Name">Finance - Stage FactGL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">48</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A3B2C4B8-4E31-460E-A47D-B21919E7A599}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C76E6DBE-4779-413D-9462-846825A3F567}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Finance - STAGING.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9001456A-0640-4D1F-91B4-3E7436D26770}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Finance - STAGING</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">14</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{5F8CE5A0-B620-4ABE-AF03-40BC04A827E3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Finance - Stage DimJournalType.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{F4D002D3-AF92-480A-8A65-BFBB747D64B8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Finance - Stage DimJournalType</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{BAF218DF-5F69-4543-87EB-8B576127A867}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Finance - Stage DimTransactionType.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{21316977-3404-4189-A5E2-D8A8FE088DB8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Finance - Stage DimTransactionType</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{8047D725-E4E6-420E-AD36-7E0DB0CA4C82}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimOrganization.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9402C0BF-BA88-42FB-B601-FF24DE127336}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimOrganization</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D812A3FB-5677-4830-9BEA-5C8DB77066F4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - STAGING.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{1D960173-5849-4BA7-8167-D0CD30B05958}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - STAGING</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{180BACCE-167C-4AE2-8D6F-3528F5B5EFEB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="DW - STAGING.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{9E6571A9-25EB-4621-B711-EE0B22231BC8}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">DW - STAGING</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AA6B096C-556E-4CC1-A57D-B26CBF9D7C2D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimCompany.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{D987E4D9-6DC7-42E0-B3DE-F9DDEEE6B896}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimCompany</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{64E70102-5E62-43F4-AF13-8167EC0C1841}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimCustomer.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{4E308369-6A2D-4834-A8CC-BDD6D28DCD62}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimCustomer</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F303B05D-02F4-4E91-BF29-774C8DE95B67}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimVendor.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{D3340287-8E4A-40FE-8CA8-24CA889AFF9E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimVendor</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">25</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AC792385-0F4E-4F8D-808D-3D1C41290FE5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimAsset.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{B7CA3D48-BFBC-4AFE-93A4-C1E594D17EBB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimAsset</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E266B06E-0A78-4C67-A057-654CCF7883B2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimReferenceCode.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{8EBC956B-31F2-43E2-AB35-F3806BF22D85}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimReferenceCode</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EEBB5EDA-9A73-49AD-991D-8CBD3A356692}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimGLAccount.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{35E79322-3E84-4C55-A16B-3DC9F497B21E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimGLAccount</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{40AC485C-A75B-4EF2-AC7C-D7F86B9661E4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Conformed - Stage DimBranch.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BF539647-D56D-4AD1-9ED4-88723EAACCEF}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Conformed - Stage DimBranch</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{49EC84E4-49C5-4715-B8D0-C8FFD23FAED4}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

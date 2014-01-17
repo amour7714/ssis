@@ -28,8 +28,9 @@ BEGIN
 
 	declare @TaskID int = NEXT VALUE FOR process.TaskID; --get the next TaskID from the sequence
 
-	INSERT INTO [process].[Task]
-           ([BatchID]
+    INSERT INTO [process].[Task]
+           ([TaskID]
+           ,[BatchID]
            ,[TaskDescript]
            ,[StartDateTime]
            ,[EndDateTime]
@@ -38,7 +39,8 @@ BEGIN
            ,[NumRowsUpdated]
            ,[ErrorMessage])
      VALUES
-           (@BatchID
+           (@TaskID
+           ,@BatchID
            ,@TaskDescript
            ,getdate()
            ,NULL
