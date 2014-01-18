@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - STAGING"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{CB6775F1-C2B9-4C4D-9AA2-DBD8139CFBD9}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{D25499C9-D8FD-4679-B725-5588B9056256}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -190,6 +190,25 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Execute Conformed - Stage DimDivision"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{9c685d54-30cf-4116-93a0-2e4808805505}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Conformed - Stage DimDivision"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>Conformed - Stage DimDivision.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Execute Conformed - Stage DimGLAccount"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
@@ -323,6 +342,14 @@
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
       DTS:To="Package\Execute Conformed - Stage DimBranch" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{DD837079-7934-4DF5-AF80-5646A65A436B}"
+      DTS:From="Package\Execute Conformed - Stage DimBranch"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Execute Conformed - Stage DimDivision" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -335,33 +362,33 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="274,42"
           Id="Package\Execute Conformed - Stage DimCompany"
-          TopLeft="173.375,105.666666666667" />
+          TopLeft="171.152777777778,104.25" />
         <NodeLayout
           Size="275,42"
           Id="Package\Execute Conformed - Stage DimCustomer"
-          TopLeft="172.875,182.333333333333" />
+          TopLeft="170.652777777778,179.5" />
         <NodeLayout
           Size="289,42"
           Id="Package\Execute Conformed - Stage DimOrganization"
-          TopLeft="165.875,29" />
+          TopLeft="163.652777777778,29" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="310.375,71">
+          TopLeft="308.152777777778,71">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.6666666666667"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="0,27.1666666666667">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1666666666667" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -372,18 +399,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="310.375,147.666666666667">
+          TopLeft="308.152777777778,146.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.6666666666667"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="0,27.1666666666667">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1666666666667" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -395,21 +422,21 @@
         <NodeLayout
           Size="263,42"
           Id="Package\Execute Conformed - Stage DimVendor"
-          TopLeft="178.875,259" />
+          TopLeft="176.652777777778,254.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="310.375,224.333333333333">
+          TopLeft="308.152777777778,221.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.6666666666667"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="0,27.1666666666667">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1666666666667" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -421,33 +448,21 @@
         <NodeLayout
           Size="255,42"
           Id="Package\Execute Conformed - Stage DimAsset"
-          TopLeft="174.875,338" />
+          TopLeft="180.652777777778,330" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="310.375,301">
+          TopLeft="308.152777777778,296.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8,37"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="-8,29.5">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.5"
-                    Point2="0,18.5"
-                    Point3="-4,18.5" />
-                  <mssgle:LineSegment
-                    End="-4,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-4,18.5"
-                    Point2="-8,18.5"
-                    Point3="-8,22.5" />
-                  <mssgle:LineSegment
-                    End="-8,29.5" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -459,33 +474,21 @@
         <NodeLayout
           Size="301,42"
           Id="Package\Execute Conformed - Stage DimReferenceCode"
-          TopLeft="159.875,413" />
+          TopLeft="157.652777777778,405.25" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="302.375,380">
+          TopLeft="308.152777777778,372">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="8,33"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="8,25.5">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,12.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,12.5"
-                    Point2="0,16.5"
-                    Point3="4,16.5" />
-                  <mssgle:LineSegment
-                    End="4,16.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="4,16.5"
-                    Point2="8,16.5"
-                    Point3="8,20.5" />
-                  <mssgle:LineSegment
-                    End="8,25.5" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -497,21 +500,21 @@
         <NodeLayout
           Size="280,42"
           Id="Package\Execute Conformed - Stage DimGLAccount"
-          TopLeft="168.875,482" />
+          TopLeft="168.152777777778,480.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="309.625,455">
+          TopLeft="308.152777777778,447.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="0,19.5">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.5" />
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -523,21 +526,47 @@
         <NodeLayout
           Size="263,42"
           Id="Package\Execute Conformed - Stage DimBranch"
-          TopLeft="174.875,553" />
+          TopLeft="176.652777777778,555.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="307.625,524">
+          TopLeft="308.152777777778,522.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29"
+              EndConnector="0,33.25"
               Start="0,0"
-              End="0,21.5">
+              End="0,25.75">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.5" />
+                    End="0,25.75" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="266,42"
+          Id="Package\Execute Conformed - Stage DimDivision"
+          TopLeft="175.152777777778,631" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="308.152777777778,597.75">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33.25"
+              Start="0,0"
+              End="0,25.75">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.75" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

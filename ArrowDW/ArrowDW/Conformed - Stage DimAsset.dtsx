@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - Stage DimAsset"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{E266B06E-0A78-4C67-A057-654CCF7883B2}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{B9DB46C7-899B-43ED-8520-5AB36D6C9EB8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -321,17 +321,6 @@
                       name="active"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
-                      name="vendor_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
                       codePage="1252"
                       dataType="str"
@@ -343,15 +332,6 @@
                       name="company_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_id]"
-                      dataType="i2"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_id]"
-                      name="company_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
                       codePage="1252"
                       dataType="str"
@@ -361,15 +341,6 @@
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
                       name="company_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[co_asset_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[co_asset_id]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[co_asset_id]"
-                      name="co_asset_id"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[asset_ctrl_num]"
@@ -405,48 +376,6 @@
                       name="description_basic"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[description_full]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[description_full]"
-                      length="75"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[description_full]"
-                      name="description_full"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[status]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[status]"
-                      length="10"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[status]"
-                      name="status"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[activity_state]"
-                      dataType="ui1"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[activity_state]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[activity_state]"
-                      name="activity_state"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[activity_description]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[activity_description]"
-                      length="14"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[activity_description]"
-                      name="activity_description"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[asset_type_code]"
                       codePage="1252"
                       dataType="str"
@@ -469,115 +398,6 @@
                       name="asset_type_description"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[relationship_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[relationship_code]"
-                      length="9"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[relationship_code]"
-                      name="relationship_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[branch_in_use]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[branch_in_use]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[branch_in_use]"
-                      name="branch_in_use"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[branch_owner]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[branch_owner]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[branch_owner]"
-                      name="branch_owner"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[model_year]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[model_year]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[model_year]"
-                      name="model_year"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[plate_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[plate_number]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[plate_number]"
-                      name="plate_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_acquisition]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_acquisition]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_acquisition]"
-                      name="date_acquisition"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_license_issue]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_license_issue]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_license_issue]"
-                      name="date_license_issue"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_license_expiry]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_license_expiry]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_license_expiry]"
-                      name="date_license_expiry"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_insur_expiry]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_insur_expiry]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_insur_expiry]"
-                      name="date_insur_expiry"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[axle_config]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[axle_config]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[axle_config]"
-                      name="axle_config"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[tare_weight]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[tare_weight]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[tare_weight]"
-                      name="tare_weight"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[gl_reference_code]"
                       codePage="1252"
                       dataType="str"
@@ -587,234 +407,6 @@
                       length="32"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[gl_reference_code]"
                       name="gl_reference_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[original_cost]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[original_cost]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[original_cost]"
-                      name="original_cost"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_type]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_type]"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_type]"
-                      name="lease_type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[category_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[category_code]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[category_code]"
-                      name="category_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[policy_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[policy_number]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[policy_number]"
-                      name="policy_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_last_modified]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_last_modified]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[date_last_modified]"
-                      name="date_last_modified"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[modified_by_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[modified_by_id]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[modified_by_id]"
-                      name="modified_by_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[modified_by_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[modified_by_name]"
-                      length="30"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[modified_by_name]"
-                      name="modified_by_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_number]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_number]"
-                      name="lease_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_company]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_company]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_company]"
-                      name="lease_company"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_term]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_term]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_term]"
-                      name="lease_term"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_expiry_date]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_expiry_date]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_expiry_date]"
-                      name="lease_expiry_date"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[residual_amount]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[residual_amount]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[residual_amount]"
-                      name="residual_amount"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[monthly_expense]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[monthly_expense]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[monthly_expense]"
-                      name="monthly_expense"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[manufacturer]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[manufacturer]"
-                      name="manufacturer"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[model_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[model_number]"
-                      length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[model_number]"
-                      name="model_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[serial_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[serial_number]"
-                      length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[serial_number]"
-                      name="serial_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[customer_unit_num]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[customer_unit_num]"
-                      length="22"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[customer_unit_num]"
-                      name="customer_unit_num"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[customer_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[customer_code]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[customer_code]"
-                      name="customer_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[contract_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[contract_number]"
-                      length="16"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[contract_number]"
-                      name="contract_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_description]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_description]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_description]"
-                      name="vendor_description"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[license_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[license_prov]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[license_prov]"
-                      name="license_prov"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[insur_company]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[insur_company]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[insur_company]"
-                      name="insur_company"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[owner_type_code]"
@@ -837,28 +429,6 @@
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[owner_type]"
                       name="owner_type"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[leaseop_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[leaseop_code]"
-                      length="9"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[leaseop_code]"
-                      name="leaseop_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[leaseop_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[leaseop_name]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[leaseop_name]"
-                      name="leaseop_name"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -1164,22 +734,12 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       name="company_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_id]"
-                      dataType="i2"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_id]"
-                      name="company_id" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
                       name="company_name" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[co_asset_id]"
-                      dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[co_asset_id]"
-                      name="co_asset_id" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[asset_ctrl_num]"
                       codePage="1252"
@@ -1202,39 +762,6 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[description_basic]"
                       name="description_basic" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[description_full]"
-                      codePage="1252"
-                      dataType="str"
-                      length="75"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[description_full]"
-                      name="description_full" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[status]"
-                      name="status" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
-                      name="vendor_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[activity_state]"
-                      dataType="ui1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[activity_state]"
-                      name="activity_state" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[activity_description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[activity_description]"
-                      name="activity_description" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[asset_type_code]"
                       codePage="1252"
                       dataType="str"
@@ -1249,71 +776,6 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[asset_type_description]"
                       name="asset_type_description" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[relationship_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[relationship_code]"
-                      name="relationship_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[branch_in_use]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[branch_in_use]"
-                      name="branch_in_use" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[branch_owner]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[branch_owner]"
-                      name="branch_owner" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[model_year]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[model_year]"
-                      name="model_year" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[plate_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[plate_number]"
-                      name="plate_number" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_acquisition]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_acquisition]"
-                      name="date_acquisition" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_license_issue]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_license_issue]"
-                      name="date_license_issue" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_license_expiry]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_license_expiry]"
-                      name="date_license_expiry" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_insur_expiry]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_insur_expiry]"
-                      name="date_insur_expiry" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[axle_config]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[axle_config]"
-                      name="axle_config" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[tare_weight]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[tare_weight]"
-                      name="tare_weight" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[gl_reference_code]"
                       codePage="1252"
                       dataType="str"
@@ -1321,152 +783,12 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[gl_reference_code]"
                       name="gl_reference_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[original_cost]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[original_cost]"
-                      name="original_cost" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_type]"
-                      name="lease_type" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[category_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[category_code]"
-                      name="category_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[policy_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[policy_number]"
-                      name="policy_number" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_last_modified]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[date_last_modified]"
-                      name="date_last_modified" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[modified_by_id]"
-                      dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[modified_by_id]"
-                      name="modified_by_id" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[modified_by_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[modified_by_name]"
-                      name="modified_by_name" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_number]"
-                      name="lease_number" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_company]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_company]"
-                      name="lease_company" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_term]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_term]"
-                      name="lease_term" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_expiry_date]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_expiry_date]"
-                      name="lease_expiry_date" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[residual_amount]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[residual_amount]"
-                      name="residual_amount" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[monthly_expense]"
-                      dataType="r8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[monthly_expense]"
-                      name="monthly_expense" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[manufacturer]"
-                      name="manufacturer" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[model_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[model_number]"
-                      name="model_number" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[serial_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[serial_number]"
-                      name="serial_number" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[customer_unit_num]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[customer_unit_num]"
-                      name="customer_unit_num" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[customer_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[customer_code]"
-                      name="customer_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[contract_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="16"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[contract_number]"
-                      name="contract_number" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       name="active" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_description]"
-                      name="vendor_description" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[license_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[license_prov]"
-                      name="license_prov" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[insur_company]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[insur_company]"
-                      name="insur_company" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[owner_type_code]"
                       codePage="1252"
@@ -1481,20 +803,6 @@
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[owner_type]"
                       name="owner_type" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[leaseop_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[leaseop_code]"
-                      name="leaseop_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[leaseop_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[leaseop_name]"
-                      name="leaseop_name" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -2011,21 +1319,43 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="248,42"
-          Id="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW"
-          TopLeft="199.166666666667,302" />
-        <NodeLayout
           Size="297,42"
           Id="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server"
           TopLeft="174.666666666667,55" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy data to the staging table in the DW\Row Count"
+          TopLeft="258.166666666667,222" />
         <NodeLayout
           Size="175,42"
           Id="Package\Copy data to the staging table in the DW\Add BatchID column"
           TopLeft="235.666666666667,146" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Copy data to the staging table in the DW\Row Count"
-          TopLeft="258.166666666667,222" />
+          Size="248,42"
+          Id="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW"
+          TopLeft="199.166666666667,302" />
+        <EdgeLayout
+          Id="Package\Copy data to the staging table in the DW.Paths[Derived Column Output]"
+          TopLeft="323.166666666667,188">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,34"
+              Start="0,0"
+              End="0,26.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
           TopLeft="323.166666666667,264">
@@ -2070,44 +1400,9 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[Derived Column Output]"
-          TopLeft="323.166666666667,188">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,34"
-              Start="0,0"
-              End="0,26.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,26.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server">
     <Properties>
@@ -2118,6 +1413,19 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
