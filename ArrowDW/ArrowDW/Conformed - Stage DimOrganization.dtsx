@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - Stage DimOrganization"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{D812A3FB-5677-4830-9BEA-5C8DB77066F4}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{2061EEB4-AC53-4D39-8ED8-9F09D564E733}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -333,10 +333,12 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active_flag]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active_flag]"
+                      length="1"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active_flag]"
                       name="active_flag"
                       truncationRowDisposition="FailComponent" />
@@ -357,7 +359,9 @@
                       name="organization_name" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active_flag]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
                       name="active_flag" />
                   </externalMetadataColumns>
                 </output>
@@ -382,7 +386,9 @@
                       name="organization_name" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active_flag]"
-                      dataType="i4"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active_flag]"
                       name="active_flag" />
                     <outputColumn
@@ -527,7 +533,9 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[organization_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimOrganization in DW.Inputs[OLE DB Destination Input].Columns[active_flag]"
-                      cachedDataType="i4"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
                       cachedName="active_flag"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimOrganization in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Organization_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active_flag]" />
@@ -798,28 +806,6 @@
           Size="282,42"
           Id="Package\Copy data to the staging table in the DW\staging conformed_DimOrganization in DW"
           TopLeft="186.958333333334,306" />
-        <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="327.958333333334,97">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,40"
-              Start="0,0"
-              End="0,32.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
         <NodeLayout
           Size="130,42"
           Id="Package\Copy data to the staging table in the DW\Row Count"
@@ -860,6 +846,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
+          TopLeft="327.958333333334,97">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

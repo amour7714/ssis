@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Finance - Stage DimJournalType"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{BAF218DF-5F69-4543-87EB-8B576127A867}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{790A8750-701E-45A0-A0B0-6C1458D9BAC2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -768,6 +768,32 @@
           Size="264,42"
           Id="Package\Copy the Journal Types to the staging table in the DW\staging finance_DimJournalType in DW"
           TopLeft="192.5,300" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy the Journal Types to the staging table in the DW\Row Count"
+          TopLeft="259.5,216" />
+        <EdgeLayout
+          Id="Package\Copy the Journal Types to the staging table in the DW.Paths[Row Count Output 1]"
+          TopLeft="324.5,258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Copy the Journal Types to the staging table in the DW.Paths[OLE DB Source Output]"
           TopLeft="324.5,97">
@@ -790,10 +816,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Copy the Journal Types to the staging table in the DW\Row Count"
-          TopLeft="259.5,216" />
         <EdgeLayout
           Id="Package\Copy the Journal Types to the staging table in the DW.Paths[Derived Column Output]"
           TopLeft="324.5,179">
@@ -808,28 +830,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,29.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Copy the Journal Types to the staging table in the DW.Paths[Row Count Output 1]"
-          TopLeft="324.5,258">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,42"
-              Start="0,0"
-              End="0,34.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,34.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

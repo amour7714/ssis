@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Finance - Stage DimTransactionType"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{8047D725-E4E6-420E-AD36-7E0DB0CA4C82}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{65197CA2-3921-4A7F-B344-DCBF0E3A08FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -333,10 +333,12 @@
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]"
-                      dataType="i2"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type]"
+                      length="6"
                       lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]"
                       name="trx_type"
                       truncationRowDisposition="FailComponent" />
@@ -357,7 +359,9 @@
                       name="trx_type_desc" />
                     <externalMetadataColumn
                       refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type]"
-                      dataType="i2"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
                       name="trx_type" />
                   </externalMetadataColumns>
                 </output>
@@ -382,7 +386,9 @@
                       name="trx_type_desc" />
                     <outputColumn
                       refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type]"
-                      dataType="i2"
+                      codePage="1252"
+                      dataType="str"
+                      length="6"
                       lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type]"
                       name="trx_type" />
                     <outputColumn
@@ -527,7 +533,9 @@
                       lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_desc]" />
                     <inputColumn
                       refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].Columns[trx_type]"
-                      cachedDataType="i2"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="6"
                       cachedName="trx_type"
                       externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeNumber]"
                       lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]" />
@@ -796,6 +804,32 @@
           Size="284,42"
           Id="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW"
           TopLeft="189.291666666667,285" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy the Transaction Types to the staging table in the DW\Row Count"
+          TopLeft="266.291666666667,214" />
+        <EdgeLayout
+          Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[Row Count Output 1]"
+          TopLeft="331.291666666667,256">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29"
+              Start="0,0"
+              End="0,21.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[OLE DB Source Output]"
           TopLeft="331.291666666667,97">
@@ -818,10 +852,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Copy the Transaction Types to the staging table in the DW\Row Count"
-          TopLeft="266.291666666667,214" />
         <EdgeLayout
           Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[Derived Column Output]"
           TopLeft="331.291666666667,179">
@@ -836,28 +866,6 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,27.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[Row Count Output 1]"
-          TopLeft="331.291666666667,256">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29"
-              Start="0,0"
-              End="0,21.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

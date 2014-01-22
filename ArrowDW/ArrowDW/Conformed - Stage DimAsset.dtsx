@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - Stage DimAsset"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{B9DB46C7-899B-43ED-8520-5AB36D6C9EB8}">
+  DTS:VersionBuild="29"
+  DTS:VersionGUID="{21D4BBEC-1EFA-4C53-B4C1-5E4674428192}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -327,7 +327,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
                       name="company_code"
                       truncationRowDisposition="FailComponent" />
@@ -382,7 +382,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[asset_type_code]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[asset_type_code]"
                       name="asset_type_code"
                       truncationRowDisposition="FailComponent" />
@@ -415,7 +415,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[owner_type_code]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[owner_type_code]"
                       name="owner_type_code"
                       truncationRowDisposition="FailComponent" />
@@ -440,31 +440,17 @@
                       length="1"
                       name="active" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="vendor_code" />
-                    <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="company_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_id]"
-                      dataType="i2"
-                      name="company_id" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="company_name" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[co_asset_id]"
-                      dataType="i4"
-                      name="co_asset_id" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[asset_ctrl_num]"
                       codePage="1252"
@@ -484,32 +470,10 @@
                       length="40"
                       name="description_basic" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[description_full]"
-                      codePage="1252"
-                      dataType="str"
-                      length="75"
-                      name="description_full" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="10"
-                      name="status" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[activity_state]"
-                      dataType="ui1"
-                      name="activity_state" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[activity_description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="14"
-                      name="activity_description" />
-                    <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[asset_type_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="asset_type_code" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[asset_type_description]"
@@ -518,188 +482,16 @@
                       length="40"
                       name="asset_type_description" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[relationship_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      name="relationship_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[branch_in_use]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="branch_in_use" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[branch_owner]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="branch_owner" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[model_year]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="model_year" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[plate_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="plate_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_acquisition]"
-                      dataType="dbTimeStamp"
-                      name="date_acquisition" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_license_issue]"
-                      dataType="dbTimeStamp"
-                      name="date_license_issue" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_license_expiry]"
-                      dataType="dbTimeStamp"
-                      name="date_license_expiry" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_insur_expiry]"
-                      dataType="dbTimeStamp"
-                      name="date_insur_expiry" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[axle_config]"
-                      dataType="r8"
-                      name="axle_config" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[tare_weight]"
-                      dataType="r8"
-                      name="tare_weight" />
-                    <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[gl_reference_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="gl_reference_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[original_cost]"
-                      dataType="r8"
-                      name="original_cost" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_type]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="lease_type" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[category_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="category_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[policy_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="policy_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[date_last_modified]"
-                      dataType="dbTimeStamp"
-                      name="date_last_modified" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[modified_by_id]"
-                      dataType="i4"
-                      name="modified_by_id" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[modified_by_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="modified_by_name" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="lease_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_company]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="lease_company" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_term]"
-                      dataType="r8"
-                      name="lease_term" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_expiry_date]"
-                      dataType="dbTimeStamp"
-                      name="lease_expiry_date" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[residual_amount]"
-                      dataType="r8"
-                      name="residual_amount" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[monthly_expense]"
-                      dataType="r8"
-                      name="monthly_expense" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[manufacturer]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="manufacturer" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[model_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="32"
-                      name="model_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[serial_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="32"
-                      name="serial_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[customer_unit_num]"
-                      codePage="1252"
-                      dataType="str"
-                      length="22"
-                      name="customer_unit_num" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[customer_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="customer_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[contract_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="16"
-                      name="contract_number" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="vendor_description" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[license_prov]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="license_prov" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[insur_company]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="insur_company" />
-                    <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[owner_type_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="owner_type_code" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[owner_type]"
@@ -707,18 +499,6 @@
                       dataType="str"
                       length="40"
                       name="owner_type" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[leaseop_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      name="leaseop_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[leaseop_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="leaseop_name" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -730,7 +510,7 @@
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       name="company_code" />
                     <outputColumn
@@ -765,7 +545,7 @@
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[asset_type_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[asset_type_code]"
                       name="asset_type_code" />
                     <outputColumn
@@ -793,7 +573,7 @@
                       refId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[owner_type_code]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[owner_type_code]"
                       name="owner_type_code" />
                     <outputColumn
@@ -963,7 +743,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[asset_type_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="asset_type_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeCode]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[asset_type_code]" />
@@ -979,7 +759,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[owner_type_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="owner_type_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeCode]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[owner_type_code]" />
@@ -1003,7 +783,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[company_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="company_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
@@ -1050,7 +830,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="AssetTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeName]"
@@ -1062,7 +842,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="AssetOwnerTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeName]"
@@ -1080,7 +860,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="CompanyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"

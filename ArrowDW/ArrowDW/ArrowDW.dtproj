@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ARROW100010</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYkvcOPxhE0iF8V36gCcfmAAAAAACAAAAAAADZgAAwAAAABAAAACe4aBBKVrc7KkwlnCA1J7jAAAAAASAAACgAAAAEAAAABfs8tNdlU2spctVIlV+oDiIAAAAPyJ50MneZYBrBF5aZ87LcC4iynyy+aHQZHf+4tUrMFTl3vrZxoQtvP1F5qNXow0XO3rlmcK8ybh/fmW2B81Pm5597E/lEJpSVfg5zsX0HQDqEyIqynFgSwDwaXuKm2oCLciOi1InsKJvT1V+ZEBirUtV4/Ih7D1pyXR7EEqNQ1gmSpoR5/DcGhQAAACkTOtmXKOqLz+Yeasm+fEJi5nBbg==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYkvcOPxhE0iF8V36gCcfmAAAAAACAAAAAAADZgAAwAAAABAAAAC+xqEusNXRKxZ8Jn842/smAAAAAASAAACgAAAAEAAAAHgJNTYx07OFQYyYs5ILgRKIAAAAkKJaPoQDmg72XgHixxaMLBKpqjehlrR5081Bn2uU4Rp2/npt1S/tmO2ZSueKzsleo1edxHLXTGn/7JUyBYUHsalcznk6eVz+RohON6KBsT6p9z/yTWOytaAHsDAiA8VIg1JCTdDfXhvZrLQrmEJ0L3H47yjgoapYbcJPX1FbR8u6NGB6x15hYRQAAAC4bGcvOkFRbqesefA73OwEvZrR1w==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -503,10 +503,10 @@
                 <SSIS:Property SSIS:Name="Name">Conformed - STAGING</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">24</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{CB6775F1-C2B9-4C4D-9AA2-DBD8139CFBD9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{D25499C9-D8FD-4679-B725-5588B9056256}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -588,10 +588,10 @@
                 <SSIS:Property SSIS:Name="Name">Conformed - Stage DimAsset</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E266B06E-0A78-4C67-A057-654CCF7883B2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B9DB46C7-899B-43ED-8520-5AB36D6C9EB8}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

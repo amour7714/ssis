@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - Stage DimVendor"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{AC792385-0F4E-4F8D-808D-3D1C41290FE5}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{6A3B54B0-78FB-4BDB-91B5-337F118113F3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -327,7 +327,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
-                      length="4"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]"
                       name="country"
                       truncationRowDisposition="FailComponent" />
@@ -338,7 +338,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
-                      length="4"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]"
                       name="state_prov"
                       truncationRowDisposition="FailComponent" />
@@ -388,13 +388,13 @@
                       refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       name="country" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       name="state_prov" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[city]"
@@ -439,14 +439,14 @@
                       refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
                       name="country" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
                       name="state_prov" />
                     <outputColumn
@@ -599,7 +599,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[country]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="4"
+                      cachedLength="15"
                       cachedName="country"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]" />
@@ -607,7 +607,7 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[state_prov]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="4"
+                      cachedLength="15"
                       cachedName="state_prov"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]" />
@@ -652,13 +652,13 @@
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       name="Country" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
                       codePage="1252"
                       dataType="str"
-                      length="4"
+                      length="15"
                       name="StateProv" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[City]"
