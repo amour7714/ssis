@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Conformed - Stage DimBranch"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{CE12740F-814A-45D8-A0BB-1478740BBB36}">
+  DTS:VersionBuild="26"
+  DTS:VersionGUID="{F6E4ECFB-E709-452B-B644-1C2D40280890}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -375,6 +375,28 @@
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
                       name="ActiveFlag"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchType]"
+                      length="20"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]"
+                      name="BranchType"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchParent]"
+                      length="8"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]"
+                      name="BranchParent"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -414,6 +436,18 @@
                       dataType="str"
                       length="1"
                       name="ActiveFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BranchType" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchParent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      name="BranchParent" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -435,6 +469,20 @@
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchName]"
                       name="BranchName" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchType]"
+                      name="BranchType" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchParent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="8"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchParent]"
+                      name="BranchParent" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[Country]"
                       codePage="1252"
@@ -635,6 +683,22 @@
                       cachedName="ActiveFlag"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[ActiveFlag]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchType]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="BranchType"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchType]"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchParent]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="8"
+                      cachedName="BranchParent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchParent]"
+                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -678,6 +742,18 @@
                       dataType="str"
                       length="50"
                       name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchType]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="BranchType" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchParent]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="BranchParent" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
