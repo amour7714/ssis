@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{94A14AE2-6E47-4E61-BED0-133D090DC7E1}"
+  DTS:DTSID="{83081EA2-174E-406A-B9F9-6D597471AB44}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Finance - Stage FactGL"
+  DTS:ObjectName="Stage - Finance FactGL"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{0881B167-4723-4809-A4E4-51C04A77301D}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{D97805AF-0C51-47E5-ADAE-98581286B7B4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Task1Descript">
       <DTS:VariableValue
-        DTS:DataType="8">Finance - Stage FactGL: Execute dwloadobjects.dbo.stage_GLDetailsForCompany_sp on the ERP db server</DTS:VariableValue>
+        DTS:DataType="8">Stage - Finance FactGL: Execute dwloadobjects.dbo.stage_GLDetailsForCompany_sp on the ERP db server</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -110,7 +110,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Task2Descript">
       <DTS:VariableValue
-        DTS:DataType="8">Finance - Stage FactGL: Copy GL tranactions from ERP server to staging table in the DW</DTS:VariableValue>
+        DTS:DataType="8">Stage - Finance FactGL: Copy GL tranactions from ERP server to staging table in the DW</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

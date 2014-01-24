@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{9001456A-0640-4D1F-91B4-3E7436D26770}"
+  DTS:DTSID="{17A8D009-AEF2-4548-8EE3-E8F93F09E74E}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Finance - STAGING"
+  DTS:ObjectName="STAGING - Finance"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{5F8CE5A0-B620-4ABE-AF03-40BC04A827E3}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{B1F52D62-386E-478B-B392-3D23010B7866}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -114,13 +114,13 @@
   </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Execute Finance - Stage DimJournalType"
+      DTS:refId="Package\Execute Stage - Finance DimJournalType"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{A8C0DCCA-AA24-41A1-8A41-CA37D456BA94}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Finance - Stage DimJournalType"
+      DTS:ObjectName="Execute Stage - Finance DimJournalType"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -128,18 +128,18 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Finance - Stage DimJournalType.dtsx</PackageName>
+          <PackageName>Stage - Finance DimJournalType.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Finance - Stage DimTransactionType"
+      DTS:refId="Package\Execute Stage - Finance DimTransactionType"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{790F9C8D-C0FF-4BD5-AD99-11C5DABC8FEC}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Finance - Stage DimTransactionType"
+      DTS:ObjectName="Execute Stage - Finance DimTransactionType"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -147,18 +147,18 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Finance - Stage DimTransactionType.dtsx</PackageName>
+          <PackageName>Stage - Finance DimTransactionType.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Finance - Stage FactGL"
+      DTS:refId="Package\Execute Stage - Finance FactGL"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{0613105F-1051-44A8-A27A-20E89AEA6CE2}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Finance - Stage FactGL"
+      DTS:ObjectName="Execute Stage - Finance FactGL"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -166,7 +166,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Finance - Stage FactGL.dtsx</PackageName>
+          <PackageName>Stage - Finance FactGL.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -176,18 +176,18 @@
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{6FEC8C40-C4E0-43B2-8F98-9E11A25BC1A9}"
-      DTS:From="Package\Execute Finance - Stage FactGL"
+      DTS:From="Package\Execute Stage - Finance FactGL"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute Finance - Stage DimJournalType" />
+      DTS:To="Package\Execute Stage - Finance DimJournalType" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{E96FF205-C555-4027-88C6-C402ABDA4ECE}"
-      DTS:From="Package\Execute Finance - Stage DimJournalType"
+      DTS:From="Package\Execute Stage - Finance DimJournalType"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Execute Finance - Stage DimTransactionType" />
+      DTS:To="Package\Execute Stage - Finance DimTransactionType" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -203,15 +203,15 @@
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="271,42"
-          Id="Package\Execute Finance - Stage DimJournalType"
+          Id="Package\Execute Stage - Finance DimJournalType"
           TopLeft="173.8,214.5" />
         <NodeLayout
           Size="292,42"
-          Id="Package\Execute Finance - Stage DimTransactionType"
+          Id="Package\Execute Stage - Finance DimTransactionType"
           TopLeft="163.3,295.25" />
         <NodeLayout
           Size="228,42"
-          Id="Package\Execute Finance - Stage FactGL"
+          Id="Package\Execute Stage - Finance FactGL"
           TopLeft="195.3,133.75" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"

@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{9402C0BF-BA88-42FB-B601-FF24DE127336}"
+  DTS:DTSID="{CCA92D18-BDF2-4551-8E53-DE54A60C2473}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Conformed - Stage DimOrganization"
+  DTS:ObjectName="Stage - Conformed DimOrganization"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{2061EEB4-AC53-4D39-8ED8-9F09D564E733}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{B323008D-FF3D-4242-A873-53101E30AB06}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -81,7 +81,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="TaskDescript">
       <DTS:VariableValue
-        DTS:DataType="8">Conformed - Stage DimOrganization</DTS:VariableValue>
+        DTS:DataType="8">Stage - Conformed DimOrganization</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{BF539647-D56D-4AD1-9ED4-88723EAACCEF}"
+  DTS:DTSID="{95582B55-AB81-4BBF-872E-3E4FC62E892F}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Conformed - Stage DimBranch"
+  DTS:ObjectName="Stage - Finance DimTransactionType"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{F6E4ECFB-E709-452B-B644-1C2D40280890}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{ED25AB0A-13F1-49C2-A3B0-FCBF21405883}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -21,7 +21,7 @@
       DTS:ConfigurationString="User::BatchID"
       DTS:ConfigurationVariable="\Package.Variables[User::BatchID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{E2A4D675-8382-40ED-8FB9-AF7ACF63B321}"
+      DTS:DTSID="{F39F908E-2E37-480E-9CAF-A64147F38893}"
       DTS:ObjectName="Get BatchID From Parent Package" />
   </DTS:Configurations>
   <DTS:LogProviders>
@@ -29,7 +29,7 @@
       DTS:ConfigString="arrowdw"
       DTS:CreationName="DTS.LogProviderSQLServer.3"
       DTS:Description="Writes log entries for events to a SQL Server database"
-      DTS:DTSID="{80A6E915-C25A-4B52-9ACE-8516964ED046}"
+      DTS:DTSID="{EF109781-FF34-4D29-A18D-1262E0D448A7}"
       DTS:ObjectName="SSIS log provider for SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -39,7 +39,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{8C921481-54B3-42C6-A378-6D616CE18679}"
+      DTS:DTSID="{03AD59E5-2C8E-4FBF-B1B4-40222D82987B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="BatchID">
@@ -48,7 +48,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{C09A0932-C393-4B81-B252-B331293888EC}"
+      DTS:DTSID="{27273E98-901F-46C8-BC85-566C7CD158D1}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ErrorMessage">
@@ -58,7 +58,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{77B56AC9-54D5-4CA7-8531-ACCFAF88342D}"
+      DTS:DTSID="{51007DC5-3E28-4E32-A21D-4B1D1BEB120A}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="NumRowsInserted">
@@ -67,7 +67,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{07D35013-53DA-46EB-A69A-EAD351B31DEA}"
+      DTS:DTSID="{9A4B51EE-AF47-4A2F-A569-1946F900623E}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="NumRowsUpdated">
@@ -76,16 +76,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{15A5F6E9-BEA7-4A86-BE6C-313F734A0797}"
+      DTS:DTSID="{A8A315BC-E9ED-474A-A351-D231D4D0163C}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TaskDescript">
       <DTS:VariableValue
-        DTS:DataType="8">Conformed - Stage DimBranch</DTS:VariableValue>
+        DTS:DataType="8">Stage - Finance DimTransactionType</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EF51E026-D32C-40F2-8B51-30DC925952D1}"
+      DTS:DTSID="{86D0760B-89BE-4FD9-A8E5-646DFC83979F}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TaskID">
@@ -155,18 +155,18 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{80A6E915-C25A-4B52-9ACE-8516964ED046}" />
+        DTS:InstanceID="{EF109781-FF34-4D29-A18D-1262E0D448A7}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Copy data to the staging table in the DW"
+      DTS:refId="Package\Copy the Transaction Types to the staging table in the DW"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{FC56D3E4-6902-4AD7-821C-ECB9B1B3A6F0}"
+      DTS:DTSID="{2D4E4435-F35D-41A7-BDF0-595EE5DDFC97}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Copy data to the staging table in the DW"
+      DTS:ObjectName="Copy the Transaction Types to the staging table in the DW"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -176,7 +176,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Copy data to the staging table in the DW\Add BatchID column"
+              refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column"
               componentClassID="{49928E82-9C4E-49F0-AABE-3812B82707EC}"
               contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
@@ -184,7 +184,7 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
                   description="Input to the Derived Column Transformation"
                   name="Derived Column Input">
                   <externalMetadataColumns />
@@ -192,18 +192,18 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output]"
                   description="Default Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   name="Derived Column Output"
-                  synchronousInputId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]"
                       dataType="i4"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]"
                       name="BatchID"
                       truncationRowDisposition="FailComponent">
                       <properties>
@@ -224,23 +224,23 @@
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output]"
                   description="Error Output of the Derived Column Transformation"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Derived Column Error Output"
-                  synchronousInputId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]">
+                  synchronousInputId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -249,11 +249,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server"
+              refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server"
               componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="atsi_Branch_vw in dwloadobjects on ERP server"
+              name="atsi_TransactionType_vw in dwloadobjects on ERP server"
               usesDispositions="true"
               version="7">
               <properties>
@@ -264,7 +264,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[atsi_Branch_vw]</property>
+                  name="OpenRowset">[dbo].[atsi_TransactionType_vw]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -298,7 +298,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
                   connectionManagerID="{44F1E26B-63A0-45EC-9D06-5C997B8EB28F}:external"
                   connectionManagerRefId="Project.ConnectionManagers[erp dwloadobjects]"
                   description="The OLE DB runtime connection used to access the database."
@@ -306,221 +306,101 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type_code]"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]"
-                      name="BranchCode"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_code]"
+                      name="trx_type_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchName]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_desc]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchName]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchName]"
-                      name="BranchName"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type_desc]"
+                      length="30"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_desc]"
+                      name="trx_type_desc"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[Country]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[Country]"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[Country]"
-                      name="Country"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[StateProv]"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[StateProv]"
-                      name="StateProv"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[City]"
-                      length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[City]"
-                      name="City"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
-                      length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
-                      name="ActiveFlag"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchType]"
-                      length="20"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]"
-                      name="BranchType"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchParent]"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]"
-                      name="BranchParent"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type]"
+                      length="6"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]"
+                      name="trx_type"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
-                      name="BranchCode" />
+                      name="trx_type_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchName]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type_desc]"
                       codePage="1252"
                       dataType="str"
-                      length="40"
-                      name="BranchName" />
+                      length="30"
+                      name="trx_type_desc" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[Country]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_type]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="StateProv" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="ActiveFlag" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="BranchType" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchParent]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="BranchParent" />
+                      length="6"
+                      name="trx_type" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
-                      name="BranchCode" />
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type_code]"
+                      name="trx_type_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchName]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type_desc]"
                       codePage="1252"
                       dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchName]"
-                      name="BranchName" />
+                      length="30"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type_desc]"
+                      name="trx_type_desc" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchType]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type]"
                       codePage="1252"
                       dataType="str"
-                      length="20"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchType]"
-                      name="BranchType" />
+                      length="6"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_type]"
+                      name="trx_type" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchParent]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchParent]"
-                      name="BranchParent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[Country]"
-                      name="Country" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[StateProv]"
-                      name="StateProv" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[City]"
-                      name="City" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
-                      name="ActiveFlag" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -529,7 +409,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\Copy data to the staging table in the DW\Row Count"
+              refId="Package\Copy the Transaction Types to the staging table in the DW\Row Count"
               componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
               contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
@@ -542,7 +422,7 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\Copy data to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
                   hasSideEffects="true"
                   name="Row Count Input 1">
                   <externalMetadataColumns />
@@ -550,19 +430,19 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\Row Count.Outputs[Row Count Output 1]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\Row Count.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
-                  synchronousInputId="Package\Copy data to the staging table in the DW\Row Count.Inputs[Row Count Input 1]">
+                  synchronousInputId="Package\Copy the Transaction Types to the staging table in the DW\Row Count.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW"
+              refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW"
               componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="staging conformed_DimBranch in DW"
+              name="staging finance_DimTransactionType in DW"
               usesDispositions="true"
               version="4">
               <properties>
@@ -573,7 +453,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[staging].[conformed_DimBranch]</property>
+                  name="OpenRowset">[staging].[finance_DimTransactionType]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -615,7 +495,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Connections[OleDbConnection]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Connections[OleDbConnection]"
                   connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
                   connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
                   description="The OLE DB runtime connection used to access the database."
@@ -623,158 +503,86 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].Columns[BatchID]"
                       cachedDataType="i4"
                       cachedName="BatchID"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
-                      lineageId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]" />
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output].Columns[BatchID]" />
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].Columns[trx_type_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="8"
-                      cachedName="BranchCode"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]" />
+                      cachedName="trx_type_code"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeCode]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_code]" />
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchName]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].Columns[trx_type_desc]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="BranchName"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchName]" />
+                      cachedLength="30"
+                      cachedName="trx_type_desc"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeName]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type_desc]" />
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[Country]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].Columns[trx_type]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[Country]" />
-                    <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[StateProv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="StateProv"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[StateProv]" />
-                    <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[City]" />
-                    <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[ActiveFlag]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="1"
-                      cachedName="ActiveFlag"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[ActiveFlag]" />
-                    <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchType]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="BranchType"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchType]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchType]" />
-                    <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].Columns[BranchParent]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="BranchParent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchParent]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchParent]" />
+                      cachedLength="6"
+                      cachedName="trx_type"
+                      externalMetadataColumnId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeNumber]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_type]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
                       dataType="i4"
                       name="BatchID" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      length="1"
-                      name="ActiveFlag" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="8"
-                      name="BranchCode" />
+                      name="TransactionTypeCode" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchName]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeName]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      name="BranchName" />
+                      name="TransactionTypeName" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="StateProv" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchType]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="BranchType" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchParent]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="BranchParent" />
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeNumber]"
+                      dataType="i2"
+                      name="TransactionTypeNumber" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -785,20 +593,20 @@
           </components>
           <paths>
             <path
-              refId="Package\Copy data to the staging table in the DW.Paths[Derived Column Output]"
-              endId="Package\Copy data to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
+              refId="Package\Copy the Transaction Types to the staging table in the DW.Paths[Derived Column Output]"
+              endId="Package\Copy the Transaction Types to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
               name="Derived Column Output"
-              startId="Package\Copy data to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output]" />
+              startId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Outputs[Derived Column Output]" />
             <path
-              refId="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
-              endId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
+              refId="Package\Copy the Transaction Types to the staging table in the DW.Paths[OLE DB Source Output]"
+              endId="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
+              startId="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
-              endId="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW.Inputs[OLE DB Destination Input]"
+              refId="Package\Copy the Transaction Types to the staging table in the DW.Paths[Row Count Output 1]"
+              endId="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
-              startId="Package\Copy data to the staging table in the DW\Row Count.Outputs[Row Count Output 1]" />
+              startId="Package\Copy the Transaction Types to the staging table in the DW\Row Count.Outputs[Row Count Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -807,7 +615,7 @@
       DTS:refId="Package\End task"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{3248963E-6C77-4C54-8973-F9A8B1FF66F6}"
+      DTS:DTSID="{B23F0782-7F9C-48B5-98B5-0D4AEC26C770}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="End task"
@@ -853,7 +661,7 @@
       DTS:refId="Package\Start task"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{36EB0F45-EF8A-4CD2-AB64-9E0B4DF2D00B}"
+      DTS:DTSID="{E19B2B35-EBF7-41BD-9C8A-95FB35E8E3DD}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Start task"
@@ -894,16 +702,16 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{956B74E9-D213-4921-8D7C-D78C693C7564}"
+      DTS:DTSID="{2790524B-9FE0-4720-83DA-931367511FE4}"
       DTS:From="Package\Start task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Copy data to the staging table in the DW" />
+      DTS:To="Package\Copy the Transaction Types to the staging table in the DW" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{F8237D97-9DBD-4204-BFE3-047655E202EB}"
-      DTS:From="Package\Copy data to the staging table in the DW"
+      DTS:DTSID="{D1043440-E325-4315-A272-5A505983E5DD}"
+      DTS:From="Package\Copy the Transaction Types to the staging table in the DW"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\End task" />
@@ -921,20 +729,20 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="272,42"
-          Id="Package\Copy data to the staging table in the DW"
-          TopLeft="136,134" />
+          Size="355,42"
+          Id="Package\Copy the Transaction Types to the staging table in the DW"
+          TopLeft="108.333333333333,134" />
         <NodeLayout
           Size="119,42"
           Id="Package\End task"
-          TopLeft="207.5,216" />
+          TopLeft="221.333333333333,216" />
         <NodeLayout
           Size="124,42"
           Id="Package\Start task"
-          TopLeft="205.5,52" />
+          TopLeft="219.333333333333,52" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="269.75,94">
+          TopLeft="283.583333333333,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -956,7 +764,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="269.5,176">
+          TopLeft="285.833333333333,176">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -980,40 +788,40 @@
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Copy data to the staging table in the DW">
+    design-time-name="Package\Copy the Transaction Types to the staging table in the DW">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="256,42"
-          Id="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW"
-          TopLeft="193.333333333334,306" />
-        <NodeLayout
-          Size="304,42"
-          Id="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server"
-          TopLeft="169.333333333334,55" />
+          Size="349,42"
+          Id="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server"
+          TopLeft="156.791666666667,55" />
         <NodeLayout
           Size="175,42"
-          Id="Package\Copy data to the staging table in the DW\Add BatchID column"
-          TopLeft="233.833333333334,137" />
+          Id="Package\Copy the Transaction Types to the staging table in the DW\Add BatchID column"
+          TopLeft="243.791666666667,137" />
+        <NodeLayout
+          Size="284,42"
+          Id="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW"
+          TopLeft="189.291666666667,285" />
         <NodeLayout
           Size="130,42"
-          Id="Package\Copy data to the staging table in the DW\Row Count"
-          TopLeft="256.333333333334,222" />
+          Id="Package\Copy the Transaction Types to the staging table in the DW\Row Count"
+          TopLeft="266.291666666667,214" />
         <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
-          TopLeft="321.333333333334,264">
+          Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[Row Count Output 1]"
+          TopLeft="331.291666666667,256">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,42"
+              EndConnector="0,29"
               Start="0,0"
-              End="0,34.5">
+              End="0,21.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,34.5" />
+                    End="0,21.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1023,8 +831,8 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="321.333333333334,97">
+          Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[OLE DB Source Output]"
+          TopLeft="331.291666666667,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1045,19 +853,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[Derived Column Output]"
-          TopLeft="321.333333333334,179">
+          Id="Package\Copy the Transaction Types to the staging table in the DW.Paths[Derived Column Output]"
+          TopLeft="331.291666666667,179">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,43"
+              EndConnector="0,35"
               Start="0,0"
-              End="0,35.5">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,35.5" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1070,20 +878,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy data to the staging table in the DW\staging conformed_DimBranch in DW">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy data to the staging table in the DW\atsi_Branch_vw in dwloadobjects on ERP server">
+    design-time-name="Package\Copy the Transaction Types to the staging table in the DW\atsi_TransactionType_vw in dwloadobjects on ERP server">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1092,6 +887,19 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy the Transaction Types to the staging table in the DW\staging finance_DimTransactionType in DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

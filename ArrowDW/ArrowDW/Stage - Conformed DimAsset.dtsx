@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{B7CA3D48-BFBC-4AFE-93A4-C1E594D17EBB}"
+  DTS:DTSID="{034F05F9-ED2F-46B3-B8AE-9B40AA4F6AB0}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Conformed - Stage DimAsset"
+  DTS:ObjectName="Stage - Conformed DimAsset"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{21D4BBEC-1EFA-4C53-B4C1-5E4674428192}">
+  DTS:VersionBuild="31"
+  DTS:VersionGUID="{A97FADC7-62E9-40AE-894A-74960B82BD51}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -81,7 +81,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="TaskDescript">
       <DTS:VariableValue
-        DTS:DataType="8">Conformed - Stage DimAsset</DTS:VariableValue>
+        DTS:DataType="8">Stage - Conformed DimAsset</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

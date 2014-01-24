@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{35E79322-3E84-4C55-A16B-3DC9F497B21E}"
+  DTS:DTSID="{5147F289-A725-4F1A-B37B-00ACFA9EA234}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Conformed - Stage DimGLAccount"
+  DTS:ObjectName="Stage - Conformed DimGLAccount"
   DTS:PackageType="5"
-  DTS:VersionBuild="30"
-  DTS:VersionGUID="{648A95F3-A082-4630-8130-881AC675BAAF}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{CF6CE5EE-48D8-4F4C-B3DD-0DC424D9AEDE}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -81,7 +81,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="TaskDescript">
       <DTS:VariableValue
-        DTS:DataType="8">Conformed - Stage DimGLAccount</DTS:VariableValue>
+        DTS:DataType="8">Stage - Conformed DimGLAccount</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""

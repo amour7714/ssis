@@ -5,14 +5,14 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{9E6571A9-25EB-4621-B711-EE0B22231BC8}"
+  DTS:DTSID="{B087DE3E-6CCE-485E-BD0E-E8460B9B5E9E}"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="DW - STAGING"
+  DTS:ObjectName="DW - RUN ALL"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{AA6B096C-556E-4CC1-A57D-B26CBF9D7C2D}">
+  DTS:VersionBuild="23"
+  DTS:VersionGUID="{3F6F4EFF-2D36-498E-AECC-EF05EDFA2BF3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:LogProviders>
@@ -176,13 +176,33 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Conformed - STAGING"
+      DTS:refId="Package\Execute PRESENTATION - Conformed"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package Task"
+      DTS:DTSID="{f4114c9a-ae6a-4c0f-a196-5abd5e68a534}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute PRESENTATION - Conformed"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="1" />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>PRESENTATION - Conformed.dtsx</PackageName>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute STAGING - Conformed"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{5E225EEF-205E-4602-957D-4A3797147F0D}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Conformed - STAGING"
+      DTS:ObjectName="Execute STAGING - Conformed"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -191,18 +211,18 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Conformed - STAGING.dtsx</PackageName>
+          <PackageName>STAGING - Conformed.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Finance - STAGING"
+      DTS:refId="Package\Execute STAGING - Finance"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
       DTS:DTSID="{C9DE90EE-73A9-481A-8CC4-2A78C266A738}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Finance - STAGING"
+      DTS:ObjectName="Execute STAGING - Finance"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -211,7 +231,7 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Finance - STAGING.dtsx</PackageName>
+          <PackageName>STAGING - Finance.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
@@ -258,22 +278,30 @@
       DTS:From="Package\Start new batch"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
-      DTS:To="Package\Execute Finance - STAGING" />
+      DTS:To="Package\Execute STAGING - Finance" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
       DTS:DTSID="{B189356E-FAF6-4A13-A8FF-3E6BE4370CA1}"
-      DTS:From="Package\Execute Finance - STAGING"
+      DTS:From="Package\Execute STAGING - Finance"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute Conformed - STAGING" />
+      DTS:To="Package\Execute STAGING - Conformed" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{461AD95E-D7D9-49B7-9015-80E82974E4A8}"
-      DTS:From="Package\Execute Conformed - STAGING"
+      DTS:DTSID="{0E1693A0-B0CB-4D8B-9D42-BE79EA0BF4DF}"
+      DTS:From="Package\Execute STAGING - Conformed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Execute PRESENTATION - Conformed" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{68D316BD-A353-481E-925B-90FA81EDC467}"
+      DTS:From="Package\Execute PRESENTATION - Conformed"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
       DTS:To="Package\End batch" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -287,26 +315,26 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="126,42"
           Id="Package\End batch"
-          TopLeft="249.775,302" />
+          TopLeft="252.075,392" />
         <NodeLayout
           Size="225,42"
-          Id="Package\Execute Conformed - STAGING"
-          TopLeft="200.275,219" />
+          Id="Package\Execute STAGING - Conformed"
+          TopLeft="202.575,219" />
         <NodeLayout
           Size="210,42"
-          Id="Package\Execute Finance - STAGING"
-          TopLeft="207.775,136" />
+          Id="Package\Execute STAGING - Finance"
+          TopLeft="210.075,136" />
         <NodeLayout
           Size="154,42"
           Id="Package\Start new batch"
-          TopLeft="235.775,53" />
+          TopLeft="238.075,53" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="312.775,95">
+          TopLeft="315.075,95">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -328,7 +356,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="312.775,178">
+          TopLeft="315.075,178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -348,20 +376,46 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="256,42"
+          Id="Package\Execute PRESENTATION - Conformed"
+          TopLeft="187.075,306" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="312.775,261">
+          TopLeft="315.075,261">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,45"
               Start="0,0"
-              End="0,33.5">
+              End="0,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="315.075,348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,44"
+              Start="0,0"
+              End="0,36.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
