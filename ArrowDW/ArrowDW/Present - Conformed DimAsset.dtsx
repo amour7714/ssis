@@ -5,15 +5,15 @@
   DTS:CreationName="SSIS.Package.3"
   DTS:CreatorComputerName="ARROW100010"
   DTS:CreatorName="ARROW\gschulte"
-  DTS:DTSID="{311C0C10-44DB-4A9D-866C-133ED45FFE33}"
+  DTS:DTSID="{3B258DDA-E791-4CF0-A4DD-84437F12316F}"
   DTS:EnableConfig="True"
   DTS:ExecutableType="SSIS.Package.3"
   DTS:LastModifiedProductVersion="11.0.2100.60"
   DTS:LocaleID="4105"
-  DTS:ObjectName="Present - Conformed DimCustomer"
+  DTS:ObjectName="Present - Conformed DimAsset"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{AA0BFCAD-8868-4900-B44E-EEDDDEE65376}">
+  DTS:VersionBuild="81"
+  DTS:VersionGUID="{A54A49A6-FC1B-4864-A6A4-8A95EBC2BFD3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -21,7 +21,7 @@
       DTS:ConfigurationString="User::BatchID"
       DTS:ConfigurationVariable="\Package.Variables[User::BatchID].Properties[Value]"
       DTS:CreationName=""
-      DTS:DTSID="{AB6AD521-00AF-4242-A8D2-C837B36EE29F}"
+      DTS:DTSID="{5D53A89B-54FA-4FBE-A3E9-AED75E70B2EF}"
       DTS:ObjectName="Get BatchID From Parent Package" />
   </DTS:Configurations>
   <DTS:LogProviders>
@@ -29,7 +29,7 @@
       DTS:ConfigString="arrowdw"
       DTS:CreationName="DTS.LogProviderSQLServer.3"
       DTS:Description="Writes log entries for events to a SQL Server database"
-      DTS:DTSID="{2E3D4CBD-B6DB-434C-80E2-CE2D74E1FF94}"
+      DTS:DTSID="{BA963EC1-D2D2-4DC8-8192-113F74BC9205}"
       DTS:ObjectName="SSIS log provider for SQL Server">
       <DTS:ObjectData>
         <InnerObject />
@@ -39,7 +39,7 @@
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{9DE42C68-B9A5-419B-9B82-71CDD54A3DB4}"
+      DTS:DTSID="{6C042AAD-1775-411B-9487-E91BB8925101}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="BatchID">
@@ -48,7 +48,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A9E21DE5-76DF-4F0B-8E32-F72C2FD5DA3F}"
+      DTS:DTSID="{31ACFCA6-D034-406F-87C3-27E1CBF1CC12}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="ErrorMessage">
@@ -58,7 +58,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A73E670E-B103-4697-833A-8300C4D7C130}"
+      DTS:DTSID="{52ECC246-32B7-4190-990F-7201036500BF}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="NumRowsInserted">
@@ -67,7 +67,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{EB40AA84-E998-41E4-8135-AF4D95798AD7}"
+      DTS:DTSID="{8F622720-A8D7-44E5-86F7-37F83EC35CFB}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="NumRowsUpdated">
@@ -76,16 +76,16 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{849FF976-8AAD-411A-A56B-C7B7DCC1EC5A}"
+      DTS:DTSID="{37D65949-7915-4C16-9D94-E0A8D66E8430}"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="TaskDescript">
       <DTS:VariableValue
-        DTS:DataType="8">Present - Conformed DimCustomer</DTS:VariableValue>
+        DTS:DataType="8">Present - Conformed DimAsset</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{A3D2B14A-027F-4C5E-A845-E10266431FB7}"
+      DTS:DTSID="{4904A542-A5FA-49D3-A495-F3AB2B1F372B}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="TaskID">
@@ -155,7 +155,7 @@
     </DTS:Property>
     <DTS:SelectedLogProviders>
       <DTS:SelectedLogProvider
-        DTS:InstanceID="{2E3D4CBD-B6DB-434C-80E2-CE2D74E1FF94}" />
+        DTS:InstanceID="{BA963EC1-D2D2-4DC8-8192-113F74BC9205}" />
     </DTS:SelectedLogProviders>
   </DTS:LoggingOptions>
   <DTS:Executables>
@@ -163,7 +163,7 @@
       DTS:refId="Package\End task"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{6A6659EC-B531-4023-A170-647978755A5F}"
+      DTS:DTSID="{6AC436EF-1550-41DD-8E29-8430D7100D41}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="End task"
@@ -209,7 +209,7 @@
       DTS:refId="Package\Merge data into presentation table in the DW"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{8582618B-58FB-44E5-976E-9568ECCD6973}"
+      DTS:DTSID="{43365D0D-51F1-4763-BCB9-C06B3CE682B2}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
       DTS:ObjectName="Merge data into presentation table in the DW"
@@ -222,11 +222,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID"
+              refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID"
               componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="get all rows from staging conformed_DimCustomer for current BatchID"
+              name="get all rows from staging conformed_DimAsset for current BatchID"
               usesDispositions="true"
               version="7">
               <properties>
@@ -246,13 +246,17 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [CustomerCode]
-      ,[CustomerName]
-      ,[Country]
-      ,[StateProv]
-      ,[City]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [AssetCode]
+      ,[AssetName]
+      ,[AssetTag]
+      ,[AssetTypeCode]
+      ,[AssetTypeName]
+      ,[AssetOwnerTypeCode]
+      ,[AssetOwnerTypeName]
+      ,[GLReferenceCode]
+      ,[CompanyCode]
       ,[ActiveFlag]
-FROM [staging].[conformed_DimCustomer]
+FROM [staging].[conformed_DimAsset]
 WHERE [BatchID] = ?</property>
                 <property
                   dataType="System.String"
@@ -274,11 +278,11 @@ WHERE [BatchID] = ?</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"Parameter0:Input",{9DE42C68-B9A5-419B-9B82-71CDD54A3DB4};</property>
+                  name="ParameterMapping">"Parameter0:Input",{6C042AAD-1775-411B-9487-E91BB8925101};</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Connections[OleDbConnection]"
+                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Connections[OleDbConnection]"
                   connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
                   connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
                   description="The OLE DB runtime connection used to access the database."
@@ -286,173 +290,269 @@ WHERE [BatchID] = ?</property>
               </connections>
               <outputs>
                 <output
-                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output]"
+                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
-                      length="8"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]"
-                      name="CustomerCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CustomerName]"
-                      length="40"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerName]"
-                      name="CustomerName"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[Country]"
-                      length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]"
-                      name="Country"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[StateProv]"
-                      length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]"
-                      name="StateProv"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[City]"
-                      length="50"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]"
-                      name="City"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
                       length="1"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]"
                       name="ActiveFlag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetCode]"
+                      length="16"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]"
+                      name="AssetCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetName]"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]"
+                      name="AssetName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTag]"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]"
+                      name="AssetTag"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTypeCode]"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]"
+                      name="AssetTypeCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTypeName]"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]"
+                      name="AssetTypeName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetOwnerTypeCode]"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]"
+                      name="AssetOwnerTypeCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetOwnerTypeName]"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]"
+                      name="AssetOwnerTypeName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[GLReferenceCode]"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]"
+                      name="GLReferenceCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]"
+                      name="CompanyCode"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="CustomerCode" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CustomerName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="CustomerName" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="StateProv" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="City" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[ActiveFlag]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="ActiveFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      name="AssetCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="AssetTag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AssetTypeCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetTypeName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetOwnerTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AssetOwnerTypeCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[AssetOwnerTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetOwnerTypeName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="GLReferenceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CompanyCode" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
-                      name="CustomerCode" />
+                      length="16"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetCode]"
+                      name="AssetCode" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[CustomerName]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetName]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[CustomerName]"
-                      name="CustomerName" />
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetName]"
+                      name="AssetName" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[Country]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTag]"
+                      name="AssetTag" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[Country]"
-                      name="Country" />
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTypeCode]"
+                      name="AssetTypeCode" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[StateProv]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetTypeName]"
+                      name="AssetTypeName" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetOwnerTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[StateProv]"
-                      name="StateProv" />
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetOwnerTypeCode]"
+                      name="AssetOwnerTypeCode" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetOwnerTypeName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[City]"
-                      name="City" />
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[AssetOwnerTypeName]"
+                      name="AssetOwnerTypeName" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[GLReferenceCode]"
+                      name="GLReferenceCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
+                      name="CompanyCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
                       name="ActiveFlag" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -461,11 +561,11 @@ WHERE [BatchID] = ?</property>
               </outputs>
             </component>
             <component
-              refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer"
+              refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset"
               componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="insert to conformed DimCustomer"
+              name="insert to conformed DimAsset"
               usesDispositions="true"
               version="4">
               <properties>
@@ -476,7 +576,7 @@ WHERE [BatchID] = ?</property>
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[conformed].[DimCustomer]</property>
+                  name="OpenRowset">[conformed].[DimAsset]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -518,7 +618,7 @@ WHERE [BatchID] = ?</property>
               </properties>
               <connections>
                 <connection
-                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Connections[OleDbConnection]"
+                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Connections[OleDbConnection]"
                   connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
                   connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
                   description="The OLE DB runtime connection used to access the database."
@@ -526,119 +626,175 @@ WHERE [BatchID] = ?</property>
               </connections>
               <inputs>
                 <input
-                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input]"
+                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[CustomerCode]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerCode]" />
+                      cachedLength="16"
+                      cachedName="AssetCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetCode]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[CustomerName]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="40"
-                      cachedName="CustomerName"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerName]"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerName]" />
+                      cachedName="AssetName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetName]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetName]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[Country]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetTag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="AssetTag"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTag]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTag]" />
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetTypeCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[Country]" />
+                      cachedName="AssetTypeCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeCode]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[StateProv]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetTypeName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeName]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeName]" />
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetOwnerTypeCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
-                      cachedName="StateProv"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[StateProv]" />
+                      cachedName="AssetOwnerTypeCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeCode]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[City]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[AssetOwnerTypeName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[City]" />
+                      cachedLength="40"
+                      cachedName="AssetOwnerTypeName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeName]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeName]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[ActiveFlag]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[GLReferenceCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="GLReferenceCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[GLReferenceCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[GLReferenceCode]" />
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CompanyCode]" />
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[ActiveFlag]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="ActiveFlag"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
                       lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]" />
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
                       cachedDataType="dbDate"
                       cachedName="EffectiveDate"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
                       lineageId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output].Columns[EffectiveDate]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerKey]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetKey]"
                       dataType="i4"
-                      name="CustomerKey" />
+                      name="AssetKey" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetCode]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
-                      name="CustomerCode" />
+                      length="16"
+                      name="AssetCode" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CustomerName]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetName]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      name="CustomerName" />
+                      name="AssetName" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="AssetTag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      name="Country" />
+                      name="AssetTypeCode" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetTypeName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      name="StateProv" />
+                      name="AssetOwnerTypeCode" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[AssetOwnerTypeName]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      name="City" />
+                      length="40"
+                      name="AssetOwnerTypeName" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="GLReferenceCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CompanyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="ActiveFlag" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
                       dataType="dbDate"
                       name="EffectiveDate" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[ExpiryDate]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[ExpiryDate]"
                       dataType="dbDate"
                       name="ExpiryDate" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input].ExternalColumns[CurrentRowInd]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input].ExternalColumns[CurrentRowInd]"
                       codePage="1252"
                       dataType="str"
                       length="1"
@@ -648,22 +804,22 @@ WHERE [BatchID] = ?</property>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -696,35 +852,6 @@ WHERE [BatchID] = ?</property>
                   refId="Package\Merge data into presentation table in the DW\NumRowsInserted.Outputs[Row Count Output 1]"
                   name="Row Count Output 1"
                   synchronousInputId="Package\Merge data into presentation table in the DW\NumRowsInserted.Inputs[Row Count Input 1]">
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Merge data into presentation table in the DW\NumRowsUpdated"
-              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
-              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
-              name="NumRowsUpdated">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable to hold the row count."
-                  name="VariableName">User::NumRowsUpdated</property>
-              </properties>
-              <inputs>
-                <input
-                  refId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Inputs[Row Count Input 1]"
-                  hasSideEffects="true"
-                  name="Row Count Input 1">
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Outputs[Row Count Output 1]"
-                  name="Row Count Output 1"
-                  synchronousInputId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Inputs[Row Count Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
@@ -889,7 +1016,7 @@ WHERE [BatchID] = ?</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ActiveFlag], [City], [Country], [CustomerCode], [CustomerName], [StateProv],[EffectiveDate],[ExpiryDate] FROM [conformed].[DimCustomer]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ActiveFlag], [AssetCode], [AssetName], [AssetOwnerTypeCode], [AssetOwnerTypeName], [AssetTag], [AssetTypeCode], [AssetTypeName], [CompanyCode], [GLReferenceCode],[EffectiveDate],[ExpiryDate] FROM [conformed].[DimAsset]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -901,7 +1028,7 @@ WHERE [BatchID] = ?</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
-                  name="FailOnFixedAttributeChange">false</property>
+                  name="FailOnFixedAttributeChange">true</property>
                 <property
                   dataType="System.String"
                   description="Specifies the column name for the inferred member."
@@ -944,7 +1071,7 @@ WHERE [BatchID] = ?</property>
                       cachedLength="1"
                       cachedName="ActiveFlag"
                       externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ActiveFlag]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -953,43 +1080,13 @@ WHERE [BatchID] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[City]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          name="ColumnType"
-                          typeConverter="ColumnType">2</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CustomerCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerCode]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]">
+                      cachedLength="16"
+                      cachedName="AssetCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -998,13 +1095,13 @@ WHERE [BatchID] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CustomerName]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="40"
-                      cachedName="CustomerName"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerName]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerName]">
+                      cachedName="AssetName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetName]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1013,18 +1110,108 @@ WHERE [BatchID] = ?</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[StateProv]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetOwnerTypeCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="15"
-                      cachedName="StateProv"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StateProv]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]">
+                      cachedName="AssetOwnerTypeCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetOwnerTypeCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]">
                       <properties>
                         <property
                           dataType="System.Int32"
                           name="ColumnType"
-                          typeConverter="ColumnType">2</property>
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetOwnerTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetOwnerTypeName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetOwnerTypeName]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetTag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="AssetTag"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTag]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetTypeCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AssetTypeCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTypeCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AssetTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetTypeName"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTypeName]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[GLReferenceCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="GLReferenceCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[GLReferenceCode]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1037,35 +1224,59 @@ WHERE [BatchID] = ?</property>
                       length="1"
                       name="ActiveFlag" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetCode]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
-                      name="City" />
+                      length="16"
+                      name="AssetCode" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Country" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="CustomerCode" />
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CustomerName]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetName]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      name="CustomerName" />
+                      name="AssetName" />
                     <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[StateProv]"
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetOwnerTypeCode]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      name="StateProv" />
+                      name="AssetOwnerTypeCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetOwnerTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetOwnerTypeName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="AssetTag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AssetTypeCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      name="AssetTypeName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CompanyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="GLReferenceCode" />
                     <externalMetadataColumn
                       refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[EffectiveDate]"
                       dataType="dbDate"
@@ -1141,93 +1352,153 @@ WHERE [BatchID] = ?</property>
                   name="Union All Input 1">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[CustomerCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[CustomerName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="CustomerName"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerName]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerName]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[Country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="Country"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[Country]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[StateProv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="StateProv"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[StateProv]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[City]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[ActiveFlag]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="ActiveFlag"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="AssetCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetTag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="AssetTag"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetTypeCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AssetTypeCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetTypeName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetOwnerTypeCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AssetOwnerTypeCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[AssetOwnerTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetOwnerTypeName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[GLReferenceCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="GLReferenceCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[GLReferenceCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CompanyCode]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1239,93 +1510,153 @@ WHERE [BatchID] = ?</property>
                   name="Union All Input 2">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[CustomerCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerCode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[CustomerName]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="CustomerName"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerName]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerName]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[Country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="Country"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[Country]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[StateProv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="StateProv"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[StateProv]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[City]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
                       refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[ActiveFlag]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="1"
                       cachedName="ActiveFlag"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="16"
+                      cachedName="AssetCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetTag]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="AssetTag"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTag]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetTypeCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AssetTypeCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetTypeName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetOwnerTypeCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AssetOwnerTypeCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[AssetOwnerTypeName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="40"
+                      cachedName="AssetOwnerTypeName"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeName]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[GLReferenceCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="GLReferenceCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[GLReferenceCode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CompanyCode]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -1345,47 +1676,75 @@ WHERE [BatchID] = ?</property>
                   name="Union All Output 1">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerCode]"
-                      name="CustomerCode" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CustomerName]"
-                      name="CustomerName" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[Country]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[Country]"
-                      name="Country" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[StateProv]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[StateProv]"
-                      name="StateProv" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[City]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[City]"
-                      name="City" />
-                    <outputColumn
                       refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]"
                       name="ActiveFlag" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="16"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetCode]"
+                      name="AssetCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetName]"
+                      name="AssetName" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTag]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTag]"
+                      name="AssetTag" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeCode]"
+                      name="AssetTypeCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetTypeName]"
+                      name="AssetTypeName" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeCode]"
+                      name="AssetOwnerTypeCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[AssetOwnerTypeName]"
+                      name="AssetOwnerTypeName" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[GLReferenceCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[GLReferenceCode]"
+                      name="GLReferenceCode" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CompanyCode]"
+                      name="CompanyCode" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1409,7 +1768,7 @@ WHERE [BatchID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimCustomer] SET [ExpiryDate] = ? WHERE [CustomerCode] = ? AND [ExpiryDate] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimAsset] SET [ExpiryDate] = ? WHERE [AssetCode] = ? AND [CompanyCode] = ? AND [ExpiryDate] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1432,13 +1791,21 @@ WHERE [BatchID] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[CustomerCode]"
+                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[AssetCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
+                      cachedLength="16"
+                      cachedName="AssetCode"
                       externalMetadataColumnId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]" />
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]" />
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]" />
                     <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[ExpiryDate]"
                       cachedDataType="dbDate"
@@ -1463,8 +1830,21 @@ WHERE [BatchID] = ?</property>
                       refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       codePage="1252"
                       dataType="str"
-                      length="15"
+                      length="16"
                       name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1507,185 +1887,18 @@ WHERE [BatchID] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Merge data into presentation table in the DW\update Type 1 attributes"
-              componentClassID="{93FFEC66-CBC8-4C7F-9C6A-CB1C17A7567D}"
-              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
-              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
-              name="update Type 1 attributes"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  expressionType="Notify"
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimCustomer] SET [City] = ?,[Country] = ?,[StateProv] = ? WHERE [CustomerCode] = ? AND [ExpiryDate] IS NULL</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Connections[OleDbConnection]"
-                  connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]"
-                  errorOrTruncationOperation="Command Execution"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Command Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[City]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="City"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[City]" />
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[Country]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="Country"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[Country]" />
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[CustomerCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="CustomerCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[CustomerCode]" />
-                    <inputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[StateProv]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="StateProv"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output].Columns[StateProv]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Param_0">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Param_2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Output]"
-                  exclusionGroup="1"
-                  name="OLE DB Command Output"
-                  synchronousInputId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]">
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Command Error Output"
-                  synchronousInputId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
-              endId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Inputs[Row Count Input 1]"
-              name="Changing Attribute Updates Output"
-              startId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
-            <path
               refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
-              endId="Package\Merge data into presentation table in the DW\NumRowsInserted.Inputs[Row Count Input 1]"
-              name="Derived Column Output"
-              startId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
               endId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input]"
               name="Derived Column Output"
               startId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
+              endId="Package\Merge data into presentation table in the DW\NumRowsInserted.Inputs[Row Count Input 1]"
+              name="Derived Column Output"
+              startId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
               endId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Inputs[Derived Column Input]"
@@ -1705,17 +1918,12 @@ WHERE [BatchID] = ?</property>
               refId="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
               endId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="OLE DB Source Output"
-              startId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
-              endId="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer.Inputs[OLE DB Destination Input]"
-              name="Row Count Output 1"
-              startId="Package\Merge data into presentation table in the DW\NumRowsInserted.Outputs[Row Count Output 1]" />
+              startId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
-              endId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]"
+              endId="Package\Merge data into presentation table in the DW\insert to conformed DimAsset.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
-              startId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Outputs[Row Count Output 1]" />
+              startId="Package\Merge data into presentation table in the DW\NumRowsInserted.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
               endId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Inputs[Derived Column Input]"
@@ -1729,7 +1937,7 @@ WHERE [BatchID] = ?</property>
       DTS:refId="Package\Start task"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{183C4881-B408-45EC-924E-3BC53ECE1CD8}"
+      DTS:DTSID="{7D3EDC0E-D0F8-454E-AB26-AAB2FB4E9943}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Start task"
@@ -1769,7 +1977,7 @@ WHERE [BatchID] = ?</property>
       DTS:refId="Package\update CurrentRowInd"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{D57F132A-A8D8-4549-ABC7-F0700BEE1ADF}"
+      DTS:DTSID="{18B3E23D-FE30-488A-B07F-6D52B2BC75E1}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="update CurrentRowInd"
@@ -1779,7 +1987,7 @@ WHERE [BatchID] = ?</property>
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}"
-          SQLTask:SqlStatementSource="update conformed.DimCustomer &#xA;set CurrentRowInd = 'n' &#xA;where ExpiryDate is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update conformed.DimAsset&#xA;set CurrentRowInd = 'n' &#xA;where ExpiryDate is not null" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -1787,7 +1995,7 @@ WHERE [BatchID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{A94DF9A2-3E9C-4CA2-8DEC-FCF4AF4C050F}"
+      DTS:DTSID="{7BFA3BE5-DE19-4128-AFB1-5EBF84E6111B}"
       DTS:From="Package\Start task"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -1795,7 +2003,7 @@ WHERE [BatchID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{339FE308-452F-4B65-BCE2-DC02BCE44C02}"
+      DTS:DTSID="{36667E0F-6CBB-4BEB-AC3C-9AC8B8B90649}"
       DTS:From="Package\Merge data into presentation table in the DW"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -1803,7 +2011,7 @@ WHERE [BatchID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{7A80B015-A98B-4BC9-8641-8900ACC22EC9}"
+      DTS:DTSID="{C1ABE311-F305-4DA7-A252-91EDA6CD9994}"
       DTS:From="Package\update CurrentRowInd"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -1910,243 +2118,89 @@ WHERE [BatchID] = ?</property>
     design-time-name="Package\Merge data into presentation table in the DW">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="189,42"
-          Id="Package\Merge data into presentation table in the DW\Set value of ExpiryDate"
-          TopLeft="178.75,195.833333333333" />
-        <NodeLayout
-          Size="476,42"
-          Id="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change"
-          TopLeft="35.25,267.166666666667" />
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="471,42"
           Id="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates"
-          TopLeft="241.875,358.5" />
+          TopLeft="420,391.5" />
         <NodeLayout
-          Size="165,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
-          TopLeft="394.875,501.166666666667" />
+          Size="218,42"
+          Id="Package\Merge data into presentation table in the DW\insert to conformed DimAsset"
+          TopLeft="546,642.5" />
+        <NodeLayout
+          Size="476,42"
+          Id="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change"
+          TopLeft="199.5,289.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Merge data into presentation table in the DW\Slowly Changing Dimension"
-          TopLeft="423.25,92.1666666666667" />
+          TopLeft="588,85.5" />
         <NodeLayout
           Size="341,42"
           Id="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted"
-          TopLeft="306.875,429.833333333333" />
+          TopLeft="483,471.5" />
         <NodeLayout
-          Size="195,42"
-          Id="Package\Merge data into presentation table in the DW\update Type 1 attributes"
-          TopLeft="1017,92.1666666666667" />
+          Size="165,42"
+          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
+          TopLeft="573.5,562.5" />
         <NodeLayout
-          Size="166,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsUpdated"
-          TopLeft="810,92.1666666666667" />
+          Size="394,42"
+          Id="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID"
+          TopLeft="495.5,10.5" />
         <NodeLayout
-          Size="427,42"
-          Id="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID"
-          TopLeft="314.25,20.5" />
-        <NodeLayout
-          Size="238,42"
-          Id="Package\Merge data into presentation table in the DW\insert to conformed DimCustomer"
-          TopLeft="358.375,572.5" />
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
-          TopLeft="477.375,400.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.333333333333"
-              Start="0,0"
-              End="0,21.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
-          TopLeft="477.375,543.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.333333333333"
-              Start="0,0"
-              End="0,21.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
-          TopLeft="976,113.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="41,0"
-              Start="0,0"
-              End="33.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="33.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="527.75,62.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.6666666666667"
-              Start="0,0"
-              End="0,22.1666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22.1666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Command Output]"
-          TopLeft="273.25,309.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="126.958333333333,49.333333333333"
-              Start="0,0"
-              End="126.958333333333,41.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.4997884045702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.4997884045702"
-                    Point2="0,29.4997884045702"
-                    Point3="4,29.4997884045702" />
-                  <mssgle:LineSegment
-                    End="122.958333333333,29.4997884045702" />
-                  <mssgle:CubicBezierSegment
-                    Point1="122.958333333333,29.4997884045702"
-                    Point2="126.958333333333,29.4997884045702"
-                    Point3="126.958333333333,33.4997884045702" />
-                  <mssgle:LineSegment
-                    End="126.958333333333,41.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[New Output]"
-          TopLeft="557.895833333333,134.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,224.333333333333"
-              Start="0,0"
-              End="0,216.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,216.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,102.699869791667,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="189,42"
+          Id="Package\Merge data into presentation table in the DW\Set value of ExpiryDate"
+          TopLeft="344.5,196.5" />
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
-          TopLeft="494.25,134.166666666667">
+          TopLeft="659,127.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-221,61.6666666666663"
+              EndConnector="-220,69"
               Start="0,0"
-              End="-221,54.1666666666663">
+              End="-220,61.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.9477682811015" />
+                    End="0,23.9145299145299" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.9477682811015"
-                    Point2="0,24.9477682811015"
-                    Point3="-4,24.9477682811015" />
+                    Point1="0,23.9145299145299"
+                    Point2="0,27.9145299145299"
+                    Point3="-4,27.9145299145299" />
                   <mssgle:LineSegment
-                    End="-217,24.9477682811015" />
+                    End="-216,27.9145299145299" />
                   <mssgle:CubicBezierSegment
-                    Point1="-217,24.9477682811015"
-                    Point2="-221,24.9477682811015"
-                    Point3="-221,28.9477682811015" />
+                    Point1="-216,27.9145299145299"
+                    Point2="-220,27.9145299145299"
+                    Point3="-220,31.9145299145299" />
                   <mssgle:LineSegment
-                    End="-221,54.1666666666663" />
+                    End="-220,61.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-185.55638671875,29.9477682811015,150.1127734375,11.609375"
+              BoundingBox="-185.05638671875,32.9145299145299,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
-          TopLeft="477.375,471.833333333333">
+          TopLeft="438.25,238.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.333333333334"
+              EndConnector="0,51"
               Start="0,0"
-              End="0,21.833333333334">
+              End="0,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.833333333334" />
+                    End="0,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2157,18 +2211,18 @@ WHERE [BatchID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
-          TopLeft="273.25,237.833333333333">
+          TopLeft="654.75,513.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,29.333333333334"
+              EndConnector="0,49"
               Start="0,0"
-              End="0,21.833333333334">
+              End="0,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.833333333334" />
+                    End="0,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -2178,26 +2232,126 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
-          TopLeft="632.25,113.166666666667">
+          Id="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
+          TopLeft="654.5,433.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="177.75,0"
+              EndConnector="0,38"
               Start="0,0"
-              End="170.25,0">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="170.25,0" />
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
+          TopLeft="655.5,604.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
+          TopLeft="692.5,52.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,33"
+              Start="0,0"
+              End="0,25.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Command Output]"
+          TopLeft="437.5,331.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="140.833333333333,60"
+              Start="0,0"
+              End="140.833333333333,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.8781210325857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.8781210325857"
+                    Point2="0,35.8781210325857"
+                    Point3="4,35.8781210325857" />
+                  <mssgle:LineSegment
+                    End="136.833333333333,35.8781210325857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="136.833333333333,35.8781210325857"
+                    Point2="140.833333333333,35.8781210325857"
+                    Point3="140.833333333333,39.8781210325857" />
+                  <mssgle:LineSegment
+                    End="140.833333333333,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[New Output]"
+          TopLeft="729.333333333333,127.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,264"
+              Start="0,0"
+              End="0,256.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,256.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.59109374999997,5,157.0678125,11.6630859375"
+              BoundingBox="-27.09138671875,122.533203125,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2213,43 +2367,67 @@ WHERE [BatchID] = ?</property>
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionID&gt;{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[conformed].[DimCustomer]&lt;/TableName&gt;
+  &lt;TableName&gt;[conformed].[DimAsset]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[ActiveFlag]&lt;/IdentificationString&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[ActiveFlag]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;ActiveFlag&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;City&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[Country]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Country&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[CustomerCode]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CustomerCode&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetCode&lt;/ColumnName&gt;
       &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
       &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[CustomerName]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CustomerName&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetName&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;staging conformed_DimCustomer.Outputs[OLE DB Source Output].Columns[StateProv]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;StateProv&lt;/ColumnName&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetOwnerTypeCode&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetOwnerTypeName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetOwnerTypeName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTag]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetTag&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetTypeCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[AssetTypeName]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;AssetTypeName&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[CompanyCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CompanyCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimAsset for current BatchID.Outputs[OLE DB Source Output].Columns[GLReferenceCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;GLReferenceCode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
@@ -2258,15 +2436,14 @@ WHERE [BatchID] = ?</property>
     &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
     &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
   &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
   &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
   &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn&gt;CurrentRowInd&lt;/CurrentIndicatorColumn&gt;
+  &lt;CurrentIndicatorColumn /&gt;
   &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent&gt;True&lt;/ValueCurrent&gt;
-  &lt;ValueExpired&gt;False&lt;/ValueExpired&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
   &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
   &lt;EndDateColumn&gt;ExpiryDate&lt;/EndDateColumn&gt;
   &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
@@ -2276,7 +2453,7 @@ WHERE [BatchID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimCustomer for current BatchID">
+    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimAsset for current BatchID">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

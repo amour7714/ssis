@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimGLAccount"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{CF6CE5EE-48D8-4F4C-B3DD-0DC424D9AEDE}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{FBE7B995-7294-41E8-A519-23B4E968B841}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -330,17 +330,6 @@
                       length="8"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
                       name="company_code"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_name]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
-                      name="company_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]"
@@ -699,12 +688,6 @@
                       length="8"
                       name="company_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="company_name" />
-                    <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code]"
                       codePage="1252"
                       dataType="str"
@@ -904,13 +887,6 @@
                       length="8"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       name="company_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
-                      name="company_name" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code]"
                       codePage="1252"
@@ -1276,14 +1252,6 @@
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[company_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="company_name"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]" />
-                    <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -1550,12 +1518,6 @@
                       dataType="str"
                       length="15"
                       name="CompanyCode" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="CompanyName" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountCode]"
                       codePage="1252"

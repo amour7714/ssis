@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimReferenceCode"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{AC940E49-F0C3-48AE-937A-1A03DAA53425}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{731335B2-DF8F-42D3-8E98-A354BFECC237}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -332,17 +332,6 @@
                       name="company_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_name]"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]"
-                      name="company_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[reference_code]"
                       codePage="1252"
                       dataType="str"
@@ -401,12 +390,6 @@
                       dataType="str"
                       length="8"
                       name="company_code" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="company_name" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[reference_code]"
                       codePage="1252"
@@ -473,13 +456,6 @@
                       length="8"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       name="company_code" />
-                    <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_name]"
-                      name="company_name" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       codePage="1252"
@@ -628,14 +604,6 @@
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       lineageId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
                     <inputColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].Columns[company_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="40"
-                      cachedName="company_name"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLReferenceCode_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_name]" />
-                    <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].Columns[reference_code]"
                       cachedCodepage="1252"
                       cachedDataType="str"
@@ -686,12 +654,6 @@
                       dataType="str"
                       length="15"
                       name="CompanyCode" />
-                    <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyName]"
-                      codePage="1252"
-                      dataType="str"
-                      length="40"
-                      name="CompanyName" />
                     <externalMetadataColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimReferenceCode in DW.Inputs[OLE DB Destination Input].ExternalColumns[ReferenceCode]"
                       codePage="1252"
@@ -963,28 +925,6 @@
           Id="Package\Copy data to the staging table in the DW\Add BatchID column"
           TopLeft="248.666666666667,146" />
         <EdgeLayout
-          Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
-          TopLeft="336.166666666667,264">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38"
-              Start="0,0"
-              End="0,30.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
           TopLeft="336.166666666667,97">
           <EdgeLayout.Curve>
@@ -1020,6 +960,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,26.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
+          TopLeft="336.166666666667,264">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38"
+              Start="0,0"
+              End="0,30.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
