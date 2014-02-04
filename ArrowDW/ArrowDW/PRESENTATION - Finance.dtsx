@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="PRESENTATION - Finance"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{3C30369B-7964-45CA-A694-828E7144A185}">
+  DTS:VersionBuild="22"
+  DTS:VersionGUID="{3598D1E9-3799-4153-8FE9-E3B6FA4CF51B}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -45,6 +45,15 @@
       DTS:ObjectName="BatchID">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4FDC01AD-1FE5-4B70-B35A-E260605128E9}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EffectiveDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
     </DTS:Variable>
   </DTS:Variables>
   <DTS:LoggingOptions
@@ -152,14 +161,13 @@
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Execute Stage - Finance FactGL"
+      DTS:refId="Package\Execute Present - Finance FactGL"
       DTS:CreationName="SSIS.ExecutePackageTask.3"
       DTS:Description="Execute Package Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8DA89269-8622-41D8-9D1E-5B6B8378EC08}"
       DTS:ExecutableType="SSIS.ExecutePackageTask.3"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Execute Stage - Finance FactGL"
+      DTS:ObjectName="Execute Present - Finance FactGL"
       DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:LoggingOptions
@@ -167,28 +175,28 @@
       <DTS:ObjectData>
         <ExecutePackageTask>
           <UseProjectReference>True</UseProjectReference>
-          <PackageName>Stage - Finance FactGL.dtsx</PackageName>
+          <PackageName>Present - Finance FactGL.dtsx</PackageName>
         </ExecutePackageTask>
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{F4A2186C-81DE-4D42-A5AE-AFFCA7540653}"
-      DTS:From="Package\Execute Stage - Finance FactGL"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Execute Present - Finance DimJournalType" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
-      DTS:CreationName=""
-      DTS:DTSID="{0DE26C79-4641-4126-8768-9C093FBD1278}"
+      DTS:DTSID="{04BF6FE0-3D1B-4271-8A85-398F141AAFFA}"
       DTS:From="Package\Execute Present - Finance DimJournalType"
       DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 2"
+      DTS:ObjectName="Constraint"
       DTS:To="Package\Execute Present - Finance DimTransactionType" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C03511D-A0B2-49FF-802A-F05A7DEE1663}"
+      DTS:From="Package\Execute Present - Finance DimTransactionType"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Execute Present - Finance FactGL" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -211,12 +219,12 @@
           Id="Package\Execute Present - Finance DimTransactionType"
           TopLeft="163.3,295.25" />
         <NodeLayout
-          Size="228,42"
-          Id="Package\Execute Stage - Finance FactGL"
-          TopLeft="195.3,133.75" />
+          Size="236,42"
+          Id="Package\Execute Present - Finance FactGL"
+          TopLeft="201.3,382.75" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="311.55,175.75">
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="313.8,256.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -237,19 +245,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="313.8,256.5">
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="316.55,337.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.75"
+              EndConnector="0,45.5"
               Start="0,0"
-              End="0,31.25">
+              End="0,38">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.25" />
+                    End="0,38" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Present - Finance DimTransactionType"
   DTS:PackageType="5"
-  DTS:VersionBuild="87"
-  DTS:VersionGUID="{16CE5EC0-DF7D-4B7A-BA54-EC3655CBC380}">
+  DTS:VersionBuild="88"
+  DTS:VersionGUID="{4F986F84-47AF-4A58-8319-8B60BAD96EE2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -654,7 +654,7 @@ WHERE [BatchID] = ?</property>
                         <property
                           dataType="System.Int32"
                           name="ColumnType"
-                          typeConverter="ColumnType">1</property>
+                          typeConverter="ColumnType">2</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -682,7 +682,7 @@ WHERE [BatchID] = ?</property>
                         <property
                           dataType="System.Int32"
                           name="ColumnType"
-                          typeConverter="ColumnType">2</property>
+                          typeConverter="ColumnType">1</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -776,7 +776,7 @@ WHERE [BatchID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [finance].[DimTransactionType] SET [TransactionTypeName] = ?,[TransactionTypeNumber] = ? WHERE [TransactionTypeCode] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [finance].[DimTransactionType] SET [TransactionTypeCode] = ?,[TransactionTypeName] = ? WHERE [TransactionTypeNumber] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -804,7 +804,7 @@ WHERE [BatchID] = ?</property>
                       cachedDataType="str"
                       cachedLength="8"
                       cachedName="TransactionTypeCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeCode]" />
                     <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[TransactionTypeName]"
@@ -812,13 +812,13 @@ WHERE [BatchID] = ?</property>
                       cachedDataType="str"
                       cachedLength="40"
                       cachedName="TransactionTypeName"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeName]" />
                     <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[TransactionTypeNumber]"
                       cachedDataType="i2"
                       cachedName="TransactionTypeNumber"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeNumber]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -827,7 +827,7 @@ WHERE [BatchID] = ?</property>
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
                       codePage="1252"
                       dataType="str"
-                      length="40"
+                      length="15"
                       name="Param_0">
                       <properties>
                         <property
@@ -838,26 +838,26 @@ WHERE [BatchID] = ?</property>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      dataType="i2"
+                      codePage="1252"
+                      dataType="str"
+                      length="40"
                       name="Param_1">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
+                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
+                      dataType="i2"
                       name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                   </externalMetadataColumns>
@@ -1062,27 +1062,35 @@ WHERE [BatchID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="427,42"
-          Id="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID"
-          TopLeft="205.5,58.5" />
+          Size="165,42"
+          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
+          TopLeft="408.5,177.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Merge data into presentation table in the DW\Slowly Changing Dimension"
-          TopLeft="314.5,134.5" />
+          TopLeft="562.5,85.4999999999999" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Merge data into presentation table in the DW\NumRowsUpdated"
+          TopLeft="783,178.5" />
+        <NodeLayout
+          Size="427,42"
+          Id="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID"
+          TopLeft="453.5,5.49999999999989" />
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="419,100.5">
+          TopLeft="667,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34"
+              EndConnector="0,38"
               Start="0,0"
-              End="0,26.5">
+              End="0,30.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,30.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1094,105 +1102,61 @@ WHERE [BatchID] = ?</property>
         <NodeLayout
           Size="255,42"
           Id="Package\Merge data into presentation table in the DW\insert to finance DimTransactionType"
-          TopLeft="103.5,310" />
+          TopLeft="356.5,262.5" />
         <NodeLayout
           Size="195,42"
           Id="Package\Merge data into presentation table in the DW\update Type 1 attributes"
-          TopLeft="531.5,310" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsUpdated"
-          TopLeft="546,221" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
-          TopLeft="148.5,221" />
+          TopLeft="775,267.5" />
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[New Output]"
-          TopLeft="385.5,176.5">
+          TopLeft="633.5,127.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-154.5,44.5"
+              EndConnector="-142.5,50.0000000000001"
               Start="0,0"
-              End="-154.5,37">
+              End="-142.5,42.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,14.002849002849" />
+                    End="0,16.2279202279203" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,14.002849002849"
-                    Point2="0,18.002849002849"
-                    Point3="-4,18.002849002849" />
+                    Point1="0,16.2279202279203"
+                    Point2="0,20.2279202279203"
+                    Point3="-4,20.2279202279203" />
                   <mssgle:LineSegment
-                    End="-150.5,18.002849002849" />
+                    End="-138.5,20.2279202279203" />
                   <mssgle:CubicBezierSegment
-                    Point1="-150.5,18.002849002849"
-                    Point2="-154.5,18.002849002849"
-                    Point3="-154.5,22.002849002849" />
+                    Point1="-138.5,20.2279202279203"
+                    Point2="-142.5,20.2279202279203"
+                    Point3="-142.5,24.2279202279203" />
                   <mssgle:LineSegment
-                    End="-154.5,37" />
+                    End="-142.5,42.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-104.34138671875,23.002849002849,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
-          TopLeft="452.5,176.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="176.5,44.5"
-              Start="0,0"
-              End="176.5,37">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.002849002849" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.002849002849"
-                    Point2="0,18.002849002849"
-                    Point3="4,18.002849002849" />
-                  <mssgle:LineSegment
-                    End="172.5,18.002849002849" />
-                  <mssgle:CubicBezierSegment
-                    Point1="172.5,18.002849002849"
-                    Point2="176.5,18.002849002849"
-                    Point3="176.5,22.002849002849" />
-                  <mssgle:LineSegment
-                    End="176.5,37" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="9.71609374999994,23.002849002849,157.0678125,11.6630859375"
+              BoundingBox="-98.34138671875,25.2279202279203,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
-          TopLeft="231,263">
+          TopLeft="487.5,219.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="0,42.9999999999999"
               Start="0,0"
-              End="0,39.5">
+              End="0,35.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,35.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1202,19 +1166,55 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
-          TopLeft="629,263">
+          Id="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
+          TopLeft="700.5,127.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,47"
+              EndConnector="165.5,51.0000000000001"
               Start="0,0"
-              End="0,39.5">
+              End="165.5,43.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,39.5" />
+                    End="0,16.6324786324787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6324786324787"
+                    Point2="0,20.6324786324787"
+                    Point3="4,20.6324786324787" />
+                  <mssgle:LineSegment
+                    End="161.5,20.6324786324787" />
+                  <mssgle:CubicBezierSegment
+                    Point1="161.5,20.6324786324787"
+                    Point2="165.5,20.6324786324787"
+                    Point3="165.5,24.6324786324787" />
+                  <mssgle:LineSegment
+                    End="165.5,43.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="4.21609374999997,25.6324786324787,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
+          TopLeft="869.25,220.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.9999999999999"
+              Start="0,0"
+              End="0,39.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1226,14 +1226,6 @@ WHERE [BatchID] = ?</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Merge data into presentation table in the DW\Slowly Changing Dimension">
     <Properties>
@@ -1248,8 +1240,8 @@ WHERE [BatchID] = ?</property>
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeCode]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;TransactionTypeCode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeName]&lt;/IdentificationString&gt;
@@ -1260,8 +1252,8 @@ WHERE [BatchID] = ?</property>
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;get all rows from staging finance DimTransactionType for current BatchID.Outputs[OLE DB Source Output].Columns[TransactionTypeNumber]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;TransactionTypeNumber&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
@@ -1280,6 +1272,14 @@ WHERE [BatchID] = ?</property>
   &lt;DateVariable /&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging finance DimTransactionType for current BatchID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

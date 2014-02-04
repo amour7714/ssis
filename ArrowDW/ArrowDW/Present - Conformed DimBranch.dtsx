@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Present - Conformed DimBranch"
   DTS:PackageType="5"
-  DTS:VersionBuild="84"
-  DTS:VersionGUID="{F456E634-D1CD-4614-B7C6-79C879CB7A1A}">
+  DTS:VersionBuild="86"
+  DTS:VersionGUID="{63D4C08F-B9F4-4BDC-A0AE-FA71038BF78D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -23,6 +23,12 @@
       DTS:CreationName=""
       DTS:DTSID="{CE6ED017-848D-4484-804B-6759AF4C2740}"
       DTS:ObjectName="Get BatchID From Parent Package" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::EffectiveDate"
+      DTS:ConfigurationVariable="\Package.Variables[User::EffectiveDate].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{B7850D72-21FA-4CC2-ADA6-B3C4B7444D19}"
+      DTS:ObjectName="Get EffectiveDate From Parent Package" />
   </DTS:Configurations>
   <DTS:LogProviders>
     <DTS:LogProvider
@@ -45,6 +51,15 @@
       DTS:ObjectName="BatchID">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F21B4475-812F-48E6-9D02-EF4AEC0C7C38}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EffectiveDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -833,7 +848,6 @@ WHERE [BatchID] = ?</property>
                     <outputColumn
                       refId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output].Columns[EffectiveDate]"
                       dataType="dbDate"
-                      description="EffectiveDate"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output].Columns[EffectiveDate]"
@@ -844,13 +858,13 @@ WHERE [BatchID] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="Expression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="FriendlyExpression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>

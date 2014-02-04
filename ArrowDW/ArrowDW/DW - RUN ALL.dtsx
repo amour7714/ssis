@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="DW - RUN ALL"
   DTS:PackageType="5"
-  DTS:VersionBuild="25"
-  DTS:VersionGUID="{0348837E-63D7-482C-B770-FF91D20A7AB9}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{0ACC51CE-A3A6-4878-A7DE-128552FA0572}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:LogProviders>
@@ -45,6 +45,17 @@
       DTS:ObjectName="BatchID">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8BD21FA0-52B8-4317-9854-0DD2FAFDC387}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[System::ContainerStartTime]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="EffectiveDate">
+      <DTS:VariableValue
+        DTS:DataType="7">1/31/2014 3:19:32 PM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -310,27 +321,27 @@
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{B3F7D132-63FF-49D3-ADDC-FDC6369830BD}"
+      DTS:DTSID="{6CD5B468-803D-4799-BF89-42FF48634C86}"
       DTS:From="Package\Execute STAGING - Conformed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Execute PRESENTATION - Finance" />
+      DTS:To="Package\Execute PRESENTATION - Conformed" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{68D316BD-A353-481E-925B-90FA81EDC467}"
+      DTS:DTSID="{AA869E16-AF3B-4B27-913D-A41AC11A9592}"
       DTS:From="Package\Execute PRESENTATION - Conformed"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
-      DTS:To="Package\End batch" />
+      DTS:To="Package\Execute PRESENTATION - Finance" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{CA723185-45C7-4E90-AD59-7AC4EA68977E}"
+      DTS:DTSID="{92C1A59B-3CE7-456E-A6F7-31C6D7C54DF9}"
       DTS:From="Package\Execute PRESENTATION - Finance"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
-      DTS:To="Package\Execute PRESENTATION - Conformed" />
+      DTS:To="Package\End batch" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -351,7 +362,11 @@
         <NodeLayout
           Size="256,42"
           Id="Package\Execute PRESENTATION - Conformed"
-          TopLeft="187.991666666667,378.6" />
+          TopLeft="193.991666666667,303.6" />
+        <NodeLayout
+          Size="241,42"
+          Id="Package\Execute PRESENTATION - Finance"
+          TopLeft="198.491666666667,382.2" />
         <NodeLayout
           Size="225,42"
           Id="Package\Execute STAGING - Conformed"
@@ -409,19 +424,19 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="315.991666666667,420.6">
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="318.991666666667,257.8">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4"
+              EndConnector="0,45.8"
               Start="0,0"
-              End="0,31.9">
+              End="0,38.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9" />
+                    End="0,38.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -430,24 +445,20 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="241,42"
-          Id="Package\Execute PRESENTATION - Finance"
-          TopLeft="195.491666666667,297.2" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="315.991666666667,257.8">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="320.491666666667,345.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4"
+              EndConnector="0,36.6"
               Start="0,0"
-              End="0,31.9">
+              End="0,29.1">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9" />
+                    End="0,29.1" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -458,18 +469,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="315.991666666667,339.2">
+          TopLeft="317.491666666667,424.2">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.4"
+              EndConnector="0,35.8"
               Start="0,0"
-              End="0,31.9">
+              End="0,28.3">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.9" />
+                    End="0,28.3" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

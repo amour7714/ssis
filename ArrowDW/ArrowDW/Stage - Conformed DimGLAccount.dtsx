@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimGLAccount"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{FBE7B995-7294-41E8-A519-23B4E968B841}">
+  DTS:VersionBuild="36"
+  DTS:VersionGUID="{C7AED6D7-2B04-403E-A55B-9467F193FE55}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -249,11 +249,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server"
+              refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server"
               componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server"
+              name="dim_GLAccount_vw in dwloadobjects on ERP server"
               usesDispositions="true"
               version="7">
               <properties>
@@ -264,7 +264,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[atsi_GLChartAllCompanies_vw]</property>
+                  name="OpenRowset">[dbo].[dim_GLAccount_vw]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -298,7 +298,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
+                  refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
                   connectionManagerID="{44F1E26B-63A0-45EC-9D06-5C997B8EB28F}:external"
                   connectionManagerRefId="Project.ConnectionManagers[erp dwloadobjects]"
                   description="The OLE DB runtime connection used to access the database."
@@ -306,569 +306,569 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
+                  refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
                       name="active"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]"
                       name="company_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]"
                       name="account_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]"
                       name="account_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type]"
                       length="2"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]"
                       name="statement_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type_name]"
                       length="16"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]"
                       name="statement_type_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type]"
                       length="6"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]"
                       name="account_type"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]"
                       name="account_type_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1]"
                       length="5"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]"
                       name="acct_cat1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1_name]"
                       length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]"
                       name="acct_cat1_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2]"
                       length="4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]"
                       name="acct_cat2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2_name]"
                       length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]"
                       name="acct_cat2_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]"
                       name="acct_cat3"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3_name]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]"
                       name="acct_cat3_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]"
                       name="acct_cat4"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4_name]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]"
                       name="acct_cat4_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]"
                       name="acct_cat5"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5_name]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]"
                       name="acct_cat5_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_code]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]"
                       name="seg1_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_formatted]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_formatted]"
                       length="7"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]"
                       name="seg1_formatted"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]"
                       name="seg1_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_short_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_short_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]"
                       name="seg1_short_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_code]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]"
                       name="seg2_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]"
                       name="seg2_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_short_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_short_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]"
                       name="seg2_short_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_code]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]"
                       name="seg3_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]"
                       name="seg3_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_short_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_short_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]"
                       name="seg3_short_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_code]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]"
                       name="seg4_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]"
                       name="seg4_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_short_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_short_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]"
                       name="seg4_short_name"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code_formatted]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code_formatted]"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]"
                       name="account_code_formatted"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name_override]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name_override]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]"
                       name="account_name_override"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="active" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[company_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
                       name="company_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="account_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="account_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type]"
                       codePage="1252"
                       dataType="str"
                       length="2"
                       name="statement_type" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[statement_type_name]"
                       codePage="1252"
                       dataType="str"
                       length="16"
                       name="statement_type_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type]"
                       codePage="1252"
                       dataType="str"
                       length="6"
                       name="account_type" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_type_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="account_type_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1]"
                       codePage="1252"
                       dataType="str"
                       length="5"
                       name="acct_cat1" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat1_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="acct_cat1_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2]"
                       codePage="1252"
                       dataType="str"
                       length="4"
                       name="acct_cat2" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat2_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="acct_cat2_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat3" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat3_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat3_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat4" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat4_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat4_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat5" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acct_cat5_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="acct_cat5_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="seg1_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_formatted]"
                       codePage="1252"
                       dataType="str"
                       length="7"
                       name="seg1_formatted" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg1_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg1_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg1_short_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="seg2_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg2_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg2_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg2_short_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="seg3_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg3_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg3_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg3_short_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="seg4_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg4_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[seg4_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="seg4_short_name" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_code_formatted]"
                       codePage="1252"
                       dataType="str"
                       length="32"
                       name="account_code_formatted" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name_override]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[account_name_override]"
                       codePage="1252"
                       dataType="str"
                       length="1"
@@ -876,251 +876,251 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[company_code]"
                       name="company_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code]"
                       name="account_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code_formatted]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code_formatted]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_code_formatted]"
                       name="account_code_formatted" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name]"
                       name="account_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name_override]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name_override]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name_override]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_name_override]"
                       name="account_name_override" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type]"
                       codePage="1252"
                       dataType="str"
                       length="2"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type]"
                       name="statement_type" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type_name]"
                       codePage="1252"
                       dataType="str"
                       length="16"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[statement_type_name]"
                       name="statement_type_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type]"
                       codePage="1252"
                       dataType="str"
                       length="6"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type]"
                       name="account_type" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[account_type_name]"
                       name="account_type_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1]"
                       codePage="1252"
                       dataType="str"
                       length="5"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1]"
                       name="acct_cat1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat1_name]"
                       name="acct_cat1_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2]"
                       codePage="1252"
                       dataType="str"
                       length="4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2]"
                       name="acct_cat2" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2_name]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat2_name]"
                       name="acct_cat2_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3]"
                       name="acct_cat3" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat3_name]"
                       name="acct_cat3_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4]"
                       name="acct_cat4" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat4_name]"
                       name="acct_cat4_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5]"
                       name="acct_cat5" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5_name]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acct_cat5_name]"
                       name="acct_cat5_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_code]"
                       name="seg1_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_formatted]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_formatted]"
                       codePage="1252"
                       dataType="str"
                       length="7"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_formatted]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_formatted]"
                       name="seg1_formatted" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_name]"
                       name="seg1_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg1_short_name]"
                       name="seg1_short_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_code]"
                       name="seg2_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_name]"
                       name="seg2_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg2_short_name]"
                       name="seg2_short_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_code]"
                       name="seg3_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_name]"
                       name="seg3_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg3_short_name]"
                       name="seg3_short_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_code]"
                       codePage="1252"
                       dataType="str"
                       length="32"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_code]"
                       name="seg4_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_name]"
                       name="seg4_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_short_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_short_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_short_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[seg4_short_name]"
                       name="seg4_short_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       name="active" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1242,7 +1242,7 @@
                       cachedLength="1"
                       cachedName="active"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[company_code]"
                       cachedCodepage="1252"
@@ -1250,7 +1250,7 @@
                       cachedLength="8"
                       cachedName="company_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_code]"
                       cachedCodepage="1252"
@@ -1258,7 +1258,7 @@
                       cachedLength="32"
                       cachedName="account_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_name]"
                       cachedCodepage="1252"
@@ -1266,7 +1266,7 @@
                       cachedLength="40"
                       cachedName="account_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg1_code]"
                       cachedCodepage="1252"
@@ -1274,7 +1274,7 @@
                       cachedLength="32"
                       cachedName="seg1_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment1Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg1_formatted]"
                       cachedCodepage="1252"
@@ -1282,7 +1282,7 @@
                       cachedLength="7"
                       cachedName="seg1_formatted"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment1CodeFormatted]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_formatted]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg1_name]"
                       cachedCodepage="1252"
@@ -1290,7 +1290,7 @@
                       cachedLength="40"
                       cachedName="seg1_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment1Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_type]"
                       cachedCodepage="1252"
@@ -1298,7 +1298,7 @@
                       cachedLength="6"
                       cachedName="account_type"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountTypeCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_type_name]"
                       cachedCodepage="1252"
@@ -1306,7 +1306,7 @@
                       cachedLength="40"
                       cachedName="account_type_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountTypeName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_type_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[statement_type]"
                       cachedCodepage="1252"
@@ -1314,7 +1314,7 @@
                       cachedLength="2"
                       cachedName="statement_type"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[StatementTypeCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[statement_type_name]"
                       cachedCodepage="1252"
@@ -1322,7 +1322,7 @@
                       cachedLength="16"
                       cachedName="statement_type_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[StatementTypeName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[statement_type_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat1]"
                       cachedCodepage="1252"
@@ -1330,7 +1330,7 @@
                       cachedLength="5"
                       cachedName="acct_cat1"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category1Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat1_name]"
                       cachedCodepage="1252"
@@ -1338,7 +1338,7 @@
                       cachedLength="50"
                       cachedName="acct_cat1_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category1Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat1_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat2]"
                       cachedCodepage="1252"
@@ -1346,7 +1346,7 @@
                       cachedLength="4"
                       cachedName="acct_cat2"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category2Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat2_name]"
                       cachedCodepage="1252"
@@ -1354,7 +1354,7 @@
                       cachedLength="50"
                       cachedName="acct_cat2_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category2Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat2_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat3]"
                       cachedCodepage="1252"
@@ -1362,7 +1362,7 @@
                       cachedLength="1"
                       cachedName="acct_cat3"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category3Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat3_name]"
                       cachedCodepage="1252"
@@ -1370,7 +1370,7 @@
                       cachedLength="1"
                       cachedName="acct_cat3_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category3Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat3_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat4]"
                       cachedCodepage="1252"
@@ -1378,7 +1378,7 @@
                       cachedLength="1"
                       cachedName="acct_cat4"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category4Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat4_name]"
                       cachedCodepage="1252"
@@ -1386,7 +1386,7 @@
                       cachedLength="1"
                       cachedName="acct_cat4_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category4Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat4_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat5]"
                       cachedCodepage="1252"
@@ -1394,7 +1394,7 @@
                       cachedLength="1"
                       cachedName="acct_cat5"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category5Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[acct_cat5_name]"
                       cachedCodepage="1252"
@@ -1402,7 +1402,7 @@
                       cachedLength="1"
                       cachedName="acct_cat5_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Category5Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acct_cat5_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg1_short_name]"
                       cachedCodepage="1252"
@@ -1410,7 +1410,7 @@
                       cachedLength="40"
                       cachedName="seg1_short_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment1ShortName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg1_short_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg2_code]"
                       cachedCodepage="1252"
@@ -1418,7 +1418,7 @@
                       cachedLength="32"
                       cachedName="seg2_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment2Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg2_name]"
                       cachedCodepage="1252"
@@ -1426,7 +1426,7 @@
                       cachedLength="40"
                       cachedName="seg2_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment2Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg2_short_name]"
                       cachedCodepage="1252"
@@ -1434,7 +1434,7 @@
                       cachedLength="40"
                       cachedName="seg2_short_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment2ShortName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg2_short_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg3_code]"
                       cachedCodepage="1252"
@@ -1442,7 +1442,7 @@
                       cachedLength="32"
                       cachedName="seg3_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment3Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg3_name]"
                       cachedCodepage="1252"
@@ -1450,7 +1450,7 @@
                       cachedLength="40"
                       cachedName="seg3_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment3Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg3_short_name]"
                       cachedCodepage="1252"
@@ -1458,7 +1458,7 @@
                       cachedLength="40"
                       cachedName="seg3_short_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment3ShortName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg3_short_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg4_code]"
                       cachedCodepage="1252"
@@ -1466,7 +1466,7 @@
                       cachedLength="32"
                       cachedName="seg4_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment4Code]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg4_name]"
                       cachedCodepage="1252"
@@ -1474,7 +1474,7 @@
                       cachedLength="40"
                       cachedName="seg4_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment4Name]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[seg4_short_name]"
                       cachedCodepage="1252"
@@ -1482,7 +1482,7 @@
                       cachedLength="40"
                       cachedName="seg4_short_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[Segment4ShortName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[seg4_short_name]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_code_formatted]"
                       cachedCodepage="1252"
@@ -1490,7 +1490,7 @@
                       cachedLength="32"
                       cachedName="account_code_formatted"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountCodeFormatted]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_code_formatted]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].Columns[account_name_override]"
                       cachedCodepage="1252"
@@ -1498,7 +1498,7 @@
                       cachedLength="1"
                       cachedName="account_name_override"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountNameOverride]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[account_name_override]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1741,7 +1741,7 @@
               refId="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
               endId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
+              startId="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
               endId="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW.Inputs[OLE DB Destination Input]"
@@ -1933,21 +1933,21 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="130,42"
+          Id="Package\Copy data to the staging table in the DW\Row Count"
+          TopLeft="270.666666666667,222" />
+        <NodeLayout
+          Size="322,42"
+          Id="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server"
+          TopLeft="181.666666666667,55" />
+        <NodeLayout
           Size="273,42"
           Id="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW"
           TopLeft="199.166666666667,302" />
         <NodeLayout
-          Size="372,42"
-          Id="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server"
-          TopLeft="149.666666666667,55" />
-        <NodeLayout
           Size="175,42"
           Id="Package\Copy data to the staging table in the DW\Add BatchID column"
           TopLeft="248.166666666667,146" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Copy data to the staging table in the DW\Row Count"
-          TopLeft="270.666666666667,222" />
         <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
           TopLeft="335.666666666667,264">
@@ -1972,7 +1972,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="335.666666666667,97">
+          TopLeft="339.166666666667,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -2018,6 +2018,19 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Copy data to the staging table in the DW\dim_GLAccount_vw in dwloadobjects on ERP server">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">View</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Copy data to the staging table in the DW\staging conformed_DimGLAccount in DW">
     <Properties>
       <Property>
@@ -2027,19 +2040,6 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Copy data to the staging table in the DW\atsi_GLChartAllCompanies_vw in dwloadobjects on ERP server">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">View</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimVendor"
   DTS:PackageType="5"
-  DTS:VersionBuild="29"
-  DTS:VersionGUID="{E2FE2D8F-532D-42A0-BE3F-7C69AE063501}">
+  DTS:VersionBuild="32"
+  DTS:VersionGUID="{99EF7D1A-EA88-4252-BFD7-CC23C220A72A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -249,11 +249,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server"
+              refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server"
               componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="atsi_Vendor_vw in dwloadobjects on ERP server"
+              name="dim_Vendor_vw in dwloadobjects on ERP server"
               usesDispositions="true"
               version="7">
               <properties>
@@ -264,7 +264,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[atsi_Vendor_vw]</property>
+                  name="OpenRowset">[dbo].[dim_Vendor_vw]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -298,7 +298,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
+                  refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Connections[OleDbConnection]"
                   connectionManagerID="{44F1E26B-63A0-45EC-9D06-5C997B8EB28F}:external"
                   connectionManagerRefId="Project.ConnectionManagers[erp dwloadobjects]"
                   description="The OLE DB runtime connection used to access the database."
@@ -306,173 +306,197 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
+                  refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]"
                       name="active"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
                       length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]"
                       name="country"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
                       length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]"
                       name="state_prov"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[city]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]"
                       name="city"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]"
                       name="vendor_code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_name]"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_name]"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]"
                       name="vendor_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      length="2"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      name="CanUsa"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[active]"
                       codePage="1252"
                       dataType="str"
                       length="1"
                       name="active" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[country]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="country" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[state_prov]"
                       codePage="1252"
                       dataType="str"
                       length="15"
                       name="state_prov" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[city]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="city" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
                       name="vendor_code" />
                     <externalMetadataColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[vendor_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
                       name="vendor_name" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CanUsa" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
                       codePage="1252"
                       dataType="str"
                       length="8"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_code]"
                       name="vendor_code" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_name]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_name]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_name]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[vendor_name]"
                       name="vendor_name" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[country]"
                       name="country" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
                       codePage="1252"
                       dataType="str"
                       length="15"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[state_prov]"
                       name="state_prov" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[city]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[city]"
                       codePage="1252"
                       dataType="str"
                       length="40"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[city]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[city]"
                       name="city" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       codePage="1252"
                       dataType="str"
                       length="1"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[active]"
                       name="active" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      name="CanUsa" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -594,7 +618,7 @@
                       cachedLength="1"
                       cachedName="active"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[active]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[country]"
                       cachedCodepage="1252"
@@ -602,7 +626,7 @@
                       cachedLength="15"
                       cachedName="country"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[Country]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[country]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[state_prov]"
                       cachedCodepage="1252"
@@ -610,7 +634,7 @@
                       cachedLength="15"
                       cachedName="state_prov"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[StateProv]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[state_prov]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[city]"
                       cachedCodepage="1252"
@@ -618,7 +642,7 @@
                       cachedLength="40"
                       cachedName="city"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[City]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[city]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[vendor_code]"
                       cachedCodepage="1252"
@@ -626,7 +650,7 @@
                       cachedLength="8"
                       cachedName="vendor_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[VendorCode]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_code]" />
                     <inputColumn
                       refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[vendor_name]"
                       cachedCodepage="1252"
@@ -634,7 +658,15 @@
                       cachedLength="40"
                       cachedName="vendor_name"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[VendorName]"
-                      lineageId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]" />
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[vendor_name]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -678,6 +710,12 @@
                       dataType="str"
                       length="40"
                       name="VendorName" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CanUsa" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -717,7 +755,7 @@
               refId="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
               endId="Package\Copy data to the staging table in the DW\Add BatchID column.Inputs[Derived Column Input]"
               name="OLE DB Source Output"
-              startId="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
+              startId="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
               endId="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW.Inputs[OLE DB Destination Input]"
@@ -913,17 +951,17 @@
           Id="Package\Copy data to the staging table in the DW\staging conformed_DimVendor in DW"
           TopLeft="194.416666666667,302" />
         <NodeLayout
-          Size="305,42"
-          Id="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server"
+          Size="130,42"
+          Id="Package\Copy data to the staging table in the DW\Row Count"
+          TopLeft="262.916666666667,222" />
+        <NodeLayout
+          Size="306,42"
+          Id="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server"
           TopLeft="169.916666666667,55" />
         <NodeLayout
           Size="175,42"
           Id="Package\Copy data to the staging table in the DW\Add BatchID column"
           TopLeft="240.416666666667,146" />
-        <NodeLayout
-          Size="130,42"
-          Id="Package\Copy data to the staging table in the DW\Row Count"
-          TopLeft="262.916666666667,222" />
         <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[Row Count Output 1]"
           TopLeft="325.166666666667,264">
@@ -948,7 +986,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Copy data to the staging table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="325.166666666667,97">
+          TopLeft="325.416666666667,97">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1007,7 +1045,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy data to the staging table in the DW\atsi_Vendor_vw in dwloadobjects on ERP server">
+    design-time-name="Package\Copy data to the staging table in the DW\dim_Vendor_vw in dwloadobjects on ERP server">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

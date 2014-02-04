@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Present - Conformed DimVendor"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{9BA0C5A0-2FC8-47E8-8E47-F6BCD5FD11ED}">
+  DTS:VersionBuild="91"
+  DTS:VersionGUID="{2929D775-1FF0-4791-A2BF-9E33F0E37AA4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -23,6 +23,12 @@
       DTS:CreationName=""
       DTS:DTSID="{412F0097-6152-42F0-9875-3CA226B392C4}"
       DTS:ObjectName="Get BatchID From Parent Package" />
+    <DTS:Configuration
+      DTS:ConfigurationString="User::EffectiveDate"
+      DTS:ConfigurationVariable="\Package.Variables[User::EffectiveDate].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{07E9F17A-268B-42F0-A526-3A5EAFD485EA}"
+      DTS:ObjectName="Get EffectiveDate From Parent Package" />
   </DTS:Configurations>
   <DTS:LogProviders>
     <DTS:LogProvider
@@ -45,6 +51,15 @@
       DTS:ObjectName="BatchID">
       <DTS:VariableValue
         DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{6E1EFDA4-2BFD-45CF-B65C-CFB6AEA5EDB4}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="EffectiveDate">
+      <DTS:VariableValue
+        DTS:DataType="7">12:00:00 AM</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -252,6 +267,7 @@
       ,[StateProv]
       ,[City]
       ,[ActiveFlag]
+      ,[CanUsa]
 FROM [staging].[conformed_DimVendor]
 WHERE [BatchID] = ?</property>
                 <property
@@ -355,6 +371,17 @@ WHERE [BatchID] = ?</property>
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[VendorName]"
                       name="VendorName"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      length="2"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      name="CanUsa"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -394,6 +421,12 @@ WHERE [BatchID] = ?</property>
                       dataType="str"
                       length="40"
                       name="VendorName" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CanUsa" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -443,6 +476,13 @@ WHERE [BatchID] = ?</property>
                       length="1"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Error Output].Columns[ActiveFlag]"
                       name="ActiveFlag" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      name="CanUsa" />
                     <outputColumn
                       refId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -581,6 +621,14 @@ WHERE [BatchID] = ?</property>
                       externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].ExternalColumns[ActiveFlag]"
                       lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[ActiveFlag]" />
                     <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CanUsa]" />
+                    <inputColumn
                       refId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].Columns[EffectiveDate]"
                       cachedDataType="dbDate"
                       cachedName="EffectiveDate"
@@ -629,6 +677,12 @@ WHERE [BatchID] = ?</property>
                       dataType="str"
                       length="1"
                       name="ActiveFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CanUsa" />
                     <externalMetadataColumn
                       refId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input].ExternalColumns[EffectiveDate]"
                       dataType="dbDate"
@@ -766,13 +820,13 @@ WHERE [BatchID] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="Expression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="FriendlyExpression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -840,13 +894,13 @@ WHERE [BatchID] = ?</property>
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Expression"
-                          name="Expression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="Expression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                         <property
                           containsID="true"
                           dataType="System.String"
                           description="Derived Column Friendly Expression"
                           expressionType="Notify"
-                          name="FriendlyExpression">(DT_DBDATE)(@[System::ContainerStartTime])</property>
+                          name="FriendlyExpression">(DT_DBDATE)(@[User::EffectiveDate])</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -889,7 +943,7 @@ WHERE [BatchID] = ?</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ActiveFlag], [City], [Country], [StateProv], [VendorCode], [VendorName],[EffectiveDate],[ExpiryDate] FROM [conformed].[DimVendor]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ActiveFlag], [CanUsa], [City], [Country], [StateProv], [VendorCode], [VendorName],[EffectiveDate],[ExpiryDate] FROM [conformed].[DimVendor]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -950,6 +1004,21 @@ WHERE [BatchID] = ?</property>
                           dataType="System.Int32"
                           name="ColumnType"
                           typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CanUsa]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -1036,6 +1105,12 @@ WHERE [BatchID] = ?</property>
                       dataType="str"
                       length="1"
                       name="ActiveFlag" />
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CanUsa" />
                     <externalMetadataColumn
                       refId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[City]"
                       codePage="1252"
@@ -1230,6 +1305,21 @@ WHERE [BatchID] = ?</property>
                           name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[VendorName]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 1].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CanUsa]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1328,6 +1418,21 @@ WHERE [BatchID] = ?</property>
                           name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[VendorName]}</property>
                       </properties>
                     </inputColumn>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Inputs[Union All Input 2].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CanUsa]}</property>
+                      </properties>
+                    </inputColumn>
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -1386,6 +1491,13 @@ WHERE [BatchID] = ?</property>
                       length="40"
                       lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[VendorName]"
                       name="VendorName" />
+                    <outputColumn
+                      refId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1].Columns[CanUsa]"
+                      name="CanUsa" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -1409,7 +1521,7 @@ WHERE [BatchID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimVendor] SET [ExpiryDate] = ? WHERE [VendorCode] = ? AND [ExpiryDate] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimVendor] SET [ExpiryDate] = ? WHERE [CanUsa] = ? AND [VendorCode] = ? AND [ExpiryDate] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1432,12 +1544,20 @@ WHERE [BatchID] = ?</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]" />
+                    <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[VendorCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="8"
                       cachedName="VendorCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[VendorCode]" />
                     <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].Columns[ExpiryDate]"
@@ -1465,6 +1585,19 @@ WHERE [BatchID] = ?</property>
                       dataType="str"
                       length="15"
                       name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Param_2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1525,7 +1658,7 @@ WHERE [BatchID] = ?</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimVendor] SET [City] = ?,[Country] = ?,[StateProv] = ? WHERE [VendorCode] = ? AND [ExpiryDate] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [conformed].[DimVendor] SET [City] = ?,[Country] = ?,[StateProv] = ? WHERE [CanUsa] = ? AND [VendorCode] = ? AND [ExpiryDate] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1547,6 +1680,14 @@ WHERE [BatchID] = ?</property>
                   hasSideEffects="true"
                   name="OLE DB Command Input">
                   <inputColumns>
+                    <inputColumn
+                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]" />
                     <inputColumn
                       refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].Columns[City]"
                       cachedCodepage="1252"
@@ -1577,7 +1718,7 @@ WHERE [BatchID] = ?</property>
                       cachedDataType="str"
                       cachedLength="8"
                       cachedName="VendorCode"
-                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      externalMetadataColumnId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[VendorCode]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -1634,6 +1775,19 @@ WHERE [BatchID] = ?</property>
                           name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1678,14 +1832,14 @@ WHERE [BatchID] = ?</property>
               startId="Package\Merge data into presentation table in the DW\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
-              endId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input]"
-              name="Derived Column Output"
-              startId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
               endId="Package\Merge data into presentation table in the DW\NumRowsInserted.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
+              endId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
               endId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Inputs[Derived Column Input]"
@@ -1708,14 +1862,14 @@ WHERE [BatchID] = ?</property>
               startId="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
-              endId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]"
-              name="Row Count Output 1"
-              startId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Outputs[Row Count Output 1]" />
-            <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
               endId="Package\Merge data into presentation table in the DW\insert to conformed DimVendor.Inputs[OLE DB Destination Input]"
               name="Row Count Output 1"
               startId="Package\Merge data into presentation table in the DW\NumRowsInserted.Outputs[Row Count Output 1]" />
+            <path
+              refId="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
+              endId="Package\Merge data into presentation table in the DW\update Type 1 attributes.Inputs[OLE DB Command Input]"
+              name="Row Count Output 1"
+              startId="Package\Merge data into presentation table in the DW\NumRowsUpdated.Outputs[Row Count Output 1]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
               endId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Inputs[Derived Column Input]"
@@ -1912,59 +2066,265 @@ WHERE [BatchID] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="189,42"
-          Id="Package\Merge data into presentation table in the DW\Set value of ExpiryDate"
-          TopLeft="192.75,202.5" />
-        <NodeLayout
-          Size="476,42"
-          Id="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change"
-          TopLeft="49.2500000000001,272.5" />
-        <NodeLayout
-          Size="471,42"
-          Id="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates"
-          TopLeft="252.5,364.5" />
-        <NodeLayout
-          Size="165,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
-          TopLeft="405.5,511" />
+          Size="402,42"
+          Id="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID"
+          TopLeft="633.5,19.5" />
         <NodeLayout
           Size="209,42"
           Id="Package\Merge data into presentation table in the DW\Slowly Changing Dimension"
-          TopLeft="434,99.6666666666667" />
-        <NodeLayout
-          Size="341,42"
-          Id="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted"
-          TopLeft="317.5,438.5" />
-        <NodeLayout
-          Size="195,42"
-          Id="Package\Merge data into presentation table in the DW\update Type 1 attributes"
-          TopLeft="1033,99.6666666666667" />
-        <NodeLayout
-          Size="166,42"
-          Id="Package\Merge data into presentation table in the DW\NumRowsUpdated"
-          TopLeft="824,99.6666666666667" />
-        <NodeLayout
-          Size="402,42"
-          Id="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID"
-          TopLeft="337.5,26.5" />
-        <NodeLayout
-          Size="227,42"
-          Id="Package\Merge data into presentation table in the DW\insert to conformed DimVendor"
-          TopLeft="374.5,582.5" />
+          TopLeft="731,91.5" />
         <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
-          TopLeft="488,406.5">
+          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
+          TopLeft="835,61.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32"
+              EndConnector="0,30"
               Start="0,0"
-              End="0,24.5">
+              End="0,22.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5" />
+                    End="0,22.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="189,42"
+          Id="Package\Merge data into presentation table in the DW\Set value of ExpiryDate"
+          TopLeft="510.5,193.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
+          TopLeft="802,133.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-197,60"
+              Start="0,0"
+              End="-197,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,20.2735042735043"
+                    Point2="0,24.2735042735043"
+                    Point3="-4,24.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-193,24.2735042735043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-193,24.2735042735043"
+                    Point2="-197,24.2735042735043"
+                    Point3="-197,28.2735042735043" />
+                  <mssgle:LineSegment
+                    End="-197,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-173.55638671875,29.2735042735043,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="476,42"
+          Id="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change"
+          TopLeft="364.5,266.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
+          TopLeft="603.75,235.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,31"
+              Start="0,0"
+              End="0,23.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="471,42"
+          Id="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates"
+          TopLeft="555,354.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[New Output]"
+          TopLeft="868.333333333333,133.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,221"
+              Start="0,0"
+              End="0,213.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,213.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-27.09138671875,101.033203125,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Command Output]"
+          TopLeft="602.5,308.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="110.833333333333,46"
+              Start="0,0"
+              End="110.833333333333,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.5065594583157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.5065594583157"
+                    Point2="0,27.5065594583157"
+                    Point3="4,27.5065594583157" />
+                  <mssgle:LineSegment
+                    End="106.833333333333,27.5065594583157" />
+                  <mssgle:CubicBezierSegment
+                    Point1="106.833333333333,27.5065594583157"
+                    Point2="110.833333333333,27.5065594583157"
+                    Point3="110.833333333333,31.5065594583157" />
+                  <mssgle:LineSegment
+                    End="110.833333333333,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="341,42"
+          Id="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted"
+          TopLeft="614,437.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Union All Output 1]"
+          TopLeft="787.5,396.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="227,42"
+          Id="Package\Merge data into presentation table in the DW\insert to conformed DimVendor"
+          TopLeft="671,596.5" />
+        <NodeLayout
+          Size="195,42"
+          Id="Package\Merge data into presentation table in the DW\update Type 1 attributes"
+          TopLeft="1308,91.5" />
+        <NodeLayout
+          Size="166,42"
+          Id="Package\Merge data into presentation table in the DW\NumRowsUpdated"
+          TopLeft="1115.5,92.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
+          TopLeft="940,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.5,0"
+              Start="0,0"
+              End="168,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="168,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="5.46609374999997,5,157.0678125,11.6630859375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
+          TopLeft="1281.5,113">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="26.5,0"
+              Start="0,0"
+              End="19,0">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="19,0" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Merge data into presentation table in the DW\NumRowsInserted"
+          TopLeft="703.5,519.5" />
+        <EdgeLayout
+          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
+          TopLeft="785.25,479.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40"
+              Start="0,0"
+              End="0,32.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1975,235 +2335,37 @@ WHERE [BatchID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 11]"
-          TopLeft="990,120.666666666667">
+          TopLeft="785.25,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="43,0"
+              EndConnector="0,35"
               Start="0,0"
-              End="35.5,0">
+              End="0,27.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="35.5,0" />
+                    End="0,27.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Row Count Output 1]"
-          TopLeft="488,553">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.5"
-              Start="0,0"
-              End="0,22">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,22" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Source Output]"
-          TopLeft="538.5,68.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.1666666666667"
-              Start="0,0"
-              End="0,23.6666666666667">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.6666666666667" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[OLE DB Command Output]"
-          TopLeft="287.25,314.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="123.583333333333,50"
-              Start="0,0"
-              End="123.583333333333,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,25.8984341938214" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,25.8984341938214"
-                    Point2="0,29.8984341938214"
-                    Point3="4,29.8984341938214" />
-                  <mssgle:LineSegment
-                    End="119.583333333333,29.8984341938214" />
-                  <mssgle:CubicBezierSegment
-                    Point1="119.583333333333,29.8984341938214"
-                    Point2="123.583333333333,29.8984341938214"
-                    Point3="123.583333333333,33.8984341938214" />
-                  <mssgle:LineSegment
-                    End="123.583333333333,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[New Output]"
-          TopLeft="568.583333333333,141.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,222.833333333333"
-              Start="0,0"
-              End="0,215.333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,215.333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,101.949869791667,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
-          TopLeft="505,141.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-217.75,60.8333333333333"
-              Start="0,0"
-              End="-217.75,53.3333333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.6106362773029" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,20.6106362773029"
-                    Point2="0,24.6106362773029"
-                    Point3="-4,24.6106362773029" />
-                  <mssgle:LineSegment
-                    End="-213.75,24.6106362773029" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-213.75,24.6106362773029"
-                    Point2="-217.75,24.6106362773029"
-                    Point3="-217.75,28.6106362773029" />
-                  <mssgle:LineSegment
-                    End="-217.75,53.3333333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-183.93138671875,29.6106362773029,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
-          TopLeft="287.25,244.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28"
-              Start="0,0"
-              End="0,20.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,20.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
-          TopLeft="488,480.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,30.5"
-              Start="0,0"
-              End="0,23">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Changing Attribute Updates Output]"
-          TopLeft="643,120.666666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="181,0"
-              Start="0,0"
-              End="173.5,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="173.5,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="8.21609374999997,5,157.0678125,11.6630859375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Merge data into presentation table in the DW\Slowly Changing Dimension">
     <Properties>
@@ -2220,6 +2382,12 @@ WHERE [BatchID] = ?</property>
       &lt;ColumnName&gt;ActiveFlag&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[CanUsa]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CanUsa&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;get all rows from staging conformed_DimVendor for current BatchID.Outputs[OLE DB Source Output].Columns[City]&lt;/IdentificationString&gt;
@@ -2269,17 +2437,9 @@ WHERE [BatchID] = ?</property>
   &lt;ValueExpired /&gt;
   &lt;StartDateColumn&gt;EffectiveDate&lt;/StartDateColumn&gt;
   &lt;EndDateColumn&gt;ExpiryDate&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::ContainerStartTime&lt;/DateVariable&gt;
+  &lt;DateVariable&gt;User::EffectiveDate&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;false&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Merge data into presentation table in the DW\get all rows from staging conformed_DimVendor for current BatchID">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

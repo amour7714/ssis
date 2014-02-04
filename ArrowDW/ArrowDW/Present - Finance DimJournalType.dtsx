@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Present - Finance DimJournalType"
   DTS:PackageType="5"
-  DTS:VersionBuild="82"
-  DTS:VersionGUID="{385ADDEA-60C9-4096-BEA5-0D81B704E6ED}">
+  DTS:VersionBuild="83"
+  DTS:VersionGUID="{3A4F91C8-566A-4086-B83D-87FA8CEADA5E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -1063,7 +1063,9 @@ WHERE [BatchID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,10.970703125,35.6689453125,9.55859375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1085,7 +1087,9 @@ WHERE [BatchID] = ?</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.83447265625,9.470703125,35.6689453125,9.55859375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -1120,7 +1124,7 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-103.21638671875,31.0940170940171,54.1827734375,11.43359375"
+              BoundingBox="-125.83173828125,31.0940170940171,99.4134765625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

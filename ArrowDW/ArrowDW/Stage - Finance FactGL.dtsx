@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Finance FactGL"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{D97805AF-0C51-47E5-ADAE-98581286B7B4}">
+  DTS:VersionBuild="54"
+  DTS:VersionGUID="{35370A0E-149C-4ADC-A6AF-27AB1C2DA8E9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -632,7 +632,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OrganizationCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OrganizationCode]"
                       name="OrganizationCode"
                       truncationRowDisposition="FailComponent" />
@@ -643,7 +643,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CompanyCode]"
                       name="CompanyCode"
                       truncationRowDisposition="FailComponent" />
@@ -654,7 +654,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]"
                       name="BranchCode"
                       truncationRowDisposition="FailComponent" />
@@ -665,7 +665,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[DivisionCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[DivisionCode]"
                       name="DivisionCode"
                       truncationRowDisposition="FailComponent" />
@@ -687,7 +687,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[JournalTypeCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[JournalTypeCode]"
                       name="JournalTypeCode"
                       truncationRowDisposition="FailComponent" />
@@ -698,7 +698,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TrxCurrencyCode]"
                       name="TrxCurrencyCode"
                       truncationRowDisposition="FailComponent" />
@@ -709,7 +709,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[HomeCurrencyCode]"
                       name="HomeCurrencyCode"
                       truncationRowDisposition="FailComponent" />
@@ -720,7 +720,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OperCurrencyCode]"
                       name="OperCurrencyCode"
                       truncationRowDisposition="FailComponent" />
@@ -731,7 +731,7 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CustomerCode]"
                       name="CustomerCode"
                       truncationRowDisposition="FailComponent" />
@@ -742,20 +742,9 @@
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[VendorCode]"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[VendorCode]"
                       name="VendorCode"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeCode]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeCode]"
-                      length="8"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeCode]"
-                      name="TransactionTypeCode"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[GLAccountCode]"
@@ -908,6 +897,26 @@
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BatchID]"
                       name="BatchID"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      length="2"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]"
+                      name="CanUsa"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeNumber]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeNumber]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeNumber]"
+                      name="TransactionTypeNumber"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -935,25 +944,25 @@
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OrganizationCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="OrganizationCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="CompanyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="BranchCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[DivisionCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="DivisionCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[ReferenceCode]"
@@ -965,44 +974,38 @@
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[JournalTypeCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="JournalTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="TrxCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="HomeCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="OperCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CustomerCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="CustomerCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[VendorCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="VendorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="TransactionTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[GLAccountCode]"
                       codePage="1252"
@@ -1079,6 +1082,16 @@
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
                       dataType="i4"
                       name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CanUsa" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TransactionTypeNumber]"
+                      dataType="i4"
+                      name="TransactionTypeNumber" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1110,28 +1123,28 @@
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OrganizationCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OrganizationCode]"
                       name="OrganizationCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
                       name="CompanyCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
                       name="BranchCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[DivisionCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[DivisionCode]"
                       name="DivisionCode" />
                     <outputColumn
@@ -1145,51 +1158,44 @@
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[JournalTypeCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[JournalTypeCode]"
                       name="JournalTypeCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyCode]"
                       name="TrxCurrencyCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyCode]"
                       name="HomeCurrencyCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OperCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OperCurrencyCode]"
                       name="OperCurrencyCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CustomerCode]"
                       name="CustomerCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[VendorCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[VendorCode]"
                       name="VendorCode" />
-                    <outputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TransactionTypeCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TransactionTypeCode]"
-                      name="TransactionTypeCode" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[GLAccountCode]"
                       codePage="1252"
@@ -1197,6 +1203,11 @@
                       length="32"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[GLAccountCode]"
                       name="GLAccountCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TransactionTypeNumber]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TransactionTypeNumber]"
+                      name="TransactionTypeNumber" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[AssetCode]"
                       codePage="1252"
@@ -1281,6 +1292,13 @@
                       dataType="i4"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BatchID]"
                       name="BatchID" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CanUsa]"
+                      name="CanUsa" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -1427,7 +1445,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[OrganizationCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="OrganizationCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OrganizationCode]" />
@@ -1435,7 +1453,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[CompanyCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="CompanyCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CompanyCode]" />
@@ -1443,7 +1461,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[BranchCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="BranchCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]" />
@@ -1451,7 +1469,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[DivisionCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="DivisionCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[DivisionCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[DivisionCode]" />
@@ -1467,7 +1485,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[JournalTypeCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="JournalTypeCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[JournalTypeCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[JournalTypeCode]" />
@@ -1475,7 +1493,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[TrxCurrencyCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="TrxCurrencyCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TrxCurrencyCode]" />
@@ -1483,7 +1501,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[HomeCurrencyCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="HomeCurrencyCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[HomeCurrencyCode]" />
@@ -1491,7 +1509,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[OperCurrencyCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="OperCurrencyCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OperCurrencyCode]" />
@@ -1499,7 +1517,7 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[CustomerCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="CustomerCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CustomerCode]" />
@@ -1507,18 +1525,10 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[VendorCode]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="8"
+                      cachedLength="15"
                       cachedName="VendorCode"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[VendorCode]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[VendorCode]" />
-                    <inputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[TransactionTypeCode]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="TransactionTypeCode"
-                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeCode]"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeCode]" />
                     <inputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[GLAccountCode]"
                       cachedCodepage="1252"
@@ -1625,6 +1635,20 @@
                       cachedName="BatchID"
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BatchID]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[CanUsa]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="CanUsa"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CanUsa]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].Columns[TransactionTypeNumber]"
+                      cachedDataType="i4"
+                      cachedName="TransactionTypeNumber"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeNumber]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TransactionTypeNumber]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1648,25 +1672,25 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="OrganizationCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="CompanyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="BranchCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[DivisionCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="DivisionCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[ReferenceCode]"
@@ -1678,44 +1702,38 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[JournalTypeCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="JournalTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="TrxCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="HomeCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="OperCurrencyCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CustomerCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="CustomerCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[VendorCode]"
                       codePage="1252"
                       dataType="str"
-                      length="8"
+                      length="15"
                       name="VendorCode" />
-                    <externalMetadataColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeCode]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="TransactionTypeCode" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[GLAccountCode]"
                       codePage="1252"
@@ -1792,6 +1810,16 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
                       dataType="i4"
                       name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[CanUsa]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="CanUsa" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW.Inputs[OLE DB Destination Input].ExternalColumns[TransactionTypeNumber]"
+                      dataType="i4"
+                      name="TransactionTypeNumber" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2245,13 +2273,13 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130,42"
-          Id="Package\Copy the transactions to the staging table in the DW\Row Count"
-          TopLeft="295.166666666667,140.5" />
-        <NodeLayout
           Size="220,42"
           Id="Package\Copy the transactions to the staging table in the DW\staging finance_FactGL in DW"
           TopLeft="250.166666666667,236.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy the transactions to the staging table in the DW\Row Count"
+          TopLeft="295.166666666667,140.5" />
         <NodeLayout
           Size="342,42"
           Id="Package\Copy the transactions to the staging table in the DW\finance_FactGL_staging in dwloadobjects on ERP server"
