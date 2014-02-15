@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Finance FactGL"
   DTS:PackageType="5"
-  DTS:VersionBuild="54"
-  DTS:VersionGUID="{35370A0E-149C-4ADC-A6AF-27AB1C2DA8E9}">
+  DTS:VersionBuild="55"
+  DTS:VersionGUID="{4401DA6D-84C5-40BC-9705-954E3432DAED}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -1973,7 +1973,7 @@
         <SQLTask:SqlTaskData
           SQLTask:Connection="{07EECAF4-D126-4452-823D-ABEDAA92510C}"
           SQLTask:IsStoredProc="True"
-          SQLTask:SqlStatementSource="dbo.stage_GLDetailsForCompany_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          SQLTask:SqlStatementSource="dbo.stage_FactGL_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="@company_code"
             SQLTask:DtsVariableName="User::company_code"

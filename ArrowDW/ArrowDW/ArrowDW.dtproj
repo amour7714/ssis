@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">ARROW100010</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYkvcOPxhE0iF8V36gCcfmAAAAAACAAAAAAADZgAAwAAAABAAAAC3m6p1tHY9UrZ5E4diSRRbAAAAAASAAACgAAAAEAAAAEQrVjKgD7+o5XHh9FFKTBaIAAAAUADK6wLXE9iM6mUbsQlhyqr+sWooHl0k7APTRlYAursU35Xqtwr8qRgwgvfym0vf5gWH4zkr1T89o/QdqGBH+JV199a77OMO3nxm6aFtD2mTBfcuYvlGsudSc/pP35RkoPXSPeBUSsVedPeu6ioYERO0vGCClkbMBNR/dISbcZwkgfPCRQGNHxQAAADXakEqD/yoNYod4i6D7PgSY8+GhQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAYkvcOPxhE0iF8V36gCcfmAAAAAACAAAAAAADZgAAwAAAABAAAABdzhqI2DnrXCxx7WcMBq96AAAAAASAAACgAAAAEAAAAEryTr1txBEzmhkvhrIm2hmIAAAAyCfJ7A5H10hQgPw5Tr6+TQQltOqf2WwyPU3XaKNqy+rzWSfc1ZxdVap6sqDNreK16OF8nQM5AxOZKgEm0uDNf6S4AMcokyYn+cIOUM5Hk9dQrbNcUmAeSxPGEMq/4RxRS+OsK/f9xtU/H4jmARtlDnPNeQrl3cZeqG5fswOnH0Jh4BqKxPTMthQAAADQobVo6j9yPYl+t/+PxTEuL8fMjg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -432,10 +432,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimDivision</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">27</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">29</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{18B57B55-6242-4FD4-BC28-46D42BDDFEB5}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{CE47774A-C76C-4578-AED5-98ED4CC55D1F}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -449,10 +449,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimBranch</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">29</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8D82FF6F-8634-443A-93D9-034568BA6D2F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{6E91E8F6-C121-4818-8E4A-EA448E9A622A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -466,10 +466,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimGLAccount</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">36</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FBE7B995-7294-41E8-A519-23B4E968B841}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C7AED6D7-2B04-403E-A55B-9467F193FE55}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -483,10 +483,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimReferenceCode</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">36</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{731335B2-DF8F-42D3-8E98-A354BFECC237}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DD6544FD-C122-4C18-83A4-AAF46B93F9EC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -500,10 +500,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimAsset</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E2B47A8D-529B-4655-A00B-8E7D9C74DA6C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{35A8EF18-C871-4127-A0BC-0481A43AD873}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -517,10 +517,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimVendor</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{8175A930-5133-43DF-817F-02923E24C579}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{99EF7D1A-EA88-4252-BFD7-CC23C220A72A}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -534,10 +534,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimCustomer</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">31</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">33</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B37B81BD-7AB9-4F1B-B125-8A172319486B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{1DF1A540-0BD4-4E04-ADFF-EE9D1AA37A95}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -551,10 +551,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimCompany</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">26</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4A45F032-4E7D-4747-A164-D97F3935052C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{52F5EB73-194A-438B-96CC-8210ED731A48}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -568,10 +568,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Conformed DimOrganization</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">28</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{B323008D-FF3D-4242-A873-53101E30AB06}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{60961607-D569-4BBD-B983-FBCE83A4737E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -602,10 +602,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Finance DimJournalType</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{9697E506-6C64-4763-BC9C-CCAEB948CE4D}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{539FA5A2-50F7-40B1-A431-AB36CCACC827}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -619,10 +619,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Finance DimTransactionType</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">23</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{ED25AB0A-13F1-49C2-A3B0-FCBF21405883}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{E132F142-1E91-49C0-8977-3B4B6B5E5053}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -636,10 +636,10 @@
                 <SSIS:Property SSIS:Name="Name">Stage - Finance FactGL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">52</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">55</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A4790A4A-AF7E-4916-B176-96FE95C1770B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4401DA6D-84C5-40BC-9705-954E3432DAED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -704,10 +704,10 @@
                 <SSIS:Property SSIS:Name="Name">DW - RUN ALL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">30</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">33</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{D2D1462D-297E-45C1-A6F2-D8E090789C95}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2EC7C894-1BED-43FE-B662-2A9E546BD233}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -874,10 +874,10 @@
                 <SSIS:Property SSIS:Name="Name">PRESENTATION - Finance</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">21</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">22</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{536FCEFC-EB09-4053-A11D-787854EB4858}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3598D1E9-3799-4153-8FE9-E3B6FA4CF51B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -891,10 +891,10 @@
                 <SSIS:Property SSIS:Name="Name">Present - Finance DimTransactionType</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">87</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">88</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{16CE5EC0-DF7D-4B7A-BA54-EC3655CBC380}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4F986F84-47AF-4A58-8319-8B60BAD96EE2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -908,10 +908,10 @@
                 <SSIS:Property SSIS:Name="Name">Present - Finance FactGL</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">80</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">90</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{FC681021-1BFC-4B5C-9A96-E2CA03AC8C72}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{DB251CE1-7CEF-4CFE-B0B6-1C3D0E4D866D}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">6</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

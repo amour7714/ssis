@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="DW - RUN ALL"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{0ACC51CE-A3A6-4878-A7DE-128552FA0572}">
+  DTS:VersionBuild="33"
+  DTS:VersionGUID="{2EC7C894-1BED-43FE-B662-2A9E546BD233}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:LogProviders>
@@ -49,13 +49,12 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{8BD21FA0-52B8-4317-9854-0DD2FAFDC387}"
-      DTS:EvaluateAsExpression="True"
       DTS:Expression="@[System::ContainerStartTime]"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EffectiveDate">
       <DTS:VariableValue
-        DTS:DataType="7">1/31/2014 3:19:32 PM</DTS:VariableValue>
+        DTS:DataType="7">1/1/1900</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
