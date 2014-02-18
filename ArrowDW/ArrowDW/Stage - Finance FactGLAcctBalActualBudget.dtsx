@@ -1,0 +1,2151 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/13/2013 11:12:14 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="ARROW100010"
+  DTS:CreatorName="ARROW\gschulte"
+  DTS:DTSID="{E84EF042-3BA1-4307-A997-D62516743EFE}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Stage - Finance FactGLAcctBalActualBudget"
+  DTS:PackageType="5"
+  DTS:VersionBuild="58"
+  DTS:VersionGUID="{84EB77A6-BB35-4D5A-BE87-23E36CC61D05}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="User::BatchID"
+      DTS:ConfigurationVariable="\Package.Variables[User::BatchID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{240741C6-CBD2-4333-B7C6-B1D084789A09}"
+      DTS:ObjectName="Get BatchID From Parent Package" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="arrowdw"
+      DTS:CreationName="DTS.LogProviderSQLServer.3"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{690E58D7-37BB-4513-BA3F-53840C0DCC77}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7BF1854E-9E2E-40F2-8741-141627763D68}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">-1</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="company code to get GL transactions for, if 'ALL' then get from all companies"
+      DTS:DTSID="{EF7FC4E6-3703-41B6-808B-04F43C626B94}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="company_code">
+      <DTS:VariableValue
+        DTS:DataType="8">ALL</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F54DDF6A-7CD8-45D7-93D0-68C04DBE2422}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorMessage">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:Description="number of days to look back for GL transactions, if zero then uses tracking table to know which transactions are new"
+      DTS:DTSID="{703F63AF-9267-47F2-8213-4D58939F33BB}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="lookback">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F5DBBF52-5277-4A2F-8330-65A44014898F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumRowsInserted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FF402367-EF39-41BA-9118-1A865D41AE4F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumRowsUpdated">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{CB8101DF-23DB-472C-AC40-6E0CAB76C010}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Task1Descript">
+      <DTS:VariableValue
+        DTS:DataType="8">Stage - Finance FactGLAcctBalActualBudget: Execute dwloadobjects.dbo.stage_GLAcctBalActualBudget_sp on the ERP db server</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C6939C38-FA6E-4E34-BD67-E331EE074200}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Task2Descript">
+      <DTS:VariableValue
+        DTS:DataType="8">Stage - Finance FactGLAcctBalActualBudget: Copy GL Bal/Budget tranactions from ERP server to staging table in the DW</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A720427F-02C7-4F57-B58E-BD3763600EC3}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TaskID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,7,OnError,12,OnTaskFailed,9,OnWarning</DTS:Property>
+    <DTS:Property
+      DTS:EventName="Diagnostic"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="DiagnosticEx"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnExecStatusChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnInformation"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePostPrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreComponentCall"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePreEndOfRowset"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelinePrePrimeOutput"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPipelineRowsSent"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPostValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreExecute"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnPreValidate"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnProgress"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnQueryCancel"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnVariableValueChanged"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">-1</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{690E58D7-37BB-4513-BA3F-53840C0DCC77}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Copy the transactions to the staging table in the DW"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{EB6C1120-897D-433C-90D2-E14B27C996C5}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Copy the transactions to the staging table in the DW"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[finance_FactGLAcctBalActualBudget_staging]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Connections[OleDbConnection]"
+                  connectionManagerID="{44F1E26B-63A0-45EC-9D06-5C997B8EB28F}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[erp dwloadobjects]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[PeriodEndDate]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDate]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[PeriodEndDate]"
+                      name="PeriodEndDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OrganizationCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OrganizationCode]"
+                      name="OrganizationCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CompanyCode]"
+                      name="CompanyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]"
+                      name="BranchCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[DivisionCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[DivisionCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[DivisionCode]"
+                      name="DivisionCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TrxCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TrxCurrencyCode]"
+                      name="TrxCurrencyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[HomeCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[HomeCurrencyCode]"
+                      name="HomeCurrencyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OperCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyCode]"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OperCurrencyCode]"
+                      name="OperCurrencyCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[AccountCode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[AccountCode]"
+                      length="32"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[AccountCode]"
+                      name="AccountCode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_debit]"
+                      name="trx_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_credit]"
+                      name="trx_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_net_change]"
+                      name="trx_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_current_balance]"
+                      name="trx_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_debit]"
+                      name="home_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_credit]"
+                      name="home_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_net_change]"
+                      name="home_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_current_balance]"
+                      name="home_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_debit]"
+                      name="oper_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_credit]"
+                      name="oper_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_net_change]"
+                      name="oper_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_current_balance]"
+                      name="oper_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]"
+                      dataType="dbDate"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[balance_until]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]"
+                      name="balance_until"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_balance]"
+                      name="budget_trx_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]"
+                      name="budget_trx_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_home_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_balance]"
+                      name="budget_home_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_home_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_net_change]"
+                      name="budget_home_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_balance]"
+                      name="budget_oper_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]"
+                      name="budget_oper_net_change"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[id]"
+                      dataType="i4"
+                      name="id" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDate]"
+                      dataType="dbDate"
+                      name="PeriodEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CompanyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BranchCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="BranchCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[DivisionCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DivisionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="TrxCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="HomeCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="OperCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[AccountCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="AccountCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_debit]"
+                      dataType="r8"
+                      name="trx_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_credit]"
+                      dataType="r8"
+                      name="trx_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_net_change]"
+                      dataType="r8"
+                      name="trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[trx_current_balance]"
+                      dataType="r8"
+                      name="trx_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_debit]"
+                      dataType="r8"
+                      name="home_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_credit]"
+                      dataType="r8"
+                      name="home_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_net_change]"
+                      dataType="r8"
+                      name="home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[home_current_balance]"
+                      dataType="r8"
+                      name="home_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_debit]"
+                      dataType="r8"
+                      name="oper_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_credit]"
+                      dataType="r8"
+                      name="oper_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_net_change]"
+                      dataType="r8"
+                      name="oper_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[oper_current_balance]"
+                      dataType="r8"
+                      name="oper_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[balance_until]"
+                      dataType="dbDate"
+                      name="balance_until" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_balance]"
+                      dataType="r8"
+                      name="budget_trx_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_net_change]"
+                      dataType="r8"
+                      name="budget_trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_home_balance]"
+                      dataType="r8"
+                      name="budget_home_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_home_net_change]"
+                      dataType="r8"
+                      name="budget_home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_balance]"
+                      dataType="r8"
+                      name="budget_oper_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_net_change]"
+                      dataType="r8"
+                      name="budget_oper_net_change" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[PeriodEndDate]"
+                      dataType="dbDate"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[PeriodEndDate]"
+                      name="PeriodEndDate" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OrganizationCode]"
+                      name="OrganizationCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[CompanyCode]"
+                      name="CompanyCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BranchCode]"
+                      name="BranchCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[DivisionCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[DivisionCode]"
+                      name="DivisionCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyCode]"
+                      name="TrxCurrencyCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[AccountCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[AccountCode]"
+                      name="AccountCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyCode]"
+                      name="HomeCurrencyCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OperCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[OperCurrencyCode]"
+                      name="OperCurrencyCode" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      name="BatchID" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_debit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_debit]"
+                      name="trx_debit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_credit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_credit]"
+                      name="trx_credit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_net_change]"
+                      name="trx_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[trx_current_balance]"
+                      name="trx_current_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_debit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_debit]"
+                      name="home_debit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_credit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_credit]"
+                      name="home_credit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_net_change]"
+                      name="home_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[home_current_balance]"
+                      name="home_current_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_debit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_debit]"
+                      name="oper_debit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_credit]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_credit]"
+                      name="oper_credit" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_net_change]"
+                      name="oper_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_current_balance]"
+                      name="oper_current_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[balance_until]"
+                      dataType="dbDate"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[balance_until]"
+                      name="balance_until" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_trx_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_trx_balance]"
+                      name="budget_trx_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_trx_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_trx_net_change]"
+                      name="budget_trx_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_home_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_home_balance]"
+                      name="budget_home_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_home_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_home_net_change]"
+                      name="budget_home_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_oper_balance]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_oper_balance]"
+                      name="budget_oper_balance" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_oper_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_oper_net_change]"
+                      name="budget_oper_net_change" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy the transactions to the staging table in the DW\Row Count"
+              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="Row Count">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::NumRowsInserted</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Copy the transactions to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy the transactions to the staging table in the DW\Row Count.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Copy the transactions to the staging table in the DW\Row Count.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="staging finance_FactGLAcctBalActualBudget in DW"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[finance_FactGLAcctBalActualBudget]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Connections[OleDbConnection]"
+                  connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[PeriodEndDate]"
+                      cachedDataType="dbDate"
+                      cachedName="PeriodEndDate"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDate]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[PeriodEndDate]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[OrganizationCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="OrganizationCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OrganizationCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[CompanyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="CompanyCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[CompanyCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[BranchCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="BranchCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BranchCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[DivisionCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="DivisionCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[DivisionCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[DivisionCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[TrxCurrencyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="TrxCurrencyCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[TrxCurrencyCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[HomeCurrencyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="HomeCurrencyCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[HomeCurrencyCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[OperCurrencyCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="OperCurrencyCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[OperCurrencyCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[BatchID]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[AccountCode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="32"
+                      cachedName="AccountCode"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountCode]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[AccountCode]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[trx_debit]"
+                      cachedDataType="r8"
+                      cachedName="trx_debit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_debit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[trx_credit]"
+                      cachedDataType="r8"
+                      cachedName="trx_credit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_credit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[trx_net_change]"
+                      cachedDataType="r8"
+                      cachedName="trx_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_net_change]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[trx_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="trx_current_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[trx_current_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[home_debit]"
+                      cachedDataType="r8"
+                      cachedName="home_debit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_debit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[home_credit]"
+                      cachedDataType="r8"
+                      cachedName="home_credit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_credit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[home_net_change]"
+                      cachedDataType="r8"
+                      cachedName="home_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_net_change]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[home_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="home_current_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[home_current_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[oper_debit]"
+                      cachedDataType="r8"
+                      cachedName="oper_debit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_debit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_debit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[oper_credit]"
+                      cachedDataType="r8"
+                      cachedName="oper_credit"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_credit]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_credit]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[oper_net_change]"
+                      cachedDataType="r8"
+                      cachedName="oper_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_net_change]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[oper_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="oper_current_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_current_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[balance_until]"
+                      cachedDataType="dbDate"
+                      cachedName="balance_until"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[balance_until]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_trx_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_trx_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_trx_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_trx_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_home_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_home_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_home_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_home_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_home_net_change]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_oper_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_oper_balance"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_balance]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_balance]" />
+                    <inputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_oper_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_oper_net_change"
+                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_net_change]"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDate]"
+                      dataType="dbDate"
+                      name="PeriodEndDate" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="OrganizationCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="CompanyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[BranchCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="BranchCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[DivisionCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="DivisionCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="TrxCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="HomeCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="OperCurrencyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[AccountCode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="32"
+                      name="AccountCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_debit]"
+                      dataType="r8"
+                      name="trx_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_credit]"
+                      dataType="r8"
+                      name="trx_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_net_change]"
+                      dataType="r8"
+                      name="trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[trx_current_balance]"
+                      dataType="r8"
+                      name="trx_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_debit]"
+                      dataType="r8"
+                      name="home_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_credit]"
+                      dataType="r8"
+                      name="home_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_net_change]"
+                      dataType="r8"
+                      name="home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[home_current_balance]"
+                      dataType="r8"
+                      name="home_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_debit]"
+                      dataType="r8"
+                      name="oper_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_credit]"
+                      dataType="r8"
+                      name="oper_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_net_change]"
+                      dataType="r8"
+                      name="oper_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
+                      dataType="r8"
+                      name="oper_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[balance_until]"
+                      dataType="dbDate"
+                      name="balance_until" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_balance]"
+                      dataType="r8"
+                      name="budget_trx_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_net_change]"
+                      dataType="r8"
+                      name="budget_trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_balance]"
+                      dataType="r8"
+                      name="budget_home_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_net_change]"
+                      dataType="r8"
+                      name="budget_home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_balance]"
+                      dataType="r8"
+                      name="budget_oper_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_net_change]"
+                      dataType="r8"
+                      name="budget_oper_net_change" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Copy the transactions to the staging table in the DW.Paths[OLE DB Source Output]"
+              endId="Package\Copy the transactions to the staging table in the DW\Row Count.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Copy the transactions to the staging table in the DW.Paths[Row Count Output 1]"
+              endId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Copy the transactions to the staging table in the DW\Row Count.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End task 1"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{89DED320-AA04-45D5-B857-711DA57048C1}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.end_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskID"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsInserted"
+            SQLTask:DtsVariableName="User::NumRowsInserted"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsUpdated"
+            SQLTask:DtsVariableName="User::NumRowsUpdated"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ErrorMessage"
+            SQLTask:DtsVariableName="User::ErrorMessage"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="8000" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\End task 2"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8F4EAE0B-86FC-4617-911A-CBC3C8383B68}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End task 2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.end_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskID"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsInserted"
+            SQLTask:DtsVariableName="User::NumRowsInserted"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsUpdated"
+            SQLTask:DtsVariableName="User::NumRowsUpdated"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ErrorMessage"
+            SQLTask:DtsVariableName="User::ErrorMessage"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="8000" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SP to stage GL Bal Budget transactions on the ERP server"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B89FE7B6-4376-495B-958F-C1D93DF556D0}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SP to stage GL Bal Budget transactions on the ERP server"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{07EECAF4-D126-4452-823D-ABEDAA92510C}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="dbo.stage_FactGLAcctBalActualBudget_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@company_code"
+            SQLTask:DtsVariableName="User::company_code"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="8" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@BatchID"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start task 1"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{ED9B5464-1907-42D3-B0AB-0EC0C19CAECB}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start task 1"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.start_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="ReturnValue"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@BatchID"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskDescript"
+            SQLTask:DtsVariableName="User::Task1Descript"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="100" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start task 2"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9F9398C4-C786-4D87-A1A9-843071FB471A}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start task 2"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.start_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="ReturnValue"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@BatchID"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskDescript"
+            SQLTask:DtsVariableName="User::Task2Descript"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="100" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{73C5F3F1-4505-43D9-A6C3-1A52D04217A6}"
+      DTS:From="Package\Execute SP to stage GL Bal Budget transactions on the ERP server"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\End task 1" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0763A08-D4F5-4610-82F6-5829E6F24DBF}"
+      DTS:From="Package\Start task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Execute SP to stage GL Bal Budget transactions on the ERP server" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{1C424AD8-F66F-4CE6-B294-4D5F40F965A8}"
+      DTS:From="Package\End task 1"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
+      DTS:To="Package\Start task 2" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{D3D5E4C3-989B-40F9-A18C-2345FA74B6A7}"
+      DTS:From="Package\Start task 2"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 4"
+      DTS:To="Package\Copy the transactions to the staging table in the DW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{DB517255-EFE1-42A4-BCB9-FA6B17345F32}"
+      DTS:From="Package\Copy the transactions to the staging table in the DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\End task 2" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="326,42"
+          Id="Package\Copy the transactions to the staging table in the DW"
+          TopLeft="148.166666666667,316.2" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\End task 1"
+          TopLeft="246.666666666667,176.6" />
+        <NodeLayout
+          Size="129,42"
+          Id="Package\End task 2"
+          TopLeft="246.666666666667,386" />
+        <NodeLayout
+          Size="390,42"
+          Id="Package\Execute SP to stage GL Bal Budget transactions on the ERP server"
+          TopLeft="116.166666666667,106.8" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Start task 1"
+          TopLeft="244.666666666667,37" />
+        <NodeLayout
+          Size="133,42"
+          Id="Package\Start task 2"
+          TopLeft="244.666666666667,246.4" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="311.166666666667,148.8">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8"
+              Start="0,0"
+              End="0,20.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="311.166666666667,79">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8"
+              Start="0,0"
+              End="0,20.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="311.166666666667,218.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8"
+              Start="0,0"
+              End="0,20.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="311.166666666667,288.4">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8"
+              Start="0,0"
+              End="0,20.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="311.166666666667,358.2">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,27.8"
+              Start="0,0"
+              End="0,20.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Copy the transactions to the staging table in the DW">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="316,42"
+          Id="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW"
+          TopLeft="234.166666666667,236.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy the transactions to the staging table in the DW\Row Count"
+          TopLeft="327.166666666667,140.5" />
+        <NodeLayout
+          Size="438,42"
+          Id="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server"
+          TopLeft="173.166666666667,56.5" />
+        <EdgeLayout
+          Id="Package\Copy the transactions to the staging table in the DW.Paths[Row Count Output 1]"
+          TopLeft="392.166666666667,182.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,54"
+              Start="0,0"
+              End="0,46.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Copy the transactions to the staging table in the DW.Paths[OLE DB Source Output]"
+          TopLeft="392.166666666667,98.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42"
+              Start="0,0"
+              End="0,34.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Finance FactGL"
   DTS:PackageType="5"
-  DTS:VersionBuild="55"
-  DTS:VersionGUID="{4401DA6D-84C5-40BC-9705-954E3432DAED}">
+  DTS:VersionBuild="56"
+  DTS:VersionGUID="{91D39592-05FC-4F22-9F77-0EBDAF30E51D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Task1Descript">
       <DTS:VariableValue
-        DTS:DataType="8">Stage - Finance FactGL: Execute dwloadobjects.dbo.stage_GLDetailsForCompany_sp on the ERP db server</DTS:VariableValue>
+        DTS:DataType="8">Stage - Finance FactGL: Execute dwloadobjects.dbo.stage_FactGL_sp on the ERP db server</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
