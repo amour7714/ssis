@@ -166,6 +166,7 @@ pip-log.txt
 # SSIS stuff to exclude
 prodcalc/prodcalc/csv/
 ArrowKPI/ArrowKPI/import_files/telus_mobility/archive
+SSIS Tutorial/
 
 
 #windows shortcuts
