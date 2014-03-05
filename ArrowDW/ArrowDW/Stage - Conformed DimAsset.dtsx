@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimAsset"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{35A8EF18-C871-4127-A0BC-0481A43AD873}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{1DE6BFF3-DB4F-4BD5-85C4-F3F1A1EA6AE0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -419,6 +419,33 @@
                       lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[owner_type]"
                       name="owner_type"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acquisition_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acquisition_date]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acquisition_date]"
+                      name="acquisition_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[depreciation_expiry_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[depreciation_expiry_date]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[depreciation_expiry_date]"
+                      name="depreciation_expiry_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_expiry_date]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_expiry_date]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_expiry_date]"
+                      name="lease_expiry_date"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -482,6 +509,18 @@
                       dataType="str"
                       length="40"
                       name="owner_type" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[acquisition_date]"
+                      dataType="dbTimeStamp"
+                      name="acquisition_date" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[depreciation_expiry_date]"
+                      dataType="dbTimeStamp"
+                      name="depreciation_expiry_date" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[lease_expiry_date]"
+                      dataType="dbTimeStamp"
+                      name="lease_expiry_date" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -559,6 +598,21 @@
                       length="40"
                       lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[owner_type]"
                       name="owner_type" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acquisition_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[acquisition_date]"
+                      name="acquisition_date" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[depreciation_expiry_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[depreciation_expiry_date]"
+                      name="depreciation_expiry_date" />
+                    <outputColumn
+                      refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_expiry_date]"
+                      dataType="dbTimeStamp"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[lease_expiry_date]"
+                      name="lease_expiry_date" />
                     <outputColumn
                       refId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -763,6 +817,24 @@
                       cachedName="company_code"
                       externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[CompanyCode]"
                       lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[company_code]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[acquisition_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="acquisition_date"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AcquisitionDate]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[acquisition_date]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[depreciation_expiry_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="depreciation_expiry_date"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[DepreciationExpiryDate]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[depreciation_expiry_date]" />
+                    <inputColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].Columns[lease_expiry_date]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="lease_expiry_date"
+                      externalMetadataColumnId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[LeaseExpiryDate]"
+                      lineageId="Package\Copy data to the staging table in the DW\dim_Asset_vw in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[lease_expiry_date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -830,6 +902,18 @@
                       dataType="str"
                       length="15"
                       name="CompanyCode" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[AcquisitionDate]"
+                      dataType="dbDate"
+                      name="AcquisitionDate" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[DepreciationExpiryDate]"
+                      dataType="dbDate"
+                      name="DepreciationExpiryDate" />
+                    <externalMetadataColumn
+                      refId="Package\Copy data to the staging table in the DW\staging conformed_DimAsset in DW.Inputs[OLE DB Destination Input].ExternalColumns[LeaseExpiryDate]"
+                      dataType="dbDate"
+                      name="LeaseExpiryDate" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
