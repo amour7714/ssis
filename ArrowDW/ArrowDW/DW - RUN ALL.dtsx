@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="DW - RUN ALL"
   DTS:PackageType="5"
-  DTS:VersionBuild="33"
-  DTS:VersionGUID="{2EC7C894-1BED-43FE-B662-2A9E546BD233}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{F2F65A48-165F-4F63-995F-F86AC5564E32}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:LogProviders>
@@ -49,7 +49,8 @@
     <DTS:Variable
       DTS:CreationName=""
       DTS:DTSID="{8BD21FA0-52B8-4317-9854-0DD2FAFDC387}"
-      DTS:Expression="@[System::ContainerStartTime]"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="(@[$Project::isFirstRun] == True ? (DT_DATE)&quot;1900-01-01&quot; : @[System::ContainerStartTime])"
       DTS:IncludeInDebugDump="2345"
       DTS:Namespace="User"
       DTS:ObjectName="EffectiveDate">

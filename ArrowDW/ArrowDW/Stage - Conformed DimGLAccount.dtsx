@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Conformed DimGLAccount"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{C7AED6D7-2B04-403E-A55B-9467F193FE55}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{59E2DD86-D3D9-4883-BE68-50833BFDF456}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>

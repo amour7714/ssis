@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Finance FactGLAcctBalActualBudget"
   DTS:PackageType="5"
-  DTS:VersionBuild="58"
-  DTS:VersionGUID="{84EB77A6-BB35-4D5A-BE87-23E36CC61D05}">
+  DTS:VersionBuild="59"
+  DTS:VersionGUID="{45A8CB08-C0D7-4718-B2F4-CA4C036A1EC0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -804,15 +804,6 @@
                       name="oper_current_balance"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[balance_until]"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]"
-                      name="balance_until"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[budget_trx_balance]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -978,10 +969,6 @@
                       dataType="r8"
                       name="oper_current_balance" />
                     <externalMetadataColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[balance_until]"
-                      dataType="dbDate"
-                      name="balance_until" />
-                    <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_balance]"
                       dataType="r8"
                       name="budget_trx_balance" />
@@ -1138,11 +1125,6 @@
                       dataType="r8"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[oper_current_balance]"
                       name="oper_current_balance" />
-                    <outputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[balance_until]"
-                      dataType="dbDate"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[balance_until]"
-                      name="balance_until" />
                     <outputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Error Output].Columns[budget_trx_balance]"
                       dataType="r8"
@@ -1440,12 +1422,6 @@
                       externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
                       lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[oper_current_balance]" />
                     <inputColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[balance_until]"
-                      cachedDataType="dbDate"
-                      cachedName="balance_until"
-                      externalMetadataColumnId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[balance_until]"
-                      lineageId="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server.Outputs[OLE DB Source Output].Columns[balance_until]" />
-                    <inputColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].Columns[budget_trx_balance]"
                       cachedDataType="r8"
                       cachedName="budget_trx_balance"
@@ -1588,10 +1564,6 @@
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
                       dataType="r8"
                       name="oper_current_balance" />
-                    <externalMetadataColumn
-                      refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[balance_until]"
-                      dataType="dbDate"
-                      name="balance_until" />
                     <externalMetadataColumn
                       refId="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_balance]"
                       dataType="r8"
@@ -2067,13 +2039,13 @@
           Id="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW"
           TopLeft="234.166666666667,236.5" />
         <NodeLayout
-          Size="130,42"
-          Id="Package\Copy the transactions to the staging table in the DW\Row Count"
-          TopLeft="327.166666666667,140.5" />
-        <NodeLayout
           Size="438,42"
           Id="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server"
           TopLeft="173.166666666667,56.5" />
+        <NodeLayout
+          Size="130,42"
+          Id="Package\Copy the transactions to the staging table in the DW\Row Count"
+          TopLeft="327.166666666667,140.5" />
         <EdgeLayout
           Id="Package\Copy the transactions to the staging table in the DW.Paths[Row Count Output 1]"
           TopLeft="392.166666666667,182.5">
