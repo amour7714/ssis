@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Stage - Finance FactGLAcctBalActualBudget"
   DTS:PackageType="5"
-  DTS:VersionBuild="59"
-  DTS:VersionGUID="{45A8CB08-C0D7-4718-B2F4-CA4C036A1EC0}">
+  DTS:VersionBuild="60"
+  DTS:VersionGUID="{8851DCC4-C063-473A-AC97-BB443A2120A9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -101,7 +101,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="Task1Descript">
       <DTS:VariableValue
-        DTS:DataType="8">Stage - Finance FactGLAcctBalActualBudget: Execute dwloadobjects.dbo.stage_GLAcctBalActualBudget_sp on the ERP db server</DTS:VariableValue>
+        DTS:DataType="8">Stage - Finance FactGLAcctBalActualBudget: Execute dwloadobjects.dbo.stage_FactGLAcctBalActualBudget_sp on the ERP db server</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -2094,7 +2094,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW">
+    design-time-name="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -2107,7 +2107,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Copy the transactions to the staging table in the DW\finance_FactGLAcctBalActualBudget_staging in dwloadobjects on ERP server">
+    design-time-name="Package\Copy the transactions to the staging table in the DW\staging finance_FactGLAcctBalActualBudget in DW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

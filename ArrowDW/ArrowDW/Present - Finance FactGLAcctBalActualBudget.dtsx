@@ -1,0 +1,1539 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/17/2013 3:07:48 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="ARROW100010"
+  DTS:CreatorName="ARROW\gschulte"
+  DTS:DTSID="{63683260-CC4D-4BF2-A2F1-913F61A84240}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="11.0.2100.60"
+  DTS:LocaleID="4105"
+  DTS:ObjectName="Present - Finance FactGLAcctBalActualBudget"
+  DTS:PackageType="5"
+  DTS:VersionBuild="94"
+  DTS:VersionGUID="{2CA6449F-EB23-4831-9E47-14D9F421D5F1}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="User::BatchID"
+      DTS:ConfigurationVariable="\Package.Variables[User::BatchID].Properties[Value]"
+      DTS:CreationName=""
+      DTS:DTSID="{32351C75-9858-44DD-9F0C-02DDAB578E25}"
+      DTS:ObjectName="Get BatchID From Parent Package" />
+  </DTS:Configurations>
+  <DTS:LogProviders>
+    <DTS:LogProvider
+      DTS:ConfigString="arrowdw"
+      DTS:CreationName="DTS.LogProviderSQLServer.3"
+      DTS:Description="Writes log entries for events to a SQL Server database"
+      DTS:DTSID="{14422F9B-447D-46F2-B8A2-0A760E252C56}"
+      DTS:ObjectName="SSIS log provider for SQL Server">
+      <DTS:ObjectData>
+        <InnerObject />
+      </DTS:ObjectData>
+    </DTS:LogProvider>
+  </DTS:LogProviders>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A4D8FE8D-6DEA-4C70-ACDF-1B9CE61FB11B}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="BatchID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{29587C83-8171-4609-8AE8-05493C741692}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="ErrorMessage">
+      <DTS:VariableValue
+        DTS:DataType="8"
+        xml:space="preserve"></DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{48B3CFEB-6440-4FEF-AC68-3C62FBCC6C93}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumRowsInserted">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{99ABECE8-BAD0-4B62-8711-E1897464580F}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="NumRowsUpdated">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5C7B5A1-06CC-47FA-86D4-DC48DF914666}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="TaskDescript">
+      <DTS:VariableValue
+        DTS:DataType="8">Present - Finance FactGLAcctBalActualBudget</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4E854480-DEC7-4316-A48E-0CFC5D94B707}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="TaskID">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:LoggingOptions
+    DTS:FilterKind="0"
+    DTS:LoggingMode="1">
+    <DTS:Property
+      DTS:DataType="8"
+      DTS:Name="EventFilter">3,7,OnError,12,OnTaskFailed,9,OnWarning</DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnError"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnTaskFailed"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:Property
+      DTS:EventName="OnWarning"
+      DTS:Name="ColumnFilter">
+      <DTS:Property
+        DTS:Name="Computer">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="Operator">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceName">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="SourceID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="ExecutionID">0</DTS:Property>
+      <DTS:Property
+        DTS:Name="MessageText">-1</DTS:Property>
+      <DTS:Property
+        DTS:Name="DataBytes">0</DTS:Property>
+    </DTS:Property>
+    <DTS:SelectedLogProviders>
+      <DTS:SelectedLogProvider
+        DTS:InstanceID="{14422F9B-447D-46F2-B8A2-0A760E252C56}" />
+    </DTS:SelectedLogProviders>
+  </DTS:LoggingOptions>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\End task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{38F34AA0-05CF-49D3-9AAF-203298D4F516}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="End task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.end_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskID"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsInserted"
+            SQLTask:DtsVariableName="User::NumRowsInserted"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@NumRowsUpdated"
+            SQLTask:DtsVariableName="User::NumRowsUpdated"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@ErrorMessage"
+            SQLTask:DtsVariableName="User::ErrorMessage"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="8000" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E9B42E41-F61D-41A0-A262-B5B2E62B74C3}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Move FactGLAcctBalActualBudget data from staging to presentation"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget"
+              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="finance FactGLAcctBalActualBudget"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[finance].[FactGLAcctBalActualBudget]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Connections[OleDbConnection]"
+                  connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[PeriodEndDateKey]"
+                      cachedDataType="i4"
+                      cachedName="PeriodEndDateKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDateKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[PeriodEndDateKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[OrganizationKey]"
+                      cachedDataType="i2"
+                      cachedName="OrganizationKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OrganizationKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[CompanyKey]"
+                      cachedDataType="i2"
+                      cachedName="CompanyKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[CompanyKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[BranchKey]"
+                      cachedDataType="i2"
+                      cachedName="BranchKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[BranchKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BranchKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[DivisionKey]"
+                      cachedDataType="i2"
+                      cachedName="DivisionKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[DivisionKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[DivisionKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[TrxCurrencyKey]"
+                      cachedDataType="i2"
+                      cachedName="TrxCurrencyKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[TrxCurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[HomeCurrencyKey]"
+                      cachedDataType="i2"
+                      cachedName="HomeCurrencyKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[HomeCurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[OperCurrencyKey]"
+                      cachedDataType="i2"
+                      cachedName="OperCurrencyKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OperCurrencyKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[GLAccountKey]"
+                      cachedDataType="i4"
+                      cachedName="GLAccountKey"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[GLAccountKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[GLAccountKey]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[BatchID]"
+                      cachedDataType="i4"
+                      cachedName="BatchID"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BatchID]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[trx_debit]"
+                      cachedDataType="r8"
+                      cachedName="trx_debit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_debit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[trx_credit]"
+                      cachedDataType="r8"
+                      cachedName="trx_credit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_credit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[trx_net_change]"
+                      cachedDataType="r8"
+                      cachedName="trx_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_net_change]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[trx_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="trx_current_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_current_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[home_debit]"
+                      cachedDataType="r8"
+                      cachedName="home_debit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_debit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[home_credit]"
+                      cachedDataType="r8"
+                      cachedName="home_credit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_credit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[home_net_change]"
+                      cachedDataType="r8"
+                      cachedName="home_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_net_change]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[home_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="home_current_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_current_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[oper_debit]"
+                      cachedDataType="r8"
+                      cachedName="oper_debit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_debit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[oper_credit]"
+                      cachedDataType="r8"
+                      cachedName="oper_credit"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_credit]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[oper_net_change]"
+                      cachedDataType="r8"
+                      cachedName="oper_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_net_change]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[oper_current_balance]"
+                      cachedDataType="r8"
+                      cachedName="oper_current_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_current_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_trx_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_trx_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_trx_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_trx_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_home_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_home_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_home_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_home_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_net_change]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_oper_balance]"
+                      cachedDataType="r8"
+                      cachedName="budget_oper_balance"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_balance]" />
+                    <inputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].Columns[budget_oper_net_change]"
+                      cachedDataType="r8"
+                      cachedName="budget_oper_net_change"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[PeriodEndDateKey]"
+                      dataType="i4"
+                      name="PeriodEndDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[OrganizationKey]"
+                      dataType="i2"
+                      name="OrganizationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[CompanyKey]"
+                      dataType="i2"
+                      name="CompanyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[BranchKey]"
+                      dataType="i2"
+                      name="BranchKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[DivisionKey]"
+                      dataType="i2"
+                      name="DivisionKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[TrxCurrencyKey]"
+                      dataType="i2"
+                      name="TrxCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[HomeCurrencyKey]"
+                      dataType="i2"
+                      name="HomeCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[OperCurrencyKey]"
+                      dataType="i2"
+                      name="OperCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[GLAccountKey]"
+                      dataType="i4"
+                      name="GLAccountKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_debit]"
+                      dataType="r8"
+                      name="trx_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_credit]"
+                      dataType="r8"
+                      name="trx_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_net_change]"
+                      dataType="r8"
+                      name="trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[trx_current_balance]"
+                      dataType="r8"
+                      name="trx_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_debit]"
+                      dataType="r8"
+                      name="home_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_credit]"
+                      dataType="r8"
+                      name="home_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_net_change]"
+                      dataType="r8"
+                      name="home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[home_current_balance]"
+                      dataType="r8"
+                      name="home_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_debit]"
+                      dataType="r8"
+                      name="oper_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_credit]"
+                      dataType="r8"
+                      name="oper_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_net_change]"
+                      dataType="r8"
+                      name="oper_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[oper_current_balance]"
+                      dataType="r8"
+                      name="oper_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_balance]"
+                      dataType="r8"
+                      name="budget_trx_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_trx_net_change]"
+                      dataType="r8"
+                      name="budget_trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_balance]"
+                      dataType="r8"
+                      name="budget_home_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_home_net_change]"
+                      dataType="r8"
+                      name="budget_home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_balance]"
+                      dataType="r8"
+                      name="budget_oper_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input].ExternalColumns[budget_oper_net_change]"
+                      dataType="r8"
+                      name="budget_oper_net_change" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw"
+              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="finance factGLAcctBalActualBudget_loader_vw"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT 
+       [PeriodEndDateKey]
+      ,[OrganizationKey]
+      ,[CompanyKey]
+      ,[BranchKey]
+      ,[DivisionKey]
+      ,[TrxCurrencyKey]
+      ,[HomeCurrencyKey]
+      ,[OperCurrencyKey]
+      ,[GLAccountKey]
+      ,[trx_debit]
+      ,[trx_credit]
+      ,[trx_net_change]
+      ,[trx_current_balance]
+      ,[home_debit]
+      ,[home_credit]
+      ,[home_net_change]
+      ,[home_current_balance]
+      ,[oper_debit]
+      ,[oper_credit]
+      ,[oper_net_change]
+      ,[oper_current_balance]
+      ,[budget_trx_balance]
+      ,[budget_trx_net_change]
+      ,[budget_home_balance]
+      ,[budget_home_net_change]
+      ,[budget_oper_balance]
+      ,[budget_oper_net_change]
+      ,[BatchID]
+  FROM [finance].[factGLAcctBalActualBudget_loader_vw]
+WHERE [BatchID] = ?</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping">"Parameter0:Input",{A4D8FE8D-6DEA-4C70-ACDF-1B9CE61FB11B};</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Connections[OleDbConnection]"
+                  connectionManagerID="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[arrowdw]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[PeriodEndDateKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDateKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[PeriodEndDateKey]"
+                      name="PeriodEndDateKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OrganizationKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[OrganizationKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OrganizationKey]"
+                      name="OrganizationKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[CompanyKey]"
+                      name="CompanyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BranchKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[BranchKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BranchKey]"
+                      name="BranchKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[DivisionKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[DivisionKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[DivisionKey]"
+                      name="DivisionKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[TrxCurrencyKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[TrxCurrencyKey]"
+                      name="TrxCurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[HomeCurrencyKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[HomeCurrencyKey]"
+                      name="HomeCurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OperCurrencyKey]"
+                      dataType="i2"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[OperCurrencyKey]"
+                      name="OperCurrencyKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[GLAccountKey]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[GLAccountKey]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[GLAccountKey]"
+                      name="GLAccountKey"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[BatchID]"
+                      name="BatchID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_debit]"
+                      name="trx_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_credit]"
+                      name="trx_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_net_change]"
+                      name="trx_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[trx_current_balance]"
+                      name="trx_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_debit]"
+                      name="home_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_credit]"
+                      name="home_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_net_change]"
+                      name="home_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[home_current_balance]"
+                      name="home_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_debit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_debit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_debit]"
+                      name="oper_debit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_credit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_credit]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_credit]"
+                      name="oper_credit"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_net_change]"
+                      name="oper_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_current_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_current_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[oper_current_balance]"
+                      name="oper_current_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_balance]"
+                      name="budget_trx_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_trx_net_change]"
+                      name="budget_trx_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_home_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_balance]"
+                      name="budget_home_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_home_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_home_net_change]"
+                      name="budget_home_net_change"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_balance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_balance]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_balance]"
+                      name="budget_oper_balance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_net_change]"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].Columns[budget_oper_net_change]"
+                      name="budget_oper_net_change"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[PeriodEndDateKey]"
+                      dataType="i4"
+                      name="PeriodEndDateKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[OrganizationKey]"
+                      dataType="i2"
+                      name="OrganizationKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[CompanyKey]"
+                      dataType="i2"
+                      name="CompanyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[BranchKey]"
+                      dataType="i2"
+                      name="BranchKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[DivisionKey]"
+                      dataType="i2"
+                      name="DivisionKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[TrxCurrencyKey]"
+                      dataType="i2"
+                      name="TrxCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[HomeCurrencyKey]"
+                      dataType="i2"
+                      name="HomeCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[OperCurrencyKey]"
+                      dataType="i2"
+                      name="OperCurrencyKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[GLAccountKey]"
+                      dataType="i4"
+                      name="GLAccountKey" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[BatchID]"
+                      dataType="i4"
+                      name="BatchID" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_debit]"
+                      dataType="r8"
+                      name="trx_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_credit]"
+                      dataType="r8"
+                      name="trx_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_net_change]"
+                      dataType="r8"
+                      name="trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[trx_current_balance]"
+                      dataType="r8"
+                      name="trx_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_debit]"
+                      dataType="r8"
+                      name="home_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_credit]"
+                      dataType="r8"
+                      name="home_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_net_change]"
+                      dataType="r8"
+                      name="home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[home_current_balance]"
+                      dataType="r8"
+                      name="home_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_debit]"
+                      dataType="r8"
+                      name="oper_debit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_credit]"
+                      dataType="r8"
+                      name="oper_credit" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_net_change]"
+                      dataType="r8"
+                      name="oper_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[oper_current_balance]"
+                      dataType="r8"
+                      name="oper_current_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_balance]"
+                      dataType="r8"
+                      name="budget_trx_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_trx_net_change]"
+                      dataType="r8"
+                      name="budget_trx_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_home_balance]"
+                      dataType="r8"
+                      name="budget_home_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_home_net_change]"
+                      dataType="r8"
+                      name="budget_home_net_change" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_balance]"
+                      dataType="r8"
+                      name="budget_oper_balance" />
+                    <externalMetadataColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output].ExternalColumns[budget_oper_net_change]"
+                      dataType="r8"
+                      name="budget_oper_net_change" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[PeriodEndDateKey]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[PeriodEndDateKey]"
+                      name="PeriodEndDateKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[OrganizationKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[OrganizationKey]"
+                      name="OrganizationKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[CompanyKey]"
+                      name="CompanyKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[BranchKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[BranchKey]"
+                      name="BranchKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[DivisionKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[DivisionKey]"
+                      name="DivisionKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[TrxCurrencyKey]"
+                      name="TrxCurrencyKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[HomeCurrencyKey]"
+                      name="HomeCurrencyKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[OperCurrencyKey]"
+                      dataType="i2"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[OperCurrencyKey]"
+                      name="OperCurrencyKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[GLAccountKey]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[GLAccountKey]"
+                      name="GLAccountKey" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_debit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_debit]"
+                      name="trx_debit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_credit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_credit]"
+                      name="trx_credit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_net_change]"
+                      name="trx_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[trx_current_balance]"
+                      name="trx_current_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_debit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_debit]"
+                      name="home_debit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_credit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_credit]"
+                      name="home_credit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_net_change]"
+                      name="home_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[home_current_balance]"
+                      name="home_current_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_debit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_debit]"
+                      name="oper_debit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_credit]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_credit]"
+                      name="oper_credit" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_net_change]"
+                      name="oper_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_current_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[oper_current_balance]"
+                      name="oper_current_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_trx_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_trx_balance]"
+                      name="budget_trx_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_trx_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_trx_net_change]"
+                      name="budget_trx_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_home_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_home_balance]"
+                      name="budget_home_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_home_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_home_net_change]"
+                      name="budget_home_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_oper_balance]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_oper_balance]"
+                      name="budget_oper_balance" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_oper_net_change]"
+                      dataType="r8"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[budget_oper_net_change]"
+                      name="budget_oper_net_change" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[BatchID]"
+                      name="BatchID" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted"
+              componentClassID="{E2697D8C-70DA-42B2-8208-A19CE3A9FE41}"
+              contactInfo="Row Count;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Counts rows as they pass through a data flow. For example, use the number of rows processed to determine whether or not to perform cleanup operations, or update text in an e-mail message to communicate processing status."
+              name="NumRowsInserted">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable to hold the row count."
+                  name="VariableName">User::NumRowsInserted</property>
+              </properties>
+              <inputs>
+                <input
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted.Inputs[Row Count Input 1]"
+                  hasSideEffects="true"
+                  name="Row Count Input 1">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted.Outputs[Row Count Output 1]"
+                  name="Row Count Output 1"
+                  synchronousInputId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted.Inputs[Row Count Input 1]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation.Paths[OLE DB Source Output]"
+              endId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted.Inputs[Row Count Input 1]"
+              name="OLE DB Source Output"
+              startId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Move FactGLAcctBalActualBudget data from staging to presentation.Paths[Row Count Output 1]"
+              endId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget.Inputs[OLE DB Destination Input]"
+              name="Row Count Output 1"
+              startId="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted.Outputs[Row Count Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Start task"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{3558BA33-554C-429E-991F-DD07757A3141}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Start task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:LoggingOptions
+        DTS:FilterKind="0"
+        DTS:LoggingMode="2" />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{B7EF530E-0CE0-4922-BA61-23E5A3E573E1}"
+          SQLTask:IsStoredProc="True"
+          SQLTask:SqlStatementSource="process.start_Task_sp" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="0"
+            SQLTask:DtsVariableName="User::TaskID"
+            SQLTask:ParameterDirection="ReturnValue"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@BatchID"
+            SQLTask:DtsVariableName="User::BatchID"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="11"
+            SQLTask:ParameterSize="-1" />
+          <SQLTask:ParameterBinding
+            SQLTask:ParameterName="@TaskDescript"
+            SQLTask:DtsVariableName="User::TaskDescript"
+            SQLTask:ParameterDirection="Input"
+            SQLTask:DataType="16"
+            SQLTask:ParameterSize="100" />
+        </SQLTask:SqlTaskData>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate fact table before full reload"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8210D185-F621-459A-B2F1-7F0EDE26189E}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate fact table before full reload"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}"
+          SQLTask:SqlStatementSource="truncate table finance.FactGLAcctBalActualBudget;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{CDC6AFB7-0FCC-4AD1-8B17-D4C93CFF6F8F}"
+      DTS:From="Package\Start task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Truncate fact table before full reload" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{E6DC7AD0-57FF-4964-B888-6DD543175AC3}"
+      DTS:From="Package\Truncate fact table before full reload"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Move FactGLAcctBalActualBudget data from staging to presentation" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{F807067C-B0F6-478F-84E2-37988EC8DB42}"
+      DTS:From="Package\Move FactGLAcctBalActualBudget data from staging to presentation"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\End task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="119,42"
+          Id="Package\End task"
+          TopLeft="583.5625,313" />
+        <NodeLayout
+          Size="397,42"
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation"
+          TopLeft="444.5625,226" />
+        <NodeLayout
+          Size="124,42"
+          Id="Package\Start task"
+          TopLeft="581.0625,52" />
+        <NodeLayout
+          Size="251,42"
+          Id="Package\Truncate fact table before full reload"
+          TopLeft="517.5625,139" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="643.0625,94">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="643.0625,181">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="643.0625,268">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45"
+              Start="0,0"
+              End="0,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Move FactGLAcctBalActualBudget data from staging to presentation">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw"
+          TopLeft="345.166666666666,74.5" />
+        <NodeLayout
+          Size="244,42"
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget"
+          TopLeft="371.166666666666,245.5" />
+        <NodeLayout
+          Size="165,42"
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation\NumRowsInserted"
+          TopLeft="410.666666666666,160" />
+        <EdgeLayout
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation.Paths[Row Count Output 1]"
+          TopLeft="493.166666666666,202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5"
+              Start="0,0"
+              End="0,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Move FactGLAcctBalActualBudget data from staging to presentation.Paths[OLE DB Source Output]"
+          TopLeft="493.166666666666,116.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.5"
+              Start="0,0"
+              End="0,36">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance factGLAcctBalActualBudget_loader_vw">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Move FactGLAcctBalActualBudget data from staging to presentation\finance FactGLAcctBalActualBudget">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
