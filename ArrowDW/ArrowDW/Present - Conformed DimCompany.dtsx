@@ -12,8 +12,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="Present - Conformed DimCompany"
   DTS:PackageType="5"
-  DTS:VersionBuild="72"
-  DTS:VersionGUID="{51F800D9-37C6-44A9-93F7-505B0AE72F74}">
+  DTS:VersionBuild="73"
+  DTS:VersionGUID="{B9CA71F8-2B51-4EAC-9F23-DE079AE5E630}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Configurations>
@@ -1205,14 +1205,14 @@ WHERE [BatchID] = ?</property>
           <paths>
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
-              endId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input]"
-              name="Derived Column Output"
-              startId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Outputs[Derived Column Output]" />
-            <path
-              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
               endId="Package\Merge data into presentation table in the DW\NumRowsInserted.Inputs[Row Count Input 1]"
               name="Derived Column Output"
               startId="Package\Merge data into presentation table in the DW\Set value of EffectiveDate for rows about to be inserted.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
+              endId="Package\Merge data into presentation table in the DW\update ExpiryDate on expired rows where there has been a Type 2 attribute change.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Outputs[Derived Column Output]" />
             <path
               refId="Package\Merge data into presentation table in the DW.Paths[Historical Attribute Inserts Output]"
               endId="Package\Merge data into presentation table in the DW\Set value of ExpiryDate.Inputs[Derived Column Input]"
@@ -1245,6 +1245,23 @@ WHERE [BatchID] = ?</property>
               startId="Package\Merge data into presentation table in the DW\UNION ALL brand new rows with new rows resulting from Type 2 attribute updates.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Reset EffectiveDate on Single-row Business Keys"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4cd88da9-1a22-4b08-a20e-848cf2fb1f1a}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Reset EffectiveDate on Single-row Business Keys"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{4D5FC494-C056-41D7-AEF3-9C28964CE0D8}"
+          SQLTask:SqlStatementSource="-- set all single-row business keys to have EffectiveDate=1900-01-01 so that back-dated &#xA;-- transactional data can still join to dimension row between EffectiveDate and ExpiryDate&#xA;&#xA;update d&#xA;&#x9;set EffectiveDate = '1900-01-01'&#xA;--select d.*&#xA;from conformed.DimCompany d&#xA;join (&#xA;&#x9;select s1.CompanyCode&#xA;&#x9;from conformed.DimCompany s1&#xA;&#x9;where s1.EffectiveDate &gt; '1900-01-01'&#xA;&#x9;&#x9;and s1.CompanyCode not in (select s2.CompanyCode&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;from conformed.DimCompany s2&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;group by s2.CompanyCode&#xA;&#x9;&#x9;&#x9;&#x9;&#x9;having count(*) &gt; 1)&#xA;&#x9;group by s1.CompanyCode&#xA;&#x9;having count(*) = 1&#xA;) q on d.CompanyCode = q.CompanyCode" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -1325,10 +1342,18 @@ WHERE [BatchID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{3DA6CB8F-9B3E-4E25-9C6A-480FC56A98A8}"
+      DTS:DTSID="{1FBD4430-1B79-4654-BA89-CB0AE75B6E81}"
       DTS:From="Package\update CurrentRowInd"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Reset EffectiveDate on Single-row Business Keys" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{6BDC5C1F-5EB8-4131-B85C-497547A7A4BE}"
+      DTS:From="Package\Reset EffectiveDate on Single-row Business Keys"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 3"
       DTS:To="Package\End task" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
@@ -1342,37 +1367,37 @@ WHERE [BatchID] = ?</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="119,42"
           Id="Package\End task"
-          TopLeft="216.375,292" />
+          TopLeft="219.575,371" />
         <NodeLayout
           Size="292,42"
           Id="Package\Merge data into presentation table in the DW"
-          TopLeft="129.875,132" />
+          TopLeft="133.075,131.75" />
         <NodeLayout
           Size="124,42"
           Id="Package\Start task"
-          TopLeft="213.875,52" />
+          TopLeft="217.075,52" />
         <NodeLayout
           Size="186,42"
           Id="Package\update CurrentRowInd"
-          TopLeft="182.875,212" />
+          TopLeft="186.075,211.5" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="275.875,94">
+          TopLeft="279.075,94">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,37.75"
               Start="0,0"
-              End="0,30.5">
+              End="0,30.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,30.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1383,18 +1408,44 @@ WHERE [BatchID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="275.875,174">
+          TopLeft="279.075,173.75">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,37.75"
               Start="0,0"
-              End="0,30.5">
+              End="0,30.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,30.25" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="308,42"
+          Id="Package\Reset EffectiveDate on Single-row Business Keys"
+          TopLeft="125.075,291.25" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="279.075,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,37.75"
+              Start="0,0"
+              End="0,30.25">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1404,19 +1455,19 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="275.875,254">
+          Id="Package.PrecedenceConstraints[Constraint 3]"
+          TopLeft="279.075,333.25">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38"
+              EndConnector="0,37.75"
               Start="0,0"
-              End="0,30.5">
+              End="0,30.25">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.5" />
+                    End="0,30.25" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1626,7 +1677,7 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
+          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
           TopLeft="337.75,241.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -1648,7 +1699,7 @@ WHERE [BatchID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output]"
+          Id="Package\Merge data into presentation table in the DW.Paths[Derived Column Output1]"
           TopLeft="536.875,483.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
