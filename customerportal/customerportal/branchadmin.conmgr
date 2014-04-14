@@ -5,10 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=kaoerpsqldev2;User ID=bradminuser;Initial Catalog=branchadmin;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=ARROW100010;User ID=bradminuser;Initial Catalog=branchadmin;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkUgu07jss0ulewJ9OlTn4QAAAAACAAAAAAADZgAAwAAAABAAAACKmlyl7IMUPy5a6WSL/37XAAAAAASAAACgAAAAEAAAAIgIpZXbN78SXmf5mqQlRn54AAAAYVkk8HHqaJzPqdoDj/TzH3xC6h2w9MZQR+Bgl53S/lg6qvYlLKt5oYiSJUYxTtpLpg/Z47l5eFTim0vkk5aqzQ1/C7TuBQpFPcqn1HNjX2Q4SXLwasZd8X3kOdF4bwXJ9x9zKAgyrwmB37MW7fqaboLG7eVswLyrFAAAAHrSeUSVR+qEDU4GQ3So5zKOJ/nE</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOzZc9BiOPEyvu1NFu9g8VwAAAAACAAAAAAADZgAAwAAAABAAAAB/EFWlc/oYu85rcI1Y/dnrAAAAAASAAACgAAAAEAAAAAidF5ZbQRbpiddZ2FjvLch4AAAAnEaonc1q2xbaG/FrUjsrl5Irk4lg7ZFTXfn8QYe5NEDNvMsMev49iIOf6CZ1yxtjrHp/91rImqYhZ0KOkPnnM+m9XSeQgGDULI7s8pRoHj9QBpk47nlD4WR0q/hnTjlh1dwsA9dfAKZHpREuJa1rbG40FPV3TnXkFAAAAN0JPwkA5M6crMbFKvZOp4H1w2Uj</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

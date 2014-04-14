@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=kaoserver13;User ID=inv;Initial Catalog=invman;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAwWvzxj45NkGoPCLLGBQ5swAAAAACAAAAAAADZgAAwAAAABAAAAANMu7Jd1gQPBiB9SjpPOvcAAAAAASAAACgAAAAEAAAAAu9zLy6Kj+TCauQ4SwGUJh4AAAAH+eyQm9QZvg5SoQZ3eEOpkz70rRMQXmYHK41Q+0GYt7qosbUbZqJf+OL4UHYjlkULwSUJckoz4GrOFpSwAGViadiRqwO/52KlLwrqf96C1xkLrm+p+BG6BzDmZbek5BFPf3wT/IkjTztN9yLt3g4BdU0rLgyjY6aFAAAAG6Zt7wug3mbBTNq5N7ujUqc4kyD</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOzZc9BiOPEyvu1NFu9g8VwAAAAACAAAAAAADZgAAwAAAABAAAAD21p9xH6bA3vv4pvD82DjjAAAAAASAAACgAAAAEAAAAOyJ/1foch+bJnBq8gMtObR4AAAAoxSx3e8gYYpG1a2k3hIMhqqKndxVrNGA6VMdj1bYnIayEYn8ju/Rx3+JLB838uwBJ7fgL0fm7oHleidLhGedV7hmeBwNRuZ/nFQzV69k7Op4pYMRYmbqd1y2ssNs2Fm4cZB0i1i5I/kHv+wQUwsMuCuDh2a5ZXddFAAAALTnwuge8Nw0RVycvm5b3iV38jnB</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

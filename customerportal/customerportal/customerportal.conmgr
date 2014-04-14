@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=localhost;User ID=custportalssis;Initial Catalog=customerportal;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkUgu07jss0ulewJ9OlTn4QAAAAACAAAAAAADZgAAwAAAABAAAABn/HPxMNM7wdcsQuE8isqmAAAAAASAAACgAAAAEAAAAMyTcenDkdk31BnC7eh+5DmAAAAAVnvOPYvXtgp4TxvLlY5V4RAz9el20cQSW3TD9K+VEHyZo83y6RlgnxXlgsvBsKkUty3H/cHDVCHHdAaFhbbi7SO8GpZ17u1zcdisM5d7/HYUCKOo6+RETU7xYx2i6MHfdKKtE41gS0JG8uizIJR5gH7T/MeherbPB+o1//RhspMUAAAAhytTGb9xnUjrD4NI2GzHP/fS1lc=</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAOzZc9BiOPEyvu1NFu9g8VwAAAAACAAAAAAADZgAAwAAAABAAAAD/IjgYRaRalKrhgG4i+u6TAAAAAASAAACgAAAAEAAAAGkg/x/s3MOYB91nlGAXw5+AAAAA7gi+4DdJu3Esj1H97kfMXDrbohBdh59XDcOpPoqVPVDm0NYFi+1WDye1cGNtXhVouJXKuW05Z6k4U54oaXGKk7MHXZYVpGoqg5GZPLyO9lG11kAL2nHlovwQcbBNigGhOj3w1QYUBM3zi5p9/rARrx79LZ3nTG5LrRoCgVDuxUcUAAAAflADdXo2s1A3gtQ6WkIfwlnhafY=</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{67CF3EA1-A87A-436B-9687-923BC7ED69BB}">
+  DTS:VersionBuild="42"
+  DTS:VersionGUID="{25DADA37-17AF-4EF5-88FF-B500688A5542}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -21,6 +21,7 @@
       DTS:refId="Package\Load Completed Orders table"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{586060d9-7ee9-4654-81a6-4a25bbf0eae9}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -397,12 +398,13 @@
       DTS:refId="Package\Load data for OnGround FBM Chart"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{C23FE954-BEA5-4855-B65F-31CE0B290117}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load data for OnGround FBM Chart"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -512,7 +514,7 @@
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[branch_code]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[posted_date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="i4"
                       cachedName="posted_date"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[posted_date]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[posted_date]" />
@@ -526,7 +528,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[customer_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="500"
+                      cachedLength="100"
                       cachedName="customer_name"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[customer_name]" />
@@ -540,7 +542,9 @@
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[waybill_date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
                       cachedName="waybill_date"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[waybill_date]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]" />
@@ -584,7 +588,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[master_product]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="1000"
+                      cachedLength="1007"
                       cachedName="master_product"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_product]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[master_product]" />
@@ -596,10 +600,8 @@
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[wt_per_m]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[weight]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="weight"
-                      cachedPrecision="38"
-                      cachedScale="2"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[weight]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[weight]" />
                     <inputColumn
@@ -612,21 +614,19 @@
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[variable_item]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[length]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="length"
-                      cachedPrecision="25"
-                      cachedScale="8"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[length]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[length]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[units]"
-                      cachedDataType="i4"
+                      cachedDataType="r8"
                       cachedName="units"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[units]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[units]" />
                     <inputColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[pieces]"
-                      cachedDataType="i4"
+                      cachedDataType="r8"
                       cachedName="pieces"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[pieces]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[pieces]" />
@@ -634,7 +634,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[vessel_number]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="100"
+                      cachedLength="1"
                       cachedName="vessel_number"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[vessel_number]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[vessel_number]" />
@@ -642,7 +642,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[po_number]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="1"
                       cachedName="po_number"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[po_number]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[po_number]" />
@@ -650,7 +650,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[other_reference]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="100"
+                      cachedLength="1"
                       cachedName="other_reference"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[other_reference]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[other_reference]" />
@@ -658,7 +658,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[unittally]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="106"
+                      cachedLength="121"
                       cachedName="unittally"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[unittally]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[unittally]" />
@@ -666,7 +666,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[piecetally]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="107"
+                      cachedLength="121"
                       cachedName="piecetally"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[piecetally]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[piecetally]" />
@@ -737,7 +737,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       name="master_product" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[wt_per_m]"
@@ -791,13 +791,13 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       name="unittally" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[piecetally]"
                       codePage="1252"
                       dataType="str"
-                      length="107"
+                      length="121"
                       name="piecetally" />
                   </externalMetadataColumns>
                 </input>
@@ -852,40 +852,53 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">declare @today_less_35 datetime = convert(date, getdate() - 35)
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- IB Receiving replacement query
 
-SELECT  o.division_id,
-   d.branch_code,
-   wb.posted_date,
-   p.customer_id,
-   p.customer_name, 
-   p.waybill, 
-   p.waybill_date,
-   p.waybill_id,
-   w.note, 
-   o.mill_name,
-   p.sales_rep_id,
-   p.sales_rep,
-   p.master_product, 
-   w.wt_per_m, 
-   ROUND(SUM(p.[weight]),0) as [weight], 
-   p.variable_item,
-   p.[length]/304.8 as [length],
-   SUM(p.quantity) as units, 
-   SUM(p.number_of_items) as pieces, 
-   wb.vessel_number,
-   wb.po_number,
-   wb.other_reference, 
-   CAST(SUM(p.quantity) as varchar(5)) + '/' + variable_item  as unittally, 
-   CAST(SUM(p.number_of_items) as varchar(6)) + '/' + variable_item as piecetally 
-FROM inventory.v_proddtl p
-JOIN inventory.v_inbound_waybill w on p.waybill_id = w.waybill_id 
-JOIN inventory.waybill wb on wb.waybill_id = w.waybill_id 
-JOIN inventory.v_receiving_order o on w.order_id = o.order_id 
-JOIN rdata.division d on d.division_id = o.division_id
-WHERE w.waybill_date &gt;= @today_less_35 
-GROUP BY o.division_id, d.branch_code, wb.posted_date, p.customer_id,p.customer_name, o.mill_name, p.sales_rep_id, p.sales_rep,p.waybill, p.waybill_date, p.waybill_id, w.note, wb.vessel_number, wb.po_number, wb.other_reference, p.master_product, p.variable_item, p.[length], w.wt_per_m 
-ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
+declare @today_less_35 datetime = convert(date, getdate() - 35)
+
+
+select 
+	  a.*
+	, ltrim(str(a.units, 20, 2)) + '/' + a.variable_item as unittally
+	, case 
+		 when a.pieces &lt;&gt; a.units then cast (a.pieces as varchar(6)) + '/' + a.variable_item 
+		 else ltrim(str(a.units, 20, 2)) + '/' + a.variable_item
+	  end as piecetally 
+    from
+		(select   w.division_id
+				, d.branch_code
+				, null as posted_date
+				, w.inventory_owner_id as customer_id
+				, w.inventory_owner_name as customer_name
+				, w.waybill
+				, w.waybill_date
+				, w.waybill_id
+				, w.note
+				, wd.shipper as mill_name
+				, w.account_exec_id as sales_rep_id
+				, w.account_exec as sales_rep
+				, RTRIM(p.master_product) + ' ' + CAST(wd.quantity_per_tracking_unit AS varchar(6)) as master_product
+				, 0 as wt_per_m
+				, 0 as [weight]
+				, p.variable_item
+				, 0 as [length]
+				, sum(wd.num_tracking_units) as units
+				, sum(wd.num_tracking_units * wd.quantity_per_tracking_unit) as pieces
+				, '' as vessel_number
+				, '' as po_number
+				, '' as other_reference
+			from inventory.v_waybill w 
+            join inventory.v_waybill_detail wd on w.waybill_id = wd.inbound_waybill_id -- IB Receiving
+			--join inventory.v_waybill_detail wd on w.waybill_id = wd.outbound_waybill_id -- OB Shipping
+			join product.v_product p on wd.product_id = p.product_id
+			join rdata.division d on w.division_id = d.division_id
+    where w.inventory_status = 'p'
+		and w.waybill_date &gt;= @today_less_35 
+		--and w.waybill_date between '2013-11-01' and '2013-11-15'
+	group by w.division_id, d.branch_code, w.inventory_owner_id, w.inventory_owner_name, w.account_exec_id, w.account_exec, w.waybill_id, w.waybill, w.waybill_date, w.note, 
+			w.equipment_number, wd.shipper, p.master_product, wd.quantity_per_tracking_unit, p.variable_item, p.[length], wd.num_tracking_units * wd.weight_per_tracking_unit
+) a 
+order by a.division_id, a.customer_name, a.waybill, a.master_product</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -943,7 +956,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[posted_date]"
@@ -966,7 +979,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
-                      length="500"
+                      length="100"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[customer_name]"
                       name="customer_name"
                       truncationRowDisposition="FailComponent" />
@@ -983,10 +996,12 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
+                      length="10"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]"
                       name="waybill_date"
                       truncationRowDisposition="FailComponent" />
@@ -1048,7 +1063,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_product]"
-                      length="1000"
+                      length="1007"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[master_product]"
                       name="master_product"
                       truncationRowDisposition="FailComponent" />
@@ -1063,14 +1078,12 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[weight]"
-                      dataType="numeric"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[weight]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[weight]"
                       name="weight"
-                      precision="38"
-                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[variable_item]"
@@ -1085,18 +1098,16 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[length]"
-                      dataType="numeric"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[length]"
                       name="length"
-                      precision="25"
-                      scale="8"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[units]"
@@ -1105,7 +1116,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[pieces]"
@@ -1119,7 +1130,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[vessel_number]"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[vessel_number]"
                       name="vessel_number"
                       truncationRowDisposition="FailComponent" />
@@ -1130,7 +1141,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[po_number]"
-                      length="50"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[po_number]"
                       name="po_number"
                       truncationRowDisposition="FailComponent" />
@@ -1141,7 +1152,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[other_reference]"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[other_reference]"
                       name="other_reference"
                       truncationRowDisposition="FailComponent" />
@@ -1152,7 +1163,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[unittally]"
-                      length="106"
+                      length="121"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[unittally]"
                       name="unittally"
                       truncationRowDisposition="FailComponent" />
@@ -1163,7 +1174,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[piecetally]"
-                      length="107"
+                      length="121"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[piecetally]"
                       name="piecetally"
                       truncationRowDisposition="FailComponent" />
@@ -1182,7 +1193,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="branch_code" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       name="posted_date" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
@@ -1192,7 +1203,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
                       codePage="1252"
                       dataType="str"
-                      length="500"
+                      length="100"
                       name="customer_name" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill]"
@@ -1202,7 +1213,9 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="waybill" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
                       name="waybill_date" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_id]"
@@ -1234,7 +1247,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       name="master_product" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[wt_per_m]"
@@ -1242,10 +1255,8 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="wt_per_m" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[weight]"
-                      dataType="numeric"
-                      name="weight"
-                      precision="38"
-                      scale="2" />
+                      dataType="i4"
+                      name="weight" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[variable_item]"
                       codePage="1252"
@@ -1254,47 +1265,45 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="variable_item" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      dataType="numeric"
-                      name="length"
-                      precision="25"
-                      scale="8" />
+                      dataType="i4"
+                      name="length" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       name="units" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       name="pieces" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[vessel_number]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       name="vessel_number" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[po_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       name="po_number" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[other_reference]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       name="other_reference" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       name="unittally" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[piecetally]"
                       codePage="1252"
                       dataType="str"
-                      length="107"
+                      length="121"
                       name="piecetally" />
                   </externalMetadataColumns>
                 </output>
@@ -1317,7 +1326,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="branch_code" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[posted_date]"
                       name="posted_date" />
                     <outputColumn
@@ -1329,7 +1338,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
                       codePage="1252"
                       dataType="str"
-                      length="500"
+                      length="100"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
                       name="customer_name" />
                     <outputColumn
@@ -1341,7 +1350,9 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="waybill" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
                       name="waybill_date" />
                     <outputColumn
@@ -1379,7 +1390,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[master_product]"
                       name="master_product" />
                     <outputColumn
@@ -1389,11 +1400,9 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="wt_per_m" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      dataType="numeric"
+                      dataType="i4"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      name="weight"
-                      precision="38"
-                      scale="2" />
+                      name="weight" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[variable_item]"
                       codePage="1252"
@@ -1403,54 +1412,52 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
                       name="variable_item" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      dataType="numeric"
+                      dataType="i4"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      name="length"
-                      precision="25"
-                      scale="8" />
+                      name="length" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[units]"
                       name="units" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[pieces]"
                       name="pieces" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[vessel_number]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[vessel_number]"
                       name="vessel_number" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[po_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[po_number]"
                       name="po_number" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[other_reference]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[other_reference]"
                       name="other_reference" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[unittally]"
                       name="unittally" />
                     <outputColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[piecetally]"
                       codePage="1252"
                       dataType="str"
-                      length="107"
+                      length="121"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[piecetally]"
                       name="piecetally" />
                     <outputColumn
@@ -1485,6 +1492,7 @@ ORDER BY p.customer_name, p.waybill, p.master_product, p.[length]</property>
       DTS:refId="Package\Load Lumber Inventory Staging Tables"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{D57CCADA-5E38-407A-9366-E6A011A0935A}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -4881,902 +4889,24 @@ WHERE w.actual_weight &lt;&gt; 0 AND
           <paths>
             <path
               refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output2]"
-              endId="Package\Load Lumber Inventory Staging Tables\staging pdtl.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Lumber Inventory Staging Tables\invman pdtl query.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
-              endId="Package\Load Lumber Inventory Staging Tables\staging inventory trx.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Lumber Inventory Staging Tables\invman inventory trx query.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output]"
               endId="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output1]"
+              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
               endId="Package\Load Lumber Inventory Staging Tables\staging v_lumber.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Lumber Inventory Staging Tables\invman v_lumber query.Outputs[OLE DB Source Output]" />
-          </paths>
-        </pipeline>
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Load Lumber Inventory table"
-      DTS:CreationName="SSIS.Pipeline.3"
-      DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{22E7901B-C86E-43A3-BE06-28D272551C80}"
-      DTS:ExecutableType="SSIS.Pipeline.3"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Load Lumber Inventory table"
-      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <pipeline
-          version="1">
-          <components>
-            <component
-              refId="Package\Load Lumber Inventory table\customerportal"
-              componentClassID="{4ADA7EAA-136C-4215-8098-D7A7C27FC0D1}"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="customerportal"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[invman].[lumber_inventory]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Lumber Inventory table\customerportal.Connections[OleDbConnection]"
-                  connectionManagerID="{9FFE3584-46F3-4142-8697-58942273114F}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[customerportal]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[order_status]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="order_status"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_status]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[customer_id]"
-                      cachedDataType="i4"
-                      cachedName="customer_id"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_id]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[customer_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="customer_name"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_name]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[sales_rep_id]"
-                      cachedDataType="i4"
-                      cachedName="sales_rep_id"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep_id]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[sales_rep]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="150"
-                      cachedName="sales_rep"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[mill_name]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="mill_name"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[mill_name]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[mill_name]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[order_number]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="order_number"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[order_number]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_number]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[customer_reference]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="30"
-                      cachedName="customer_reference"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_reference]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_reference]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[date_io]"
-                      cachedDataType="dbTimeStamp"
-                      cachedName="date_io"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[date_io]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[date_io]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[product_group_id]"
-                      cachedDataType="i4"
-                      cachedName="product_group_id"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[product_group_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group_id]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[product_group]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="15"
-                      cachedName="product_group"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[product_group]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[master_no_piece]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="master_no_piece"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_no_piece]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[master_no_piece]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[number_of_items]"
-                      cachedDataType="i4"
-                      cachedName="number_of_items"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[number_of_items]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[number_of_items]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[variable_item]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="100"
-                      cachedName="variable_item"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[variable_item]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[variable_item]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[length]"
-                      cachedDataType="numeric"
-                      cachedName="length"
-                      cachedPrecision="19"
-                      cachedScale="3"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[length]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[length]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[measure]"
-                      cachedDataType="i4"
-                      cachedName="measure"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[measure]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[measure]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[fbm]"
-                      cachedDataType="numeric"
-                      cachedName="fbm"
-                      cachedPrecision="19"
-                      cachedScale="3"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[fbm]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[fbm]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[lift_count]"
-                      cachedDataType="i4"
-                      cachedName="lift_count"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[lift_count]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[lift_count]" />
-                    <inputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].Columns[branch_code]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="8"
-                      cachedName="branch_code"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[branch_code]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[branch_code]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[order_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="order_status" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_id]"
-                      dataType="i4"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="customer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep_id]"
-                      dataType="i4"
-                      name="sales_rep_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[sales_rep]"
-                      codePage="1252"
-                      dataType="str"
-                      length="150"
-                      name="sales_rep" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="mill_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[order_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="order_number" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_reference]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="customer_reference" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[date_io]"
-                      dataType="dbTimeStamp"
-                      name="date_io" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[product_group_id]"
-                      dataType="i4"
-                      name="product_group_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[product_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="product_group" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_no_piece]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="master_no_piece" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[number_of_items]"
-                      dataType="i4"
-                      name="number_of_items" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[variable_item]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="variable_item" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[length]"
-                      dataType="numeric"
-                      name="length"
-                      precision="25"
-                      scale="8" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[measure]"
-                      dataType="numeric"
-                      name="measure"
-                      precision="38"
-                      scale="8" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[fbm]"
-                      dataType="numeric"
-                      name="fbm"
-                      precision="38"
-                      scale="3" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[lift_count]"
-                      dataType="numeric"
-                      name="lift_count"
-                      precision="38" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[branch_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="branch_code" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load Lumber Inventory table\customerportal.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\customerportal.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\customerportal.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\customerportal.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Load Lumber Inventory table\invman"
-              componentClassID="{165A526D-D5DE-47FF-96A6-F8274C19826B}"
-              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
-              description="OLE DB Source"
-              name="invman"
-              usesDispositions="true"
-              version="7">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset"></property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">exec [inventory].[rpt_custportal_lumber_inventory_staging_sp]</property>
-                <property
-                  dataType="System.String"
-                  description="The variable that contains the SQL command to be executed."
-                  name="SqlCommandVariable"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">2</property>
-                <property
-                  dataType="System.String"
-                  description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load Lumber Inventory table\invman.Connections[OleDbConnection]"
-                  connectionManagerID="{71A1A604-7EB5-4EDB-8CD0-FB7F27E06D48}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[invman]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output]"
-                  name="OLE DB Source Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_status]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
-                      length="50"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_status]"
-                      name="order_status"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_id]"
-                      name="customer_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
-                      length="500"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_name]"
-                      name="customer_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep_id]"
-                      name="sales_rep_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[sales_rep]"
-                      length="150"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[sales_rep]"
-                      name="sales_rep"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[mill_name]"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[mill_name]"
-                      name="mill_name"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_number]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[order_number]"
-                      length="50"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[order_number]"
-                      name="order_number"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_reference]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_reference]"
-                      length="30"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[customer_reference]"
-                      name="customer_reference"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[date_io]"
-                      dataType="dbTimeStamp"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[date_io]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[date_io]"
-                      name="date_io"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group_id]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[product_group_id]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group_id]"
-                      name="product_group_id"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[product_group]"
-                      length="15"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[product_group]"
-                      name="product_group"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[master_no_piece]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_no_piece]"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[master_no_piece]"
-                      name="master_no_piece"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[number_of_items]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[number_of_items]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[number_of_items]"
-                      name="number_of_items"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[variable_item]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[variable_item]"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[variable_item]"
-                      name="variable_item"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[length]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[length]"
-                      name="length"
-                      precision="19"
-                      scale="3"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[measure]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[measure]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[measure]"
-                      name="measure"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[fbm]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[fbm]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[fbm]"
-                      name="fbm"
-                      precision="19"
-                      scale="3"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[lift_count]"
-                      dataType="i4"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[lift_count]"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[lift_count]"
-                      name="lift_count"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[branch_code]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[branch_code]"
-                      length="8"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].Columns[branch_code]"
-                      name="branch_code"
-                      truncationRowDisposition="FailComponent" />
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[order_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      name="order_status" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
-                      dataType="i4"
-                      name="customer_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="customer_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[sales_rep_id]"
-                      dataType="i4"
-                      name="sales_rep_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[sales_rep]"
-                      codePage="1252"
-                      dataType="str"
-                      length="102"
-                      name="sales_rep" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="mill_name" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[order_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="order_number" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_reference]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      name="customer_reference" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[date_io]"
-                      dataType="dbTimeStamp"
-                      name="date_io" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[product_group_id]"
-                      dataType="i4"
-                      name="product_group_id" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[product_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      name="product_group" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_no_piece]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="master_no_piece" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[number_of_items]"
-                      dataType="i4"
-                      name="number_of_items" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[variable_item]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      name="variable_item" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      dataType="numeric"
-                      name="length"
-                      precision="25"
-                      scale="8" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[measure]"
-                      dataType="numeric"
-                      name="measure"
-                      precision="38"
-                      scale="8" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[fbm]"
-                      dataType="numeric"
-                      name="fbm"
-                      precision="38"
-                      scale="3" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[lift_count]"
-                      dataType="numeric"
-                      name="lift_count"
-                      precision="38" />
-                    <externalMetadataColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output].ExternalColumns[branch_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      name="branch_code" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output]"
-                  isErrorOut="true"
-                  name="OLE DB Source Error Output">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_status]"
-                      codePage="1252"
-                      dataType="str"
-                      length="9"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_status]"
-                      name="order_status" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_id]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_id]"
-                      name="customer_id" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
-                      name="customer_name" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep_id]"
-                      name="sales_rep_id" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep]"
-                      codePage="1252"
-                      dataType="str"
-                      length="102"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[sales_rep]"
-                      name="sales_rep" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[mill_name]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[mill_name]"
-                      name="mill_name" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_number]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[order_number]"
-                      name="order_number" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_reference]"
-                      codePage="1252"
-                      dataType="str"
-                      length="30"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[customer_reference]"
-                      name="customer_reference" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[date_io]"
-                      dataType="dbTimeStamp"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[date_io]"
-                      name="date_io" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[product_group_id]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[product_group_id]"
-                      name="product_group_id" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[product_group]"
-                      codePage="1252"
-                      dataType="str"
-                      length="15"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[product_group]"
-                      name="product_group" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[master_no_piece]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[master_no_piece]"
-                      name="master_no_piece" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[number_of_items]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[number_of_items]"
-                      name="number_of_items" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[variable_item]"
-                      codePage="1252"
-                      dataType="str"
-                      length="100"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[variable_item]"
-                      name="variable_item" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      dataType="numeric"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      name="length"
-                      precision="25"
-                      scale="8" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[measure]"
-                      dataType="numeric"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[measure]"
-                      name="measure"
-                      precision="38"
-                      scale="8" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[fbm]"
-                      dataType="numeric"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[fbm]"
-                      name="fbm"
-                      precision="38"
-                      scale="3" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[lift_count]"
-                      dataType="numeric"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[lift_count]"
-                      name="lift_count"
-                      precision="38" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[branch_code]"
-                      codePage="1252"
-                      dataType="str"
-                      length="8"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[branch_code]"
-                      name="branch_code" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-          </components>
-          <paths>
             <path
-              refId="Package\Load Lumber Inventory table.Paths[OLE DB Source Output]"
-              endId="Package\Load Lumber Inventory table\customerportal.Inputs[OLE DB Destination Input]"
+              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output]"
+              endId="Package\Load Lumber Inventory Staging Tables\staging pdtl.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
-              startId="Package\Load Lumber Inventory table\invman.Outputs[OLE DB Source Output]" />
+              startId="Package\Load Lumber Inventory Staging Tables\invman pdtl query.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output1]"
+              endId="Package\Load Lumber Inventory Staging Tables\staging inventory trx.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Lumber Inventory Staging Tables\invman inventory trx query.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -5785,6 +4915,7 @@ WHERE w.actual_weight &lt;&gt; 0 AND
       DTS:refId="Package\Load Miscellaneous tables"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{392B30D9-6F02-435D-8B89-24E5896256AF}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -7848,34 +6979,34 @@ FROM [rdata].[division]</property>
           <paths>
             <path
               refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-users.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-users.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
-              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping.Inputs[OLE DB Destination Input]"
-              name="OLE DB Source Output"
-              startId="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping.Outputs[OLE DB Source Output]" />
-            <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
               endId="Package\Load Miscellaneous tables\customerportal-invman-division.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\invman-rdata-division.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
               endId="Package\Load Miscellaneous tables\customerportal-invman-acctexec.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\invman-inventory-sales_rep.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
               endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_acctexec.Inputs[OLE DB Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-user_customer.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-user_customer.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-users.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-users.Outputs[OLE DB Source Output]" />
+            <path
+              refId="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+              endId="Package\Load Miscellaneous tables\customerportal-branchadmin-customer_mapping.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Load Miscellaneous tables\branchadmin-custportal-customer_mapping.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -7884,6 +7015,7 @@ FROM [rdata].[division]</property>
       DTS:refId="Package\Load OB Shipping table"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{0FE31301-02B8-4583-B70B-D0B78E89C03A}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -8925,12 +8057,13 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\MERGE staging into invman tables"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{B6FDD614-FD30-4B0C-A780-196C226CA032}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="MERGE staging into invman tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8942,6 +8075,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\Truncate Completed Orders table"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{edff0e8c-77a9-4fc5-b8ce-e98361d35498}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
@@ -8973,27 +8107,10 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Truncate Lumber Inventory table"
-      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
-      DTS:DTSID="{e295acb8-dade-4458-963a-185d29d163cb}"
-      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Truncate Lumber Inventory table"
-      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <SQLTask:SqlTaskData
-          SQLTask:Connection="{9FFE3584-46F3-4142-8697-58942273114F}"
-          SQLTask:SqlStatementSource="truncate table invman.lumber_inventory;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Truncate Miscellaneous tables"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{BE66B1E0-D895-40EA-ABF6-6BC3B434604D}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
@@ -9011,6 +8128,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\Truncate OB Shipping table"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{8857dbcc-ac76-49eb-afd7-2d924bccafad}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
@@ -9028,12 +8146,13 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\Truncate Staging Tables"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
+      DTS:Disabled="True"
       DTS:DTSID="{0BDD8833-1993-4EDB-9F09-DD445C381DC4}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging Tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="5">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -9067,14 +8186,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
       DTS:To="Package\Load OB Shipping table" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
-      DTS:CreationName=""
-      DTS:DTSID="{2243A893-D3C1-4345-B2B8-0171DF3F0B87}"
-      DTS:From="Package\Truncate Lumber Inventory table"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 3"
-      DTS:To="Package\Load Lumber Inventory table" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3 1]"
       DTS:CreationName=""
@@ -9125,13 +8236,17 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Completed Orders table"
           TopLeft="72.5,320.5" />
         <NodeLayout
+          Size="245,42"
+          Id="Package\Load data for OnGround FBM Chart"
+          TopLeft="371,410" />
+        <NodeLayout
           Size="190,42"
           Id="Package\Load IB Receiving table"
           TopLeft="346.5,116.5" />
         <NodeLayout
-          Size="216,42"
-          Id="Package\Load Lumber Inventory table"
-          TopLeft="906.5,125.5" />
+          Size="262,42"
+          Id="Package\Load Lumber Inventory Staging Tables"
+          TopLeft="360,270" />
         <NodeLayout
           Size="201,42"
           Id="Package\Load Miscellaneous tables"
@@ -9141,6 +8256,10 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load OB Shipping table"
           TopLeft="622.5,122.5" />
         <NodeLayout
+          Size="240,42"
+          Id="Package\MERGE staging into invman tables"
+          TopLeft="373,339" />
+        <NodeLayout
           Size="235,42"
           Id="Package\Truncate Completed Orders table"
           TopLeft="59.5,227.5" />
@@ -9149,10 +8268,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Truncate IB Receiving table"
           TopLeft="336.5,25.5" />
         <NodeLayout
-          Size="235,42"
-          Id="Package\Truncate Lumber Inventory table"
-          TopLeft="893.5,32.5" />
-        <NodeLayout
           Size="220,42"
           Id="Package\Truncate Miscellaneous tables"
           TopLeft="57.5,22.5" />
@@ -9160,6 +8275,10 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Size="208,42"
           Id="Package\Truncate OB Shipping table"
           TopLeft="608.5,28.5" />
+        <NodeLayout
+          Size="193,42"
+          Id="Package\Truncate Staging Tables"
+          TopLeft="398,199" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="169.25,64.5">
@@ -9227,28 +8346,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="1012.75,74.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,51"
-              Start="0,0"
-              End="0,43.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,43.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3 1]"
           TopLeft="178.75,269.5">
           <EdgeLayout.Curve>
@@ -9270,14 +8367,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="193,42"
-          Id="Package\Truncate Staging Tables"
-          TopLeft="398,199" />
-        <NodeLayout
-          Size="262,42"
-          Id="Package\Load Lumber Inventory Staging Tables"
-          TopLeft="360,270" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="492.75,241">
@@ -9300,10 +8389,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="240,42"
-          Id="Package\MERGE staging into invman tables"
-          TopLeft="373,339" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="492,312">
@@ -9326,10 +8411,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="245,42"
-          Id="Package\Load data for OnGround FBM Chart"
-          TopLeft="371,410" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
           TopLeft="493.25,381">
@@ -9420,37 +8501,35 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     design-time-name="Package\Load IB Receiving table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load IB Receiving table\invman"
-          TopLeft="30.25,5.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
           Id="Package\Load IB Receiving table\customerportal"
           TopLeft="11.75,103.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Load IB Receiving table\invman"
+          TopLeft="29.5,14.5" />
         <EdgeLayout
           Id="Package\Load IB Receiving table.Paths[OLE DB Source Output]"
-          TopLeft="86.75,47.5">
+          TopLeft="86.375,56.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56"
+              EndConnector="0,47"
               Start="0,0"
-              End="0,48.5">
+              End="0,39.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,48.5" />
+                    End="0,39.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9469,30 +8548,112 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load IB Receiving table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
-    design-time-name="Package\Load Lumber Inventory table">
+    design-time-name="Package\Load Lumber Inventory Staging Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Load Lumber Inventory table\customerportal"
-          TopLeft="47.5,157.5" />
+          Size="231,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query"
+          TopLeft="21,34" />
         <NodeLayout
-          Size="113,42"
-          Id="Package\Load Lumber Inventory table\invman"
-          TopLeft="65.5,65.5" />
+          Size="201,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm"
+          TopLeft="37,136" />
         <EdgeLayout
-          Id="Package\Load Lumber Inventory table.Paths[OLE DB Source Output]"
-          TopLeft="122.25,107.5">
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output2]"
+          TopLeft="137,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="190,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman v_lumber query"
+          TopLeft="268,36" />
+        <NodeLayout
+          Size="160,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging v_lumber"
+          TopLeft="282.5,134.5" />
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
+          TopLeft="362.75,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5"
+              Start="0,0"
+              End="0,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman pdtl query"
+          TopLeft="473.5,39.5" />
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging pdtl"
+          TopLeft="484.5,133.5" />
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output]"
+          TopLeft="553.5,81.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="206,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman inventory trx query"
+          TopLeft="653.5,42.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging inventory trx"
+          TopLeft="671.5,134.5" />
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output1]"
+          TopLeft="758,84.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9516,7 +8677,23 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory table\customerportal">
+    design-time-name="Package\Load Lumber Inventory Staging Tables\invman v_lumber query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\staging v_lumber">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -9529,10 +8706,57 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory table\invman">
+    design-time-name="Package\Load Lumber Inventory Staging Tables\staging pdtl">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\invman pdtl query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\invman inventory trx query">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Lumber Inventory Staging Tables\staging inventory trx">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9590,7 +8814,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec"
           TopLeft="13,9.16666666666667" />
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
           TopLeft="155,418.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9612,7 +8836,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
           TopLeft="497.5,232.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9634,7 +8858,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
           TopLeft="144.75,234.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9656,7 +8880,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
           TopLeft="143.5,51.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9678,7 +8902,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output4]"
           TopLeft="499.75,51.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9700,7 +8924,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output3]"
           TopLeft="822.75,51.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -9911,215 +9135,11 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Load Lumber Inventory Staging Tables">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query"
-          TopLeft="21,34" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm"
-          TopLeft="37,136" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output]"
-          TopLeft="137,76">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="190,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman v_lumber query"
-          TopLeft="268,36" />
-        <NodeLayout
-          Size="160,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging v_lumber"
-          TopLeft="282.5,134.5" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output1]"
-          TopLeft="362.75,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.5"
-              Start="0,0"
-              End="0,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman pdtl query"
-          TopLeft="473.5,39.5" />
-        <NodeLayout
-          Size="134,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging pdtl"
-          TopLeft="484.5,133.5" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output2]"
-          TopLeft="553.5,81.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman inventory trx query"
-          TopLeft="653.5,42.5" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging inventory trx"
-          TopLeft="671.5,134.5" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
-          TopLeft="758,84.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,50"
-              Start="0,0"
-              End="0,42.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,42.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query">
+    design-time-name="Package\Load IB Receiving table\invman">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\invman v_lumber query">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\staging v_lumber">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\invman pdtl query">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\staging pdtl">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\invman inventory trx query">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Lumber Inventory Staging Tables\staging inventory trx">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
