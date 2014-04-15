@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="42"
-  DTS:VersionGUID="{25DADA37-17AF-4EF5-88FF-B500688A5542}">
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{FD4F8D76-0477-4D21-9697-ECEE1DBB34E3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -854,15 +854,15 @@
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">-- IB Receiving replacement query
 
-declare @today_less_35 datetime = convert(date, getdate() - 35)
+declare @today_less_35 datetime = convert(date, getdate() - 365)
 
 
 select 
 	  a.*
-	, ltrim(str(a.units, 20, 2)) + '/' + a.variable_item as unittally
+	, ltrim(str(a.units, 20, 0)) + '/' + ltrim(rtrim(a.variable_item)) as unittally
 	, case 
-		 when a.pieces &lt;&gt; a.units then cast (a.pieces as varchar(6)) + '/' + a.variable_item 
-		 else ltrim(str(a.units, 20, 2)) + '/' + a.variable_item
+		 when a.pieces &lt;&gt; a.units then cast (a.pieces as varchar(6)) + '/' + ltrim(rtrim(a.variable_item)) 
+		 else ltrim(str(a.units, 20, 0)) + '/' + ltrim(rtrim(a.variable_item))
 	  end as piecetally 
     from
 		(select   w.division_id
@@ -894,9 +894,11 @@ select
 			join rdata.division d on w.division_id = d.division_id
     where w.inventory_status = 'p'
 		and w.waybill_date &gt;= @today_less_35 
-		--and w.waybill_date between '2013-11-01' and '2013-11-15'
+		--and w.waybill_date between '2013-06-06' and '2013-06-06 23:59:59'
+		--and w.inventory_owner_id = 12
+		--and w.waybill_id = 97457
 	group by w.division_id, d.branch_code, w.inventory_owner_id, w.inventory_owner_name, w.account_exec_id, w.account_exec, w.waybill_id, w.waybill, w.waybill_date, w.note, 
-			w.equipment_number, wd.shipper, p.master_product, wd.quantity_per_tracking_unit, p.variable_item, p.[length], wd.num_tracking_units * wd.weight_per_tracking_unit
+			w.equipment_number, wd.shipper, p.master_product, wd.quantity_per_tracking_unit, p.variable_item, p.[length]--, wd.num_tracking_units * wd.weight_per_tracking_unit
 ) a 
 order by a.division_id, a.customer_name, a.waybill, a.master_product</property>
                 <property
@@ -4915,7 +4917,6 @@ WHERE w.actual_weight &lt;&gt; 0 AND
       DTS:refId="Package\Load Miscellaneous tables"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{392B30D9-6F02-435D-8B89-24E5896256AF}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -6665,11 +6666,13 @@ join custportal.users u on u.[user_id] = ua.[user_id]</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select  
-    sr.sales_rep_id,
-    sr.last_name + ', ' + sr.first_name as sales_rep_name,
-    sr.division_id
-from inventory.sales_rep sr</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select 
+	sales_rep_id = ae.account_exec_id,
+	sales_rep_name = ae.last_name + ', ' + ae.first_name,
+	division_id = aed.division_id
+from inventory.account_exec ae
+join inventory.account_exec_division aed
+	on ae.account_exec_id = aed.account_exec_id</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8110,7 +8113,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\Truncate Miscellaneous tables"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{BE66B1E0-D895-40EA-ABF6-6BC3B434604D}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
@@ -8552,75 +8554,39 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     design-time-name="Package\Load Lumber Inventory Staging Tables">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="231,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query"
-          TopLeft="21,34" />
-        <NodeLayout
-          Size="201,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm"
-          TopLeft="37,136" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output2]"
-          TopLeft="137,76">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190,42"
           Id="Package\Load Lumber Inventory Staging Tables\invman v_lumber query"
           TopLeft="268,36" />
         <NodeLayout
+          Size="231,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman v_waybill_wtperm query"
+          TopLeft="21,34" />
+        <NodeLayout
           Size="160,42"
           Id="Package\Load Lumber Inventory Staging Tables\staging v_lumber"
           TopLeft="282.5,134.5" />
-        <EdgeLayout
-          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
-          TopLeft="362.75,78">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,56.5"
-              Start="0,0"
-              End="0,49">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,49" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="134,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging pdtl"
+          TopLeft="484.5,133.5" />
+        <NodeLayout
+          Size="201,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging v_waybill_wtperm"
+          TopLeft="37,136" />
         <NodeLayout
           Size="164,42"
           Id="Package\Load Lumber Inventory Staging Tables\invman pdtl query"
           TopLeft="473.5,39.5" />
         <NodeLayout
-          Size="134,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging pdtl"
-          TopLeft="484.5,133.5" />
+          Size="206,42"
+          Id="Package\Load Lumber Inventory Staging Tables\invman inventory trx query"
+          TopLeft="653.5,42.5" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Load Lumber Inventory Staging Tables\staging inventory trx"
+          TopLeft="671.5,134.5" />
         <EdgeLayout
           Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output]"
           TopLeft="553.5,81.5">
@@ -8640,17 +8606,59 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="206,42"
-          Id="Package\Load Lumber Inventory Staging Tables\invman inventory trx query"
-          TopLeft="653.5,42.5" />
-        <NodeLayout
-          Size="176,42"
-          Id="Package\Load Lumber Inventory Staging Tables\staging inventory trx"
-          TopLeft="671.5,134.5" />
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output3]"
+          TopLeft="362.75,78">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,56.5"
+              Start="0,0"
+              End="0,49">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output2]"
+          TopLeft="137,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Lumber Inventory Staging Tables.Paths[OLE DB Source Output1]"
           TopLeft="758,84.5">
@@ -8670,7 +8678,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8814,72 +8824,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
           Id="Package\Load Miscellaneous tables\branchadmin-custportal-user_acctexec"
           TopLeft="13,9.16666666666667" />
         <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
-          TopLeft="155,418.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
-          TopLeft="497.5,232.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
-          TopLeft="144.75,234.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,39.6666666666666"
-              Start="0,0"
-              End="0,32.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output5]"
           TopLeft="143.5,51.1666666666667">
           <EdgeLayout.Curve>
@@ -8937,6 +8881,72 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,32.1666666666667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output2]"
+          TopLeft="155,418.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output1]"
+          TopLeft="497.5,232.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load Miscellaneous tables.Paths[OLE DB Source Output]"
+          TopLeft="144.75,234.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,39.6666666666666"
+              Start="0,0"
+              End="0,32.1666666666666">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,32.1666666666666" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
