@@ -11,8 +11,8 @@
   DTS:LocaleID="4105"
   DTS:ObjectName="custportal_staging"
   DTS:PackageType="5"
-  DTS:VersionBuild="46"
-  DTS:VersionGUID="{FD4F8D76-0477-4D21-9697-ECEE1DBB34E3}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{91EA368E-13A0-42EF-81C0-0D352DA73106}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">6</DTS:Property>
   <DTS:Variables />
@@ -404,7 +404,7 @@
       DTS:LocaleID="-1"
       DTS:ObjectName="Load data for OnGround FBM Chart"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -544,7 +544,7 @@
                       refId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].Columns[waybill_date]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="10"
+                      cachedLength="19"
                       cachedName="waybill_date"
                       externalMetadataColumnId="Package\Load IB Receiving table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[waybill_date]"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]" />
@@ -1003,7 +1003,7 @@ order by a.division_id, a.customer_name, a.waybill, a.master_product</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
-                      length="10"
+                      length="19"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]"
                       name="waybill_date"
                       truncationRowDisposition="FailComponent" />
@@ -1217,7 +1217,7 @@ order by a.division_id, a.customer_name, a.waybill, a.master_product</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="19"
                       name="waybill_date" />
                     <externalMetadataColumn
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_id]"
@@ -1354,7 +1354,7 @@ order by a.division_id, a.customer_name, a.waybill, a.master_product</property>
                       refId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
                       codePage="1252"
                       dataType="str"
-                      length="10"
+                      length="19"
                       lineageId="Package\Load IB Receiving table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
                       name="waybill_date" />
                     <outputColumn
@@ -7018,7 +7018,6 @@ FROM [rdata].[division]</property>
       DTS:refId="Package\Load OB Shipping table"
       DTS:CreationName="SSIS.Pipeline.3"
       DTS:Description="Data Flow Task"
-      DTS:Disabled="True"
       DTS:DTSID="{0FE31301-02B8-4583-B70B-D0B78E89C03A}"
       DTS:ExecutableType="SSIS.Pipeline.3"
       DTS:LocaleID="-1"
@@ -7117,7 +7116,7 @@ FROM [rdata].[division]</property>
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[branch_code]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[posted_date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedDataType="i4"
                       cachedName="posted_date"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[posted_date]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[posted_date]" />
@@ -7131,7 +7130,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[customer_name]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="500"
+                      cachedLength="100"
                       cachedName="customer_name"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[customer_name]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[customer_name]" />
@@ -7145,7 +7144,9 @@ FROM [rdata].[division]</property>
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[waybill]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[waybill_date]"
-                      cachedDataType="dbTimeStamp"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="19"
                       cachedName="waybill_date"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[waybill_date]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]" />
@@ -7173,7 +7174,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[vessel_number]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="100"
+                      cachedLength="1"
                       cachedName="vessel_number"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[vessel_number]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[vessel_number]" />
@@ -7181,7 +7182,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[po_number]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="50"
+                      cachedLength="1"
                       cachedName="po_number"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[po_number]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[po_number]" />
@@ -7189,7 +7190,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[other_reference]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="100"
+                      cachedLength="1"
                       cachedName="other_reference"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[other_reference]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[other_reference]" />
@@ -7197,7 +7198,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[master_product]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="1000"
+                      cachedLength="1007"
                       cachedName="master_product"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_product]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[master_product]" />
@@ -7211,10 +7212,8 @@ FROM [rdata].[division]</property>
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[variable_item]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[weight]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="weight"
-                      cachedPrecision="38"
-                      cachedScale="2"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[weight]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[weight]" />
                     <inputColumn
@@ -7227,10 +7226,8 @@ FROM [rdata].[division]</property>
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[note]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[length]"
-                      cachedDataType="numeric"
+                      cachedDataType="i4"
                       cachedName="length"
-                      cachedPrecision="25"
-                      cachedScale="8"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[length]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[length]" />
                     <inputColumn
@@ -7241,13 +7238,13 @@ FROM [rdata].[division]</property>
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[wt_per_m]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[units]"
-                      cachedDataType="i4"
+                      cachedDataType="r8"
                       cachedName="units"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[units]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[units]" />
                     <inputColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[pieces]"
-                      cachedDataType="i4"
+                      cachedDataType="r8"
                       cachedName="pieces"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[pieces]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[pieces]" />
@@ -7255,7 +7252,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].Columns[unittally]"
                       cachedCodepage="1252"
                       cachedDataType="str"
-                      cachedLength="106"
+                      cachedLength="121"
                       cachedName="unittally"
                       externalMetadataColumnId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[unittally]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[unittally]" />
@@ -7346,7 +7343,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       name="master_product" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[variable_item]"
@@ -7388,7 +7385,7 @@ FROM [rdata].[division]</property>
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       name="unittally" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\customerportal.Inputs[OLE DB Destination Input].ExternalColumns[piecetally]"
@@ -7449,42 +7446,51 @@ FROM [rdata].[division]</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">declare @today_less_35 datetime = convert(date, getdate() - 35)
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">declare @today_less_35 datetime = convert(date, getdate() - 365)
 
-SELECT  o.division_id,
-	d.branch_code,
-	wb.posted_date,
-	p.customer_id,
-	p.customer_name, 
-	--p.mill_name,
-	p.waybill,
-	p.waybill_date, 
-	p.waybill_id,
-	p.sales_rep_id,
-	p.sales_rep,
-	wb.vessel_number,
-	wb.po_number,
-	wb.other_reference, 
-	p.master_product, 
-	p.variable_item, 
-	ROUND(SUM(p.[weight]),0) as [weight], 
-	w.note, 
-	p.[length]/304.8 as [length], 
-	0 as wt_per_m,
-	SUM(p.quantity) as units, 
-	SUM(p.number_of_items) as pieces,
-	CAST(SUM(p.quantity) as varchar(5)) + '/' + p.variable_item  as unittally, 
-	CAST(SUM(p.number_of_items) as varchar(6)) + '/' + p.variable_item as piecetally 
-FROM inventory.v_proddtl p
-JOIN inventory.v_outbound_waybill w on p.waybill_id = w.waybill_id 
-JOIN inventory.waybill wb on w.waybill_id = wb.waybill_id 
-JOIN inventory.v_shipping_order o on w.order_id = o.order_id 
-JOIN rdata.division d on d.division_id = o.division_id
-WHERE wb.posted_date &gt;= @today_less_35
-GROUP BY o.division_id, d.branch_code, wb.posted_date, p.customer_id,p.customer_name, --p.mill_name, 
-                    p.waybill, p.waybill_date, p.waybill_id, p.sales_rep_id, p.sales_rep, master_product, 
-                    variable_item, w.note, [length] / 304.8, wb.vessel_number, wb.po_number, wb.other_reference
-ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
+select 
+	  a.*
+	, case 
+		when a.pieces &lt;&gt; a.units then rtrim(ltrim(cast(a.units as varchar(20)))) + '/' + rtrim(ltrim(a.variable_item))
+		else rtrim(ltrim(str(a.units,20,4))) + '/' + rtrim(ltrim(a.variable_item))
+	  end as unittally
+	, case 
+		when a.pieces &lt;&gt; a.units then rtrim(ltrim(cast(a.pieces as varchar(6)))) + '/' + rtrim(ltrim(a.variable_item))
+		else '' 
+	  end as piecetally 
+from (
+	select 
+		  d.division_id
+		, d.branch_code
+		, null as posted_date
+		, w.inventory_owner_id as customer_id
+		, w.inventory_owner_name as customer_name
+		, w.waybill
+		, w.waybill_date
+		, w.waybill_id
+		, w.account_exec_id as sales_rep_id
+		, w.account_exec as sales_rep
+		, '' as vessel_number
+		, '' as po_number
+		, '' as other_reference
+		, RTRIM(p.master_product) + ' ' + CAST(wd.quantity_per_tracking_unit AS varchar(6)) as master_product
+		, p.variable_item
+		, 0 as [weight]
+		, w.note
+		, 0 as [length]
+		, 0 as wt_per_m
+		, sum(wd.num_tracking_units) as units
+		, SUM(wd.num_tracking_units * wd.quantity_per_tracking_unit) as pieces 
+	from inventory.v_waybill w 
+	join inventory.v_waybill_detail wd on w.waybill_id = wd.outbound_waybill_id 
+	join product.v_product p on wd.product_id = p.product_id 
+	join rdata.division d on w.division_id = d.division_id
+	where w.waybill_date &gt;= @today_less_35 
+		and w.inventory_status = 'p' 
+		--and w.waybill_date between '2013-06-06 00:00:00' and '2013-06-06 23:59:59' 
+	group by d.division_id, d.branch_code, w.inventory_owner_id, w.inventory_owner_name, w.waybill, w.waybill_date, w.waybill_id, w.account_exec_id, w.account_exec, 
+		p.master_product, wd.quantity_per_tracking_unit, p.variable_item, w.note) a 
+order by a.customer_name, waybill, master_product</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -7542,7 +7548,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[posted_date]"
@@ -7565,7 +7571,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
-                      length="500"
+                      length="100"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[customer_name]"
                       name="customer_name"
                       truncationRowDisposition="FailComponent" />
@@ -7582,10 +7588,12 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
+                      length="19"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[waybill_date]"
                       name="waybill_date"
                       truncationRowDisposition="FailComponent" />
@@ -7625,7 +7633,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[vessel_number]"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[vessel_number]"
                       name="vessel_number"
                       truncationRowDisposition="FailComponent" />
@@ -7636,7 +7644,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[po_number]"
-                      length="50"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[po_number]"
                       name="po_number"
                       truncationRowDisposition="FailComponent" />
@@ -7647,7 +7655,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[other_reference]"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[other_reference]"
                       name="other_reference"
                       truncationRowDisposition="FailComponent" />
@@ -7658,7 +7666,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_product]"
-                      length="1000"
+                      length="1007"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[master_product]"
                       name="master_product"
                       truncationRowDisposition="FailComponent" />
@@ -7675,14 +7683,12 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[weight]"
-                      dataType="numeric"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[weight]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[weight]"
                       name="weight"
-                      precision="38"
-                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[note]"
@@ -7697,14 +7703,12 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[length]"
-                      dataType="numeric"
+                      dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[length]"
                       name="length"
-                      precision="25"
-                      scale="8"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[wt_per_m]"
@@ -7717,7 +7721,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[units]"
@@ -7726,7 +7730,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[pieces]"
@@ -7740,7 +7744,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[unittally]"
-                      length="106"
+                      length="121"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].Columns[unittally]"
                       name="unittally"
                       truncationRowDisposition="FailComponent" />
@@ -7770,7 +7774,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="branch_code" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       name="posted_date" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_id]"
@@ -7780,7 +7784,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[customer_name]"
                       codePage="1252"
                       dataType="str"
-                      length="500"
+                      length="100"
                       name="customer_name" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill]"
@@ -7790,7 +7794,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="waybill" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
                       name="waybill_date" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[waybill_id]"
@@ -7810,25 +7816,25 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[vessel_number]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       name="vessel_number" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[po_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       name="po_number" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[other_reference]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       name="other_reference" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       name="master_product" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[variable_item]"
@@ -7838,10 +7844,8 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="variable_item" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[weight]"
-                      dataType="numeric"
-                      name="weight"
-                      precision="38"
-                      scale="2" />
+                      dataType="i4"
+                      name="weight" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[note]"
                       codePage="1252"
@@ -7850,27 +7854,25 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="note" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[length]"
-                      dataType="numeric"
-                      name="length"
-                      precision="25"
-                      scale="8" />
+                      dataType="i4"
+                      name="length" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[wt_per_m]"
                       dataType="i4"
                       name="wt_per_m" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       name="units" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       name="pieces" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       name="unittally" />
                     <externalMetadataColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Output].ExternalColumns[piecetally]"
@@ -7899,7 +7901,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="branch_code" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[posted_date]"
-                      dataType="dbTimeStamp"
+                      dataType="i4"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[posted_date]"
                       name="posted_date" />
                     <outputColumn
@@ -7911,7 +7913,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
                       codePage="1252"
                       dataType="str"
-                      length="500"
+                      length="100"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[customer_name]"
                       name="customer_name" />
                     <outputColumn
@@ -7923,7 +7925,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="waybill" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
-                      dataType="dbTimeStamp"
+                      codePage="1252"
+                      dataType="str"
+                      length="19"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[waybill_date]"
                       name="waybill_date" />
                     <outputColumn
@@ -7947,28 +7951,28 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[vessel_number]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[vessel_number]"
                       name="vessel_number" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[po_number]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[po_number]"
                       name="po_number" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[other_reference]"
                       codePage="1252"
                       dataType="str"
-                      length="100"
+                      length="1"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[other_reference]"
                       name="other_reference" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[master_product]"
                       codePage="1252"
                       dataType="str"
-                      length="1000"
+                      length="1007"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[master_product]"
                       name="master_product" />
                     <outputColumn
@@ -7980,11 +7984,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="variable_item" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      dataType="numeric"
+                      dataType="i4"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[weight]"
-                      name="weight"
-                      precision="38"
-                      scale="2" />
+                      name="weight" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[note]"
                       codePage="1252"
@@ -7994,11 +7996,9 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="note" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      dataType="numeric"
+                      dataType="i4"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[length]"
-                      name="length"
-                      precision="25"
-                      scale="8" />
+                      name="length" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[wt_per_m]"
                       dataType="i4"
@@ -8006,19 +8006,19 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
                       name="wt_per_m" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[units]"
-                      dataType="i4"
+                      dataType="r8"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[units]"
                       name="units" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[pieces]"
-                      dataType="i4"
+                      dataType="r8"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[pieces]"
                       name="pieces" />
                     <outputColumn
                       refId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[unittally]"
                       codePage="1252"
                       dataType="str"
-                      length="106"
+                      length="121"
                       lineageId="Package\Load OB Shipping table\invman.Outputs[OLE DB Source Error Output].Columns[unittally]"
                       name="unittally" />
                     <outputColumn
@@ -8066,7 +8066,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="MERGE staging into invman tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8084,7 +8084,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Completed Orders table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
+      DTS:ThreadHint="4">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8118,7 +8118,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Miscellaneous tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="3">
+      DTS:ThreadHint="2">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8130,13 +8130,12 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:refId="Package\Truncate OB Shipping table"
       DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:Description="Execute SQL Task"
-      DTS:Disabled="True"
       DTS:DTSID="{8857dbcc-ac76-49eb-afd7-2d924bccafad}"
       DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate OB Shipping table"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="4">
+      DTS:ThreadHint="3">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8154,7 +8153,7 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       DTS:LocaleID="-1"
       DTS:ObjectName="Truncate Staging Tables"
       DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="2">
+      DTS:ThreadHint="0">
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
@@ -8505,13 +8504,13 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150,42"
-          Id="Package\Load IB Receiving table\customerportal"
-          TopLeft="11.75,103.5" />
-        <NodeLayout
           Size="113,42"
           Id="Package\Load IB Receiving table\invman"
           TopLeft="29.5,14.5" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Load IB Receiving table\customerportal"
+          TopLeft="11.75,103.5" />
         <EdgeLayout
           Id="Package\Load IB Receiving table.Paths[OLE DB Source Output]"
           TopLeft="86.375,56.5">
@@ -8547,6 +8546,14 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load IB Receiving table\invman">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -9088,37 +9095,47 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
     design-time-name="Package\Load OB Shipping table">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="113,42"
-          Id="Package\Load OB Shipping table\invman"
-          TopLeft="29.5,5.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150,42"
           Id="Package\Load OB Shipping table\customerportal"
           TopLeft="10.5,91.5" />
+        <NodeLayout
+          Size="113,42"
+          Id="Package\Load OB Shipping table\invman"
+          TopLeft="17.5,6.5" />
         <EdgeLayout
           Id="Package\Load OB Shipping table.Paths[OLE DB Source Output]"
-          TopLeft="85.75,47.5">
+          TopLeft="74,48.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,44"
+              EndConnector="11.5,43"
               Start="0,0"
-              End="0,36.5">
+              End="11.5,35.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,36.5" />
+                    End="0,17.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,17.5"
+                    Point2="0,21.5"
+                    Point3="4,21.5" />
+                  <mssgle:LineSegment
+                    End="7.5,21.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="7.5,21.5"
+                    Point2="11.5,21.5"
+                    Point3="11.5,25.5" />
+                  <mssgle:LineSegment
+                    End="11.5,35.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9139,14 +9156,6 @@ ORDER BY p.customer_name, p.waybill, master_product, [length]</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Load OB Shipping table\invman">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load IB Receiving table\invman">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
